@@ -11,3 +11,5 @@ void Main(array<String^>^ args) {
 	AppView::CustomerMainForm form;
 	Application::Run(% form);
 }
+
+// Hola muchachos
