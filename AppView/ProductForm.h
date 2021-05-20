@@ -40,7 +40,8 @@ namespace AppView {
 	private: System::Windows::Forms::TabControl^ tabControl1;
 	protected:
 	private: System::Windows::Forms::TabPage^ tabGroceries;
-	private: System::Windows::Forms::DataGridView^ dataGridView1;
+	private: System::Windows::Forms::DataGridView^ dgvGroceries;
+
 	private: System::Windows::Forms::Button^ btnDelete;
 	private: System::Windows::Forms::Button^ btnUpdate;
 	private: System::Windows::Forms::Button^ btnAdd;
@@ -74,7 +75,7 @@ namespace AppView {
 		{
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabGroceries = (gcnew System::Windows::Forms::TabPage());
-			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->dgvGroceries = (gcnew System::Windows::Forms::DataGridView());
 			this->Id = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->NameGroceries = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Brand = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -94,7 +95,7 @@ namespace AppView {
 			this->tabHealthCare = (gcnew System::Windows::Forms::TabPage());
 			this->tabControl1->SuspendLayout();
 			this->tabGroceries->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvGroceries))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// tabControl1
@@ -109,7 +110,7 @@ namespace AppView {
 			// 
 			// tabGroceries
 			// 
-			this->tabGroceries->Controls->Add(this->dataGridView1);
+			this->tabGroceries->Controls->Add(this->dgvGroceries);
 			this->tabGroceries->Controls->Add(this->btnDelete);
 			this->tabGroceries->Controls->Add(this->btnUpdate);
 			this->tabGroceries->Controls->Add(this->btnAdd);
@@ -130,17 +131,17 @@ namespace AppView {
 			this->tabGroceries->UseVisualStyleBackColor = true;
 			this->tabGroceries->Click += gcnew System::EventHandler(this, &ProductForm::tabGroceries_Click);
 			// 
-			// dataGridView1
+			// dgvGroceries
 			// 
-			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(5) {
+			this->dgvGroceries->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dgvGroceries->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(5) {
 				this->Id, this->NameGroceries,
 					this->Brand, this->Price, this->QuantitySold
 			});
-			this->dataGridView1->Location = System::Drawing::Point(11, 195);
-			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->Size = System::Drawing::Size(527, 104);
-			this->dataGridView1->TabIndex = 11;
+			this->dgvGroceries->Location = System::Drawing::Point(11, 195);
+			this->dgvGroceries->Name = L"dgvGroceries";
+			this->dgvGroceries->Size = System::Drawing::Size(527, 104);
+			this->dgvGroceries->TabIndex = 11;
 			// 
 			// Id
 			// 
@@ -280,7 +281,7 @@ namespace AppView {
 			this->tabControl1->ResumeLayout(false);
 			this->tabGroceries->ResumeLayout(false);
 			this->tabGroceries->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvGroceries))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -288,18 +289,31 @@ namespace AppView {
 	private: System::Void tabGroceries_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 private: System::Void btnAdd_Click(System::Object^ sender, System::EventArgs^ e) {
-	/*int id = Int32::Parse(txtId->Text); //como Text es un String, se casteará
+	int id = Int32::Parse(txtId->Text); //como Text es un String, se casteará
 	String^ nameGroceries = txtNamegroceries->Text;
 	double price = Double::Parse(txtPrice->Text);
 	String^ brand = txtBrand->Text;
 
 	//int id, String^ name, String^ description, double price, int stockTotal, char status, String^ brand
-	Groceries^ groceries = gcnew Groceries(id, nameGroceries, nameGroceries, price, 10, 'A', brand, 20, 5);
+	Groceries^ groceries = gcnew Groceries(id, nameGroceries, nameGroceries, price, 10, 'A', brand);
 	//vamos a invocar al gestor adecuado para que se encargue a agarrar un grocery
 	AppManager::AddProduct(groceries);  //se está agregando el producto
 
 	RefreshDGVGroceries();
-	*/
+
 }
-};
+	public:
+		System::Void RefreshDGVGroceries() {
+			List<Groceries^>^ groceriesList = AppManager::QueryAllGroceries();
+			//voy a limpiar el daitagriview
+			dgvGroceries->Rows->Clear();
+			for (int i = 0; i < groceriesList->Count; i++) {
+				dgvGroceries->Rows->Add(gcnew array<String^> {
+					"" + groceriesList[i]->Id, //es double entonces se castea / se le agrega "" para que se convierta en String
+						groceriesList[i]->Name,
+						groceriesList[i]->Brand,
+						"" + groceriesList[i]->Price // igual, castear
+				});
+			}
+		}};
 }
