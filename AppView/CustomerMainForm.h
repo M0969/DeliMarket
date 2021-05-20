@@ -1,4 +1,6 @@
 #pragma once
+#include "ProductForm.h"
+#include "Login.h"
 
 namespace AppView {
 
@@ -46,13 +48,26 @@ namespace AppView {
 	private: System::Windows::Forms::PictureBox^ btnMax;
 	private: System::Windows::Forms::Panel^ SideBarWrapper;
 	private: System::Windows::Forms::Panel^ Wrapper;
-	private: Bunifu::Framework::UI::BunifuFlatButton^ bunifuFlatButton4;
-	private: Bunifu::Framework::UI::BunifuFlatButton^ bunifuFlatButton1;
-	private: Bunifu::Framework::UI::BunifuFlatButton^ bunifuFlatButton3;
-	private: Bunifu::Framework::UI::BunifuFlatButton^ bunifuFlatButton2;
+	private: Bunifu::Framework::UI::BunifuFlatButton^ btnMyshopping;
+	private: Bunifu::Framework::UI::BunifuFlatButton^ btnListofproducts;
+
+
+	private: Bunifu::Framework::UI::BunifuFlatButton^ btnBonuspoints;
+	private: Bunifu::Framework::UI::BunifuFlatButton^ btnShoppingcart;
+
+
 	private: Bunifu::Framework::UI::BunifuSeparator^ lineSidebar;
 	private: Bunifu::Framework::UI::BunifuSeparator^ lineSideBar3;
 	private: Bunifu::Framework::UI::BunifuSeparator^ lineSidebar2;
+	private: Bunifu::Framework::UI::BunifuSeparator^ bunifuSeparator1;
+	private: System::Windows::Forms::Button^ btnSignoff;
+	private: System::Windows::Forms::MenuStrip^ menuStrip1;
+	private: System::Windows::Forms::ToolStripMenuItem^ inventarioToolStripMenuItem;
+
+
+
+
+
 
 
 
@@ -92,14 +107,18 @@ namespace AppView {
 			this->btnMin = (gcnew System::Windows::Forms::PictureBox());
 			this->btnMax = (gcnew System::Windows::Forms::PictureBox());
 			this->SideBarWrapper = (gcnew System::Windows::Forms::Panel());
-			this->bunifuFlatButton4 = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
-			this->bunifuFlatButton1 = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
-			this->bunifuFlatButton3 = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
-			this->bunifuFlatButton2 = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
+			this->bunifuSeparator1 = (gcnew Bunifu::Framework::UI::BunifuSeparator());
+			this->btnSignoff = (gcnew System::Windows::Forms::Button());
+			this->btnMyshopping = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
+			this->btnListofproducts = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
+			this->btnBonuspoints = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
+			this->btnShoppingcart = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
 			this->lineSidebar = (gcnew Bunifu::Framework::UI::BunifuSeparator());
 			this->lineSideBar3 = (gcnew Bunifu::Framework::UI::BunifuSeparator());
 			this->lineSidebar2 = (gcnew Bunifu::Framework::UI::BunifuSeparator());
 			this->Wrapper = (gcnew System::Windows::Forms::Panel());
+			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
+			this->inventarioToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->Top->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnReset))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnClose))->BeginInit();
@@ -107,6 +126,8 @@ namespace AppView {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnMin))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnMax))->BeginInit();
 			this->SideBarWrapper->SuspendLayout();
+			this->Wrapper->SuspendLayout();
+			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// Top
@@ -202,10 +223,12 @@ namespace AppView {
 			// 
 			this->SideBarWrapper->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)), static_cast<System::Int32>(static_cast<System::Byte>(31)),
 				static_cast<System::Int32>(static_cast<System::Byte>(33)));
-			this->SideBarWrapper->Controls->Add(this->bunifuFlatButton4);
-			this->SideBarWrapper->Controls->Add(this->bunifuFlatButton1);
-			this->SideBarWrapper->Controls->Add(this->bunifuFlatButton3);
-			this->SideBarWrapper->Controls->Add(this->bunifuFlatButton2);
+			this->SideBarWrapper->Controls->Add(this->bunifuSeparator1);
+			this->SideBarWrapper->Controls->Add(this->btnSignoff);
+			this->SideBarWrapper->Controls->Add(this->btnMyshopping);
+			this->SideBarWrapper->Controls->Add(this->btnListofproducts);
+			this->SideBarWrapper->Controls->Add(this->btnBonuspoints);
+			this->SideBarWrapper->Controls->Add(this->btnShoppingcart);
 			this->SideBarWrapper->Controls->Add(this->lineSidebar);
 			this->SideBarWrapper->Controls->Add(this->lineSideBar3);
 			this->SideBarWrapper->Controls->Add(this->lineSidebar2);
@@ -215,150 +238,178 @@ namespace AppView {
 			this->SideBarWrapper->Size = System::Drawing::Size(181, 409);
 			this->SideBarWrapper->TabIndex = 1;
 			// 
-			// bunifuFlatButton4
+			// bunifuSeparator1
 			// 
-			this->bunifuFlatButton4->Activecolor = System::Drawing::Color::Transparent;
-			this->bunifuFlatButton4->BackColor = System::Drawing::Color::Transparent;
-			this->bunifuFlatButton4->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->bunifuFlatButton4->BorderRadius = 0;
-			this->bunifuFlatButton4->ButtonText = L"     MIS COMPRAS";
-			this->bunifuFlatButton4->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->bunifuFlatButton4->DisabledColor = System::Drawing::Color::Gray;
-			this->bunifuFlatButton4->Iconcolor = System::Drawing::Color::Transparent;
-			this->bunifuFlatButton4->Iconimage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bunifuFlatButton4.Iconimage")));
-			this->bunifuFlatButton4->Iconimage_right = nullptr;
-			this->bunifuFlatButton4->Iconimage_right_Selected = nullptr;
-			this->bunifuFlatButton4->Iconimage_Selected = nullptr;
-			this->bunifuFlatButton4->IconMarginLeft = 0;
-			this->bunifuFlatButton4->IconMarginRight = 0;
-			this->bunifuFlatButton4->IconRightVisible = true;
-			this->bunifuFlatButton4->IconRightZoom = 0;
-			this->bunifuFlatButton4->IconVisible = true;
-			this->bunifuFlatButton4->IconZoom = 90;
-			this->bunifuFlatButton4->IsTab = false;
-			this->bunifuFlatButton4->Location = System::Drawing::Point(12, 255);
-			this->bunifuFlatButton4->Name = L"bunifuFlatButton4";
-			this->bunifuFlatButton4->Normalcolor = System::Drawing::Color::Transparent;
-			this->bunifuFlatButton4->OnHovercolor = System::Drawing::Color::Transparent;
-			this->bunifuFlatButton4->OnHoverTextColor = System::Drawing::Color::White;
-			this->bunifuFlatButton4->selected = false;
-			this->bunifuFlatButton4->Size = System::Drawing::Size(157, 40);
-			this->bunifuFlatButton4->TabIndex = 6;
-			this->bunifuFlatButton4->Text = L"     MIS COMPRAS";
-			this->bunifuFlatButton4->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->bunifuFlatButton4->Textcolor = System::Drawing::Color::White;
-			this->bunifuFlatButton4->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+			this->bunifuSeparator1->BackColor = System::Drawing::Color::Transparent;
+			this->bunifuSeparator1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)), static_cast<System::Int32>(static_cast<System::Byte>(31)),
+				static_cast<System::Int32>(static_cast<System::Byte>(33)));
+			this->bunifuSeparator1->LineColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)),
+				static_cast<System::Int32>(static_cast<System::Byte>(105)), static_cast<System::Int32>(static_cast<System::Byte>(105)), static_cast<System::Int32>(static_cast<System::Byte>(105)));
+			this->bunifuSeparator1->LineThickness = 2;
+			this->bunifuSeparator1->Location = System::Drawing::Point(10, 301);
+			this->bunifuSeparator1->Name = L"bunifuSeparator1";
+			this->bunifuSeparator1->Size = System::Drawing::Size(152, 36);
+			this->bunifuSeparator1->TabIndex = 8;
+			this->bunifuSeparator1->Transparency = 150;
+			this->bunifuSeparator1->Vertical = false;
+			// 
+			// btnSignoff
+			// 
+			this->btnSignoff->FlatAppearance->BorderSize = 0;
+			this->btnSignoff->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnSignoff->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->btnSignoff->Location = System::Drawing::Point(0, 329);
+			this->btnSignoff->Name = L"btnSignoff";
+			this->btnSignoff->Size = System::Drawing::Size(182, 68);
+			this->btnSignoff->TabIndex = 7;
+			this->btnSignoff->Text = L"CERRAR SESIÓN";
+			this->btnSignoff->UseVisualStyleBackColor = true;
+			this->btnSignoff->Click += gcnew System::EventHandler(this, &CustomerMainForm::btnSignoff_Click);
+			// 
+			// btnMyshopping
+			// 
+			this->btnMyshopping->Activecolor = System::Drawing::Color::Transparent;
+			this->btnMyshopping->BackColor = System::Drawing::Color::Transparent;
+			this->btnMyshopping->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btnMyshopping->BorderRadius = 0;
+			this->btnMyshopping->ButtonText = L"  MIS COMPRAS";
+			this->btnMyshopping->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->btnMyshopping->DisabledColor = System::Drawing::Color::Gray;
+			this->btnMyshopping->Iconcolor = System::Drawing::Color::Transparent;
+			this->btnMyshopping->Iconimage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnMyshopping.Iconimage")));
+			this->btnMyshopping->Iconimage_right = nullptr;
+			this->btnMyshopping->Iconimage_right_Selected = nullptr;
+			this->btnMyshopping->Iconimage_Selected = nullptr;
+			this->btnMyshopping->IconMarginLeft = 0;
+			this->btnMyshopping->IconMarginRight = 0;
+			this->btnMyshopping->IconRightVisible = true;
+			this->btnMyshopping->IconRightZoom = 0;
+			this->btnMyshopping->IconVisible = true;
+			this->btnMyshopping->IconZoom = 90;
+			this->btnMyshopping->IsTab = false;
+			this->btnMyshopping->Location = System::Drawing::Point(12, 255);
+			this->btnMyshopping->Name = L"btnMyshopping";
+			this->btnMyshopping->Normalcolor = System::Drawing::Color::Transparent;
+			this->btnMyshopping->OnHovercolor = System::Drawing::Color::Transparent;
+			this->btnMyshopping->OnHoverTextColor = System::Drawing::Color::White;
+			this->btnMyshopping->selected = false;
+			this->btnMyshopping->Size = System::Drawing::Size(157, 40);
+			this->btnMyshopping->TabIndex = 6;
+			this->btnMyshopping->Text = L"  MIS COMPRAS";
+			this->btnMyshopping->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->btnMyshopping->Textcolor = System::Drawing::Color::White;
+			this->btnMyshopping->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			// 
-			// bunifuFlatButton1
+			// btnListofproducts
 			// 
-			this->bunifuFlatButton1->Activecolor = System::Drawing::Color::Transparent;
-			this->bunifuFlatButton1->BackColor = System::Drawing::Color::Transparent;
-			this->bunifuFlatButton1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->bunifuFlatButton1->BorderRadius = 0;
-			this->bunifuFlatButton1->ButtonText = L"    PRODUCTOS";
-			this->bunifuFlatButton1->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->bunifuFlatButton1->DisabledColor = System::Drawing::Color::Gray;
-			this->bunifuFlatButton1->Font = (gcnew System::Drawing::Font(L"Candara", 8.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+			this->btnListofproducts->Activecolor = System::Drawing::Color::Transparent;
+			this->btnListofproducts->BackColor = System::Drawing::Color::Transparent;
+			this->btnListofproducts->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btnListofproducts->BorderRadius = 0;
+			this->btnListofproducts->ButtonText = L"    PRODUCTOS";
+			this->btnListofproducts->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->btnListofproducts->DisabledColor = System::Drawing::Color::Gray;
+			this->btnListofproducts->Font = (gcnew System::Drawing::Font(L"Candara", 8.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->bunifuFlatButton1->Iconcolor = System::Drawing::Color::Transparent;
-			this->bunifuFlatButton1->Iconimage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bunifuFlatButton1.Iconimage")));
-			this->bunifuFlatButton1->Iconimage_right = nullptr;
-			this->bunifuFlatButton1->Iconimage_right_Selected = nullptr;
-			this->bunifuFlatButton1->Iconimage_Selected = nullptr;
-			this->bunifuFlatButton1->IconMarginLeft = 0;
-			this->bunifuFlatButton1->IconMarginRight = 0;
-			this->bunifuFlatButton1->IconRightVisible = true;
-			this->bunifuFlatButton1->IconRightZoom = 0;
-			this->bunifuFlatButton1->IconVisible = true;
-			this->bunifuFlatButton1->IconZoom = 90;
-			this->bunifuFlatButton1->IsTab = false;
-			this->bunifuFlatButton1->Location = System::Drawing::Point(12, 55);
-			this->bunifuFlatButton1->Name = L"bunifuFlatButton1";
-			this->bunifuFlatButton1->Normalcolor = System::Drawing::Color::Transparent;
-			this->bunifuFlatButton1->OnHovercolor = System::Drawing::Color::Transparent;
-			this->bunifuFlatButton1->OnHoverTextColor = System::Drawing::Color::White;
-			this->bunifuFlatButton1->selected = false;
-			this->bunifuFlatButton1->Size = System::Drawing::Size(177, 34);
-			this->bunifuFlatButton1->TabIndex = 3;
-			this->bunifuFlatButton1->Text = L"    PRODUCTOS";
-			this->bunifuFlatButton1->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->bunifuFlatButton1->Textcolor = System::Drawing::Color::White;
-			this->bunifuFlatButton1->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+			this->btnListofproducts->Iconcolor = System::Drawing::Color::Transparent;
+			this->btnListofproducts->Iconimage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnListofproducts.Iconimage")));
+			this->btnListofproducts->Iconimage_right = nullptr;
+			this->btnListofproducts->Iconimage_right_Selected = nullptr;
+			this->btnListofproducts->Iconimage_Selected = nullptr;
+			this->btnListofproducts->IconMarginLeft = 0;
+			this->btnListofproducts->IconMarginRight = 0;
+			this->btnListofproducts->IconRightVisible = true;
+			this->btnListofproducts->IconRightZoom = 0;
+			this->btnListofproducts->IconVisible = true;
+			this->btnListofproducts->IconZoom = 90;
+			this->btnListofproducts->IsTab = false;
+			this->btnListofproducts->Location = System::Drawing::Point(12, 55);
+			this->btnListofproducts->Name = L"btnListofproducts";
+			this->btnListofproducts->Normalcolor = System::Drawing::Color::Transparent;
+			this->btnListofproducts->OnHovercolor = System::Drawing::Color::Transparent;
+			this->btnListofproducts->OnHoverTextColor = System::Drawing::Color::White;
+			this->btnListofproducts->selected = false;
+			this->btnListofproducts->Size = System::Drawing::Size(163, 34);
+			this->btnListofproducts->TabIndex = 3;
+			this->btnListofproducts->Text = L"    PRODUCTOS";
+			this->btnListofproducts->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->btnListofproducts->Textcolor = System::Drawing::Color::White;
+			this->btnListofproducts->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->bunifuFlatButton1->Click += gcnew System::EventHandler(this, &CustomerMainForm::bunifuFlatButton1_Click);
+			this->btnListofproducts->Click += gcnew System::EventHandler(this, &CustomerMainForm::btnListofproducts_Click);
 			// 
-			// bunifuFlatButton3
+			// btnBonuspoints
 			// 
-			this->bunifuFlatButton3->Activecolor = System::Drawing::Color::Transparent;
-			this->bunifuFlatButton3->BackColor = System::Drawing::Color::Transparent;
-			this->bunifuFlatButton3->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->bunifuFlatButton3->BorderRadius = 0;
-			this->bunifuFlatButton3->ButtonText = L"     PUNTOS BONUS";
-			this->bunifuFlatButton3->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->bunifuFlatButton3->DisabledColor = System::Drawing::Color::Gray;
-			this->bunifuFlatButton3->Iconcolor = System::Drawing::Color::Transparent;
-			this->bunifuFlatButton3->Iconimage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bunifuFlatButton3.Iconimage")));
-			this->bunifuFlatButton3->Iconimage_right = nullptr;
-			this->bunifuFlatButton3->Iconimage_right_Selected = nullptr;
-			this->bunifuFlatButton3->Iconimage_Selected = nullptr;
-			this->bunifuFlatButton3->IconMarginLeft = 0;
-			this->bunifuFlatButton3->IconMarginRight = 0;
-			this->bunifuFlatButton3->IconRightVisible = true;
-			this->bunifuFlatButton3->IconRightZoom = 0;
-			this->bunifuFlatButton3->IconVisible = true;
-			this->bunifuFlatButton3->IconZoom = 90;
-			this->bunifuFlatButton3->IsTab = false;
-			this->bunifuFlatButton3->Location = System::Drawing::Point(10, 189);
-			this->bunifuFlatButton3->Name = L"bunifuFlatButton3";
-			this->bunifuFlatButton3->Normalcolor = System::Drawing::Color::Transparent;
-			this->bunifuFlatButton3->OnHovercolor = System::Drawing::Color::Transparent;
-			this->bunifuFlatButton3->OnHoverTextColor = System::Drawing::Color::White;
-			this->bunifuFlatButton3->selected = false;
-			this->bunifuFlatButton3->Size = System::Drawing::Size(172, 30);
-			this->bunifuFlatButton3->TabIndex = 5;
-			this->bunifuFlatButton3->Text = L"     PUNTOS BONUS";
-			this->bunifuFlatButton3->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->bunifuFlatButton3->Textcolor = System::Drawing::Color::White;
-			this->bunifuFlatButton3->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+			this->btnBonuspoints->Activecolor = System::Drawing::Color::Transparent;
+			this->btnBonuspoints->BackColor = System::Drawing::Color::Transparent;
+			this->btnBonuspoints->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btnBonuspoints->BorderRadius = 0;
+			this->btnBonuspoints->ButtonText = L"PUNTOS BONUS";
+			this->btnBonuspoints->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->btnBonuspoints->DisabledColor = System::Drawing::Color::Gray;
+			this->btnBonuspoints->Iconcolor = System::Drawing::Color::Transparent;
+			this->btnBonuspoints->Iconimage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnBonuspoints.Iconimage")));
+			this->btnBonuspoints->Iconimage_right = nullptr;
+			this->btnBonuspoints->Iconimage_right_Selected = nullptr;
+			this->btnBonuspoints->Iconimage_Selected = nullptr;
+			this->btnBonuspoints->IconMarginLeft = 0;
+			this->btnBonuspoints->IconMarginRight = 0;
+			this->btnBonuspoints->IconRightVisible = true;
+			this->btnBonuspoints->IconRightZoom = 0;
+			this->btnBonuspoints->IconVisible = true;
+			this->btnBonuspoints->IconZoom = 90;
+			this->btnBonuspoints->IsTab = false;
+			this->btnBonuspoints->Location = System::Drawing::Point(10, 189);
+			this->btnBonuspoints->Name = L"btnBonuspoints";
+			this->btnBonuspoints->Normalcolor = System::Drawing::Color::Transparent;
+			this->btnBonuspoints->OnHovercolor = System::Drawing::Color::Transparent;
+			this->btnBonuspoints->OnHoverTextColor = System::Drawing::Color::White;
+			this->btnBonuspoints->selected = false;
+			this->btnBonuspoints->Size = System::Drawing::Size(172, 30);
+			this->btnBonuspoints->TabIndex = 5;
+			this->btnBonuspoints->Text = L"PUNTOS BONUS";
+			this->btnBonuspoints->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->btnBonuspoints->Textcolor = System::Drawing::Color::White;
+			this->btnBonuspoints->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->bunifuFlatButton3->Click += gcnew System::EventHandler(this, &CustomerMainForm::bunifuFlatButton3_Click);
+			this->btnBonuspoints->Click += gcnew System::EventHandler(this, &CustomerMainForm::btnBonuspoints_Click);
 			// 
-			// bunifuFlatButton2
+			// btnShoppingcart
 			// 
-			this->bunifuFlatButton2->Activecolor = System::Drawing::Color::Transparent;
-			this->bunifuFlatButton2->BackColor = System::Drawing::Color::Transparent;
-			this->bunifuFlatButton2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->bunifuFlatButton2->BorderRadius = 0;
-			this->bunifuFlatButton2->ButtonText = L"     CARRITO";
-			this->bunifuFlatButton2->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->bunifuFlatButton2->DisabledColor = System::Drawing::Color::Gray;
-			this->bunifuFlatButton2->Iconcolor = System::Drawing::Color::Transparent;
-			this->bunifuFlatButton2->Iconimage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bunifuFlatButton2.Iconimage")));
-			this->bunifuFlatButton2->Iconimage_right = nullptr;
-			this->bunifuFlatButton2->Iconimage_right_Selected = nullptr;
-			this->bunifuFlatButton2->Iconimage_Selected = nullptr;
-			this->bunifuFlatButton2->IconMarginLeft = 0;
-			this->bunifuFlatButton2->IconMarginRight = 0;
-			this->bunifuFlatButton2->IconRightVisible = true;
-			this->bunifuFlatButton2->IconRightZoom = 0;
-			this->bunifuFlatButton2->IconVisible = true;
-			this->bunifuFlatButton2->IconZoom = 90;
-			this->bunifuFlatButton2->IsTab = false;
-			this->bunifuFlatButton2->Location = System::Drawing::Point(12, 125);
-			this->bunifuFlatButton2->Name = L"bunifuFlatButton2";
-			this->bunifuFlatButton2->Normalcolor = System::Drawing::Color::Transparent;
-			this->bunifuFlatButton2->OnHovercolor = System::Drawing::Color::Transparent;
-			this->bunifuFlatButton2->OnHoverTextColor = System::Drawing::Color::White;
-			this->bunifuFlatButton2->selected = false;
-			this->bunifuFlatButton2->Size = System::Drawing::Size(131, 30);
-			this->bunifuFlatButton2->TabIndex = 4;
-			this->bunifuFlatButton2->Text = L"     CARRITO";
-			this->bunifuFlatButton2->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->bunifuFlatButton2->Textcolor = System::Drawing::Color::White;
-			this->bunifuFlatButton2->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+			this->btnShoppingcart->Activecolor = System::Drawing::Color::Transparent;
+			this->btnShoppingcart->BackColor = System::Drawing::Color::Transparent;
+			this->btnShoppingcart->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btnShoppingcart->BorderRadius = 0;
+			this->btnShoppingcart->ButtonText = L"     CARRITO";
+			this->btnShoppingcart->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->btnShoppingcart->DisabledColor = System::Drawing::Color::Gray;
+			this->btnShoppingcart->Iconcolor = System::Drawing::Color::Transparent;
+			this->btnShoppingcart->Iconimage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnShoppingcart.Iconimage")));
+			this->btnShoppingcart->Iconimage_right = nullptr;
+			this->btnShoppingcart->Iconimage_right_Selected = nullptr;
+			this->btnShoppingcart->Iconimage_Selected = nullptr;
+			this->btnShoppingcart->IconMarginLeft = 0;
+			this->btnShoppingcart->IconMarginRight = 0;
+			this->btnShoppingcart->IconRightVisible = true;
+			this->btnShoppingcart->IconRightZoom = 0;
+			this->btnShoppingcart->IconVisible = true;
+			this->btnShoppingcart->IconZoom = 90;
+			this->btnShoppingcart->IsTab = false;
+			this->btnShoppingcart->Location = System::Drawing::Point(12, 125);
+			this->btnShoppingcart->Name = L"btnShoppingcart";
+			this->btnShoppingcart->Normalcolor = System::Drawing::Color::Transparent;
+			this->btnShoppingcart->OnHovercolor = System::Drawing::Color::Transparent;
+			this->btnShoppingcart->OnHoverTextColor = System::Drawing::Color::White;
+			this->btnShoppingcart->selected = false;
+			this->btnShoppingcart->Size = System::Drawing::Size(131, 30);
+			this->btnShoppingcart->TabIndex = 4;
+			this->btnShoppingcart->Text = L"     CARRITO";
+			this->btnShoppingcart->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->btnShoppingcart->Textcolor = System::Drawing::Color::White;
+			this->btnShoppingcart->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->bunifuFlatButton2->Click += gcnew System::EventHandler(this, &CustomerMainForm::bunifuFlatButton2_Click);
+			this->btnShoppingcart->Click += gcnew System::EventHandler(this, &CustomerMainForm::btnShoppingcart_Click);
 			// 
 			// lineSidebar
 			// 
@@ -407,11 +458,28 @@ namespace AppView {
 			// 
 			// Wrapper
 			// 
+			this->Wrapper->Controls->Add(this->menuStrip1);
 			this->Wrapper->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->Wrapper->Location = System::Drawing::Point(181, 66);
 			this->Wrapper->Name = L"Wrapper";
 			this->Wrapper->Size = System::Drawing::Size(494, 409);
 			this->Wrapper->TabIndex = 1;
+			// 
+			// menuStrip1
+			// 
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->inventarioToolStripMenuItem });
+			this->menuStrip1->Location = System::Drawing::Point(0, 0);
+			this->menuStrip1->Name = L"menuStrip1";
+			this->menuStrip1->Size = System::Drawing::Size(494, 24);
+			this->menuStrip1->TabIndex = 0;
+			this->menuStrip1->Text = L"menuStrip1";
+			// 
+			// inventarioToolStripMenuItem
+			// 
+			this->inventarioToolStripMenuItem->Name = L"inventarioToolStripMenuItem";
+			this->inventarioToolStripMenuItem->Size = System::Drawing::Size(72, 20);
+			this->inventarioToolStripMenuItem->Text = L"&Inventario";
+			this->inventarioToolStripMenuItem->Click += gcnew System::EventHandler(this, &CustomerMainForm::inventarioToolStripMenuItem_Click);
 			// 
 			// CustomerMainForm
 			// 
@@ -422,6 +490,7 @@ namespace AppView {
 			this->Controls->Add(this->SideBarWrapper);
 			this->Controls->Add(this->Top);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"CustomerMainForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"CustomerMainForm";
@@ -434,6 +503,10 @@ namespace AppView {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnMin))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnMax))->EndInit();
 			this->SideBarWrapper->ResumeLayout(false);
+			this->Wrapper->ResumeLayout(false);
+			this->Wrapper->PerformLayout();
+			this->menuStrip1->ResumeLayout(false);
+			this->menuStrip1->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
@@ -469,11 +542,22 @@ private: System::Void MenuSideBar_Click(System::Object^ sender, System::EventArg
 		SideBarWrapper->Width = 181;
 	}
 }
-private: System::Void bunifuFlatButton2_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void btnShoppingcart_Click(System::Object^ sender, System::EventArgs^ e) {
 }
-private: System::Void bunifuFlatButton3_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void btnBonuspoints_Click(System::Object^ sender, System::EventArgs^ e) {
 }
-private: System::Void bunifuFlatButton1_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void btnListofproducts_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void btnSignoff_Click(System::Object^ sender, System::EventArgs^ e) {
+	//Programar Cerrar Sesion
+
+	Login^ login = gcnew Login();
+	login->Show();
+}
+private: System::Void inventarioToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	ProductForm^ productForm = gcnew ProductForm();
+	//productForm->MdiParent = this; // this = el mismo SalesMainForm
+	productForm->Show();
 }
 };
 }
