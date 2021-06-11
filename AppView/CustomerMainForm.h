@@ -10,6 +10,8 @@ namespace AppView {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace AppModel;
+	using namespace AppController;
 	using namespace Bunifu;
 
 	/// <summary>
@@ -18,6 +20,8 @@ namespace AppView {
 	public ref class CustomerMainForm : public System::Windows::Forms::Form
 	{
 	public:
+		static User^ user;
+		static Customer^ customer;
 		CustomerMainForm(void)
 		{
 			InitializeComponent();
@@ -235,7 +239,7 @@ namespace AppView {
 			this->SideBarWrapper->Dock = System::Windows::Forms::DockStyle::Left;
 			this->SideBarWrapper->Location = System::Drawing::Point(0, 66);
 			this->SideBarWrapper->Name = L"SideBarWrapper";
-			this->SideBarWrapper->Size = System::Drawing::Size(181, 409);
+			this->SideBarWrapper->Size = System::Drawing::Size(165, 409);
 			this->SideBarWrapper->TabIndex = 1;
 			// 
 			// bunifuSeparator1
@@ -459,10 +463,9 @@ namespace AppView {
 			// Wrapper
 			// 
 			this->Wrapper->Controls->Add(this->menuStrip1);
-			this->Wrapper->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->Wrapper->Location = System::Drawing::Point(181, 66);
+			this->Wrapper->Location = System::Drawing::Point(165, 66);
 			this->Wrapper->Name = L"Wrapper";
-			this->Wrapper->Size = System::Drawing::Size(494, 409);
+			this->Wrapper->Size = System::Drawing::Size(479, 409);
 			this->Wrapper->TabIndex = 1;
 			// 
 			// menuStrip1
@@ -470,7 +473,7 @@ namespace AppView {
 			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->inventarioToolStripMenuItem });
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(494, 24);
+			this->menuStrip1->Size = System::Drawing::Size(479, 24);
 			this->menuStrip1->TabIndex = 0;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -512,6 +515,12 @@ namespace AppView {
 		}
 #pragma endregion
 	private: System::Void CustomerMainForm_Load(System::Object^ sender, System::EventArgs^ e) {
+		if (user == nullptr) {
+			Login^ login = gcnew Login();
+			login->ControlBox = false;
+			login->Text = "";
+			login->ShowDialog();
+		}
 	}
 	private: System::Void btnClose_Click(System::Object^ sender, System::EventArgs^ e) {
 		Windows::Forms::Application::Exit();
@@ -553,11 +562,13 @@ private: System::Void btnSignoff_Click(System::Object^ sender, System::EventArgs
 
 	Login^ login = gcnew Login();
 	login->Show();
+	this->Visible = false;
 }
 private: System::Void inventarioToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	ProductForm^ productForm = gcnew ProductForm();
 	//productForm->MdiParent = this; // this = el mismo SalesMainForm
 	productForm->Show();
 }
+
 };
 }

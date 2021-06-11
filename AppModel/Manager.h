@@ -8,6 +8,7 @@
 #include "Employee.h"
 
 namespace AppModel {
+    [Serializable]
     public ref class Manager : public Employee {
     public:
         property int EmployeesNumber;

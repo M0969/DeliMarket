@@ -8,17 +8,21 @@
 using namespace System;
 
 namespace AppModel {
+    [Serializable]
     public ref class DeliveryMan : public  Employee {
     public:
   
         property double Quota;
-        property char Status;
+
         property bool Available;
 
         DeliveryMan() {}
-        DeliveryMan(int id, String^ firstName, String^ lastName, 
-            String^ phoneNumber, double quota, array <Byte>^ photo, int verificationcode, bool available);
+        DeliveryMan(int id,String^ userName,String^ password, String^ firstName, String^ lastName, 
+           char gender, String^ documentnumber,String^phonenumber,String^ email,String^ category,
+            String^ address,char status,double quota, array <Byte>^ photo, int verificationcode, bool available);
 
     };
 }
+
+
 

@@ -9,8 +9,7 @@
  * User implementation
  */
 
-User::User(int id, String^ username, String^ password, String^ firstName, String^ lastName, char gender, String^ documentNumber, String^ phoneNumber, String^ email, String^ category, String^ address, array<Byte>^ photo)
-{
+AppModel::User::User(int id, String^ username, String^ password, String^ firstName, String^ lastName, char gender, String^ documentNumber, String^ phoneNumber, String^ email, String^ category, String^ address,char status) {
 	Id = id;
 	Username = username;
 	Password = password;
@@ -22,5 +21,5 @@ User::User(int id, String^ username, String^ password, String^ firstName, String
 	Category = category;
 	Email = email;
 	Address = address;
-	Photo = photo;
+	Status = status;
 }

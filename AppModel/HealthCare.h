@@ -6,7 +6,7 @@
 #include "Product.h"
 
 namespace AppModel {
-
+    [Serializable]
     public ref class HealthCare : public Product {
     public:
         //property String^ Category;

@@ -10,6 +10,7 @@
 using namespace System;
 
 namespace AppModel {
+    [Serializable]
      public ref class Customer : public  User {
     public:
 
@@ -18,7 +19,9 @@ namespace AppModel {
 
         Customer() {}
 
-        Customer(String^ firstName, String^ lastName,String^ address, String^ phoneNumber, int customerpoints);
+        Customer(int id, String^ username, String^ password, String^ firstName, String^ lastName,
+            char gender, String^ documentNumber, String^ phoneNumber, String^ email, String^ category,
+            String^ address, char status);
     };
      
 

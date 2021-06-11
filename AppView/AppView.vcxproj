@@ -92,6 +92,8 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies />
+      <SubSystem>Windows</SubSystem>
+      <EntryPointSymbol>Main</EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -138,11 +140,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CustomerMainForm.cpp" />
+    <ClCompile Include="DeliveryForm.cpp" />
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="ProductForm.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CustomerMainForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="DeliveryForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Login.h">
@@ -155,6 +161,9 @@
   <ItemGroup>
     <EmbeddedResource Include="CustomerMainForm.resx">
       <DependentUpon>CustomerMainForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeliveryForm.resx">
+      <DependentUpon>DeliveryForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.h</DependentUpon>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ManagerDB xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ListDB>
+    <Manager>
+      <Status>0</Status>
+      <Address>asdasd</Address>
+      <Category>Manager</Category>
+      <Email>asasda</Email>
+      <PhoneNumber>12345</PhoneNumber>
+      <DocumentNumber>12345</DocumentNumber>
+      <Gender>77</Gender>
+      <LastName>as</LastName>
+      <FirstName>as</FirstName>
+      <Password>12345</Password>
+      <Username>Manager</Username>
+      <Id>0</Id>
+      <VerificationCode>0</VerificationCode>
+      <Salary>0</Salary>
+      <EmployeesNumber>0</EmployeesNumber>
+    </Manager>
+  </ListDB>
+</ManagerDB>

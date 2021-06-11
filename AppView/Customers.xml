@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomerDB xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ListDB>
+    <Customer>
+      <Status>0</Status>
+      <Address>Direccion</Address>
+      <Category>Cliente</Category>
+      <Email>E-mail</Email>
+      <PhoneNumber>Telefono</PhoneNumber>
+      <DocumentNumber>645634562</DocumentNumber>
+      <Gender>77</Gender>
+      <LastName>Apellido</LastName>
+      <FirstName>Nombre</FirstName>
+      <Password>Contraseña</Password>
+      <Username>Usuario213231</Username>
+      <Id>1</Id>
+      <CustomerPoints>0</CustomerPoints>
+    </Customer>
+  </ListDB>
+</CustomerDB>

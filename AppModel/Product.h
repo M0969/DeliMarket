@@ -7,6 +7,7 @@
 using namespace System;
 
 namespace AppModel {
+    [Serializable]
     public ref class Product {
     public:
         property int Id;

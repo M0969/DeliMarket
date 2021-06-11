@@ -5,6 +5,7 @@
 using namespace System;
 
 namespace AppModel {
+    [Serializable]
     public ref class BonusPoints {
     public:
        property int PointsMin;

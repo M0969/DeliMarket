@@ -11,6 +11,7 @@ using namespace System;
 using namespace System :: Collections::Generic;
 
 namespace AppModel {
+    [Serializable]
     public ref class Order {
     public:
         property String^ Product;

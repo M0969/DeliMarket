@@ -8,7 +8,7 @@
 using namespace System;
 
 namespace AppModel {
-
+    [Serializable]
     public ref class SaleDetail {
     public:
         property double Quantity;

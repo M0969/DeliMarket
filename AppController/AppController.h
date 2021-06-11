@@ -20,7 +20,42 @@ namespace AppController {
 			static HealthCare^ QueryHealthCareById(int productId);
 
 		// Métodos CRUD para cliente
+
 		// Métodos CRUD para venta
 		// Métodos CRUD para repartidor
 	};
+
+	public ref class UserManager {
+			// Metodos CRUD para registrarse en cuenta 
+			public:
+				//User
+				static User^ ValidateUser(String^ username, String^ password);
+				static void AddUser(User^);
+				static void UpdateUser(User^);
+				static void	DeleteUser(int userId);
+				static bool ConfirmUser(User^);
+				static List<User^>^ QueryAllUser();
+				static User^ QueryUserbyId(int userId);
+				static int QueryLastUserId();
+
+				//DeliveryMan
+				static DeliveryMan^ QueryDeliveryManbyId(int deliverymanId);
+				static List<DeliveryMan^>^ QueryAllDeliveryMan();
+				static bool ConfirmDeliveryMan(DeliveryMan^);
+				static void AddDeliveryMan(DeliveryMan^);
+
+				//Manager
+				static Manager^ QueryManagerbyId(int managerId);
+				static List<Manager^>^ QueryAllDManagers();
+				static bool ConfirmManager(Manager^);
+				static void AddManagers(Manager^);
+				
+				//Customer
+				static List<Customer^>^ QueryAllCustomer();
+				static Customer^ QueryCustomerbyId(int customerId);
+				static bool ConfirmCustomer(Customer^);
+				static void AddCustomers(Customer^);
+
+			};
+	
 }

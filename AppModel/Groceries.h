@@ -8,7 +8,9 @@
 #include "Product.h"
 
 using namespace System;
+
 namespace AppModel {
+    [Serializable]
     public ref class Groceries : public Product {
     public:
        //property String^ Category;
