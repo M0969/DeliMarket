@@ -46,8 +46,20 @@ List<Groceries^>^ AppController::DBController::QueryAllGroceries()
     return groceriesList;
 }
 
+Product^ AppController::DBController::QueryProductByName(String^ name)
+{
+    for (int i = 0; i < productDB->ListDB->Count; i++)
+        if (productDB->ListDB[i]->Name->CompareTo(name)==0) { // si coincide, se procede a eliminar
+             // en lugar de borrarlo (por temas de seguridad), se le cambia de estado: INACTIVO
+            return productDB->ListDB[i];
+        }
+    return nullptr;
+
+}
+
 List<HealthCare^>^ AppController::DBController::QueryAllHealthCare()
 {
+    
     List <HealthCare^>^ healthCareList = gcnew List <HealthCare^>();
     for (int i = 0; i < productDB->ListDB->Count; i++)
         if (productDB->ListDB[i]->GetType() == HealthCare::typeid) //tiene un atributo general que deriva de object, este tiene un atributo "typeid" . Como todas derivan de object, entonces TODOS TIENEN ACCESO A ESE ATRIBUTO
@@ -62,6 +74,7 @@ Product^ AppController::DBController::QueryAllProductById(int productId)
             return productDB->ListDB[i];
     return nullptr; // es un puntero a nulo
 }
+
 
 Groceries^ AppController::DBController::QueryGroceriesById(int productId)
 {

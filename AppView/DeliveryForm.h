@@ -19,7 +19,7 @@ namespace AppView {
 	{
 	public:
 		static User^ user;
-		static DeliveryMan^ deliveryman;
+		
 		DeliveryForm(void)
 		{
 			InitializeComponent();
@@ -338,7 +338,13 @@ namespace AppView {
 		}
 #pragma endregion
 	private: System::Void DeliveryForm_Load(System::Object^ sender, System::EventArgs^ e) {
-		this->Show();
+		if (user == nullptr) {
+			Login^ login = gcnew Login();
+			login->ControlBox = false;
+			login->Text = "";
+			login->ShowDialog();
+		}
+
 	}
 };
 }

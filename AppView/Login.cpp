@@ -4,7 +4,8 @@
 System::Void AppView::Login::btnLogin_Click(System::Object^ sender, System::EventArgs^ e) {
 	User^ user = AppController::UserManager::ValidateUser(txtUserName->Text, txtPassword->Text);
 	if (user != nullptr) {
-		MessageBox::Show("Bienvenido " + user->FirstName + " " + user->LastName);
+
+		MessageBox::Show("Bienvenido " + user->FirstName + " " + user->LastName + " : "+ user->Category);
 		this->Hide();
 		CustomerMainForm::user = user;
 	}

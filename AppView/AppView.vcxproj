@@ -139,12 +139,17 @@
     <Image Include="btnreset.Image.png" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CarritoCustomerForm.cpp" />
     <ClCompile Include="CustomerMainForm.cpp" />
     <ClCompile Include="DeliveryForm.cpp" />
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="ProductForm.cpp" />
+    <ClCompile Include="ProductsCustomerForm.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CarritoCustomerForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="CustomerMainForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -157,8 +162,14 @@
     <ClInclude Include="ProductForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="ProductsCustomerForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CarritoCustomerForm.resx">
+      <DependentUpon>CarritoCustomerForm.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomerMainForm.resx">
       <DependentUpon>CustomerMainForm.h</DependentUpon>
     </EmbeddedResource>
@@ -170,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ProductForm.resx">
       <DependentUpon>ProductForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductsCustomerForm.resx">
+      <DependentUpon>ProductsCustomerForm.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

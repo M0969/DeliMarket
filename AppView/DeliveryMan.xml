@@ -3,16 +3,16 @@
   <ListDB>
     <DeliveryMan>
       <Status>0</Status>
-      <Address>asdasd</Address>
+      <Address>LAS ROSITAS</Address>
       <Category>Repartidor</Category>
-      <Email>asasda</Email>
-      <PhoneNumber>1234</PhoneNumber>
-      <DocumentNumber>1234</DocumentNumber>
-      <Gender>77</Gender>
-      <LastName>as</LastName>
-      <FirstName>as</FirstName>
-      <Password>1234</Password>
-      <Username>Repartidor</Username>
+      <Email>belen@gmail.com</Email>
+      <PhoneNumber>984653</PhoneNumber>
+      <DocumentNumber>DNI</DocumentNumber>
+      <Gender>70</Gender>
+      <LastName>Zavaleta</LastName>
+      <FirstName>Sofia</FirstName>
+      <Password>fofi</Password>
+      <Username>f69</Username>
       <Id>1</Id>
       <VerificationCode>123456</VerificationCode>
       <Salary>0</Salary>

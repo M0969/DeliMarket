@@ -180,9 +180,9 @@ namespace AppView {
 			this->panelLogin->Controls->Add(this->btnLogin);
 			this->panelLogin->Controls->Add(this->txtPassword);
 			this->panelLogin->Controls->Add(this->txtUserName);
-			this->panelLogin->Location = System::Drawing::Point(258, 12);
+			this->panelLogin->Location = System::Drawing::Point(258, 18);
 			this->panelLogin->Name = L"panelLogin";
-			this->panelLogin->Size = System::Drawing::Size(305, 461);
+			this->panelLogin->Size = System::Drawing::Size(299, 461);
 			this->panelLogin->TabIndex = 1;
 			// 
 			// pictureBox2

@@ -18,6 +18,7 @@ namespace AppController {
 			static Product^ QueryAllProductById(int productId); //DEVOLDERÁ UN PRODUCTO COMPLETO
 			static Groceries^ QueryGroceriesById(int productId);
 			static HealthCare^ QueryHealthCareById(int productId);
+			static Product^ QueryProductByName(String^);
 
 		// Métodos CRUD para cliente
 

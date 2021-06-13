@@ -49,6 +49,11 @@ HealthCare^ AppController::AppManager::QueryHealthCareById(int productId)
 	return DBController::QueryHealthCareById(productId);
 }
 
+Product^ AppController::AppManager::QueryProductByName(String^ name)
+{
+	return DBController::QueryProductByName(name);
+}
+
 
 
 

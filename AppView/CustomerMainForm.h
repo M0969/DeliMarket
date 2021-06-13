@@ -1,6 +1,8 @@
 #pragma once
 #include "ProductForm.h"
 #include "Login.h"
+#include "CarritoCustomerForm.h"
+#include "ProductsCustomerForm.h"
 
 namespace AppView {
 
@@ -13,6 +15,8 @@ namespace AppView {
 	using namespace AppModel;
 	using namespace AppController;
 	using namespace Bunifu;
+	using namespace std;
+
 
 	/// <summary>
 	/// Resumen de CustomerMainForm
@@ -21,6 +25,21 @@ namespace AppView {
 	{
 	public:
 		static User^ user;
+	private: System::Windows::Forms::Panel^ Wrapper;
+	public:
+
+	public:
+
+
+
+
+
+	public:
+
+	public:
+
+
+	public:
 		static Customer^ customer;
 		CustomerMainForm(void)
 		{
@@ -51,7 +70,8 @@ namespace AppView {
 	private: System::Windows::Forms::PictureBox^ btnMin;
 	private: System::Windows::Forms::PictureBox^ btnMax;
 	private: System::Windows::Forms::Panel^ SideBarWrapper;
-	private: System::Windows::Forms::Panel^ Wrapper;
+
+
 	private: Bunifu::Framework::UI::BunifuFlatButton^ btnMyshopping;
 	private: Bunifu::Framework::UI::BunifuFlatButton^ btnListofproducts;
 
@@ -65,8 +85,8 @@ namespace AppView {
 	private: Bunifu::Framework::UI::BunifuSeparator^ lineSidebar2;
 	private: Bunifu::Framework::UI::BunifuSeparator^ bunifuSeparator1;
 	private: System::Windows::Forms::Button^ btnSignoff;
-	private: System::Windows::Forms::MenuStrip^ menuStrip1;
-	private: System::Windows::Forms::ToolStripMenuItem^ inventarioToolStripMenuItem;
+
+
 
 
 
@@ -121,8 +141,6 @@ namespace AppView {
 			this->lineSideBar3 = (gcnew Bunifu::Framework::UI::BunifuSeparator());
 			this->lineSidebar2 = (gcnew Bunifu::Framework::UI::BunifuSeparator());
 			this->Wrapper = (gcnew System::Windows::Forms::Panel());
-			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
-			this->inventarioToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->Top->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnReset))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnClose))->BeginInit();
@@ -130,8 +148,6 @@ namespace AppView {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnMin))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnMax))->BeginInit();
 			this->SideBarWrapper->SuspendLayout();
-			this->Wrapper->SuspendLayout();
-			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// Top
@@ -236,6 +252,7 @@ namespace AppView {
 			this->SideBarWrapper->Controls->Add(this->lineSidebar);
 			this->SideBarWrapper->Controls->Add(this->lineSideBar3);
 			this->SideBarWrapper->Controls->Add(this->lineSidebar2);
+			this->SideBarWrapper->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->SideBarWrapper->Dock = System::Windows::Forms::DockStyle::Left;
 			this->SideBarWrapper->Location = System::Drawing::Point(0, 66);
 			this->SideBarWrapper->Name = L"SideBarWrapper";
@@ -259,6 +276,7 @@ namespace AppView {
 			// 
 			// btnSignoff
 			// 
+			this->btnSignoff->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->btnSignoff->FlatAppearance->BorderSize = 0;
 			this->btnSignoff->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btnSignoff->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
@@ -462,27 +480,12 @@ namespace AppView {
 			// 
 			// Wrapper
 			// 
-			this->Wrapper->Controls->Add(this->menuStrip1);
+			this->Wrapper->Cursor = System::Windows::Forms::Cursors::Arrow;
+			this->Wrapper->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->Wrapper->Location = System::Drawing::Point(165, 66);
 			this->Wrapper->Name = L"Wrapper";
-			this->Wrapper->Size = System::Drawing::Size(479, 409);
-			this->Wrapper->TabIndex = 1;
-			// 
-			// menuStrip1
-			// 
-			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->inventarioToolStripMenuItem });
-			this->menuStrip1->Location = System::Drawing::Point(0, 0);
-			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(479, 24);
-			this->menuStrip1->TabIndex = 0;
-			this->menuStrip1->Text = L"menuStrip1";
-			// 
-			// inventarioToolStripMenuItem
-			// 
-			this->inventarioToolStripMenuItem->Name = L"inventarioToolStripMenuItem";
-			this->inventarioToolStripMenuItem->Size = System::Drawing::Size(72, 20);
-			this->inventarioToolStripMenuItem->Text = L"&Inventario";
-			this->inventarioToolStripMenuItem->Click += gcnew System::EventHandler(this, &CustomerMainForm::inventarioToolStripMenuItem_Click);
+			this->Wrapper->Size = System::Drawing::Size(510, 409);
+			this->Wrapper->TabIndex = 2;
 			// 
 			// CustomerMainForm
 			// 
@@ -493,7 +496,6 @@ namespace AppView {
 			this->Controls->Add(this->SideBarWrapper);
 			this->Controls->Add(this->Top);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"CustomerMainForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"CustomerMainForm";
@@ -506,14 +508,25 @@ namespace AppView {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnMin))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnMax))->EndInit();
 			this->SideBarWrapper->ResumeLayout(false);
-			this->Wrapper->ResumeLayout(false);
-			this->Wrapper->PerformLayout();
-			this->menuStrip1->ResumeLayout(false);
-			this->menuStrip1->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
+		template<class T>
+
+		void AbrirPanel(T FormHijo) {
+			if (this->Wrapper->Controls->Count > 0)
+				this->Wrapper->Controls->RemoveAt(0);
+			FormHijo->TopLevel = false;
+			FormHijo->Dock = DockStyle::Fill;
+			this->Wrapper->Controls->Add(FormHijo);
+			this->Wrapper->Tag = FormHijo;
+			FormHijo->Show();
+			
+		}
+
+
+
 	private: System::Void CustomerMainForm_Load(System::Object^ sender, System::EventArgs^ e) {
 		if (user == nullptr) {
 			Login^ login = gcnew Login();
@@ -552,10 +565,18 @@ private: System::Void MenuSideBar_Click(System::Object^ sender, System::EventArg
 	}
 }
 private: System::Void btnShoppingcart_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->AbrirPanel(gcnew AppView::CarritoCustomerForm);
+
 }
+
 private: System::Void btnBonuspoints_Click(System::Object^ sender, System::EventArgs^ e) {
 }
+	
+
 private: System::Void btnListofproducts_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->AbrirPanel(gcnew AppView::ProductsCustomerForm);
+
+
 }
 private: System::Void btnSignoff_Click(System::Object^ sender, System::EventArgs^ e) {
 	//Programar Cerrar Sesion
@@ -570,5 +591,7 @@ private: System::Void inventarioToolStripMenuItem_Click(System::Object^ sender, 
 	productForm->Show();
 }
 
+
+		
 };
 }
