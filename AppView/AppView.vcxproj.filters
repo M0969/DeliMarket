@@ -35,6 +35,9 @@
     <ClCompile Include="CarritoCustomerForm.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="Ubicacion.cpp">
+      <Filter>Archivos de encabezado</Filter>
+    </ClCompile>
     <ClCompile Include="ProductInventoryForm.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
@@ -53,6 +56,9 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="CarritoCustomerForm.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Ubicacion.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="ProductInventoryForm.h">

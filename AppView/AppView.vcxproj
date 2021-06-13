@@ -145,6 +145,7 @@
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="ProductInventoryForm.cpp" />
     <ClCompile Include="ProductsCustomerForm.cpp" />
+    <ClCompile Include="Ubicacion.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CarritoCustomerForm.h">
@@ -163,6 +164,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="ProductsCustomerForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Ubicacion.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
@@ -184,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ProductsCustomerForm.resx">
       <DependentUpon>ProductsCustomerForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ubicacion.resx">
+      <DependentUpon>Ubicacion.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
