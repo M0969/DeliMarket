@@ -52,16 +52,17 @@ namespace AppView {
 	private: System::Windows::Forms::Button^ btnDeleteSale;
 	private: System::Windows::Forms::ComboBox^ cmbBoxBPSelect;
 	private: System::Windows::Forms::Label^ label4;
-	private: System::Windows::Forms::TextBox^ txtAdressSale;
-	private: System::Windows::Forms::Button^ txtASHome;
+
+
 	private: System::Windows::Forms::Button^ txtASCustom;
-	private: System::Windows::Forms::Label^ label5;
+
 	private: System::Windows::Forms::Label^ label6;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Product;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Quantity;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ UnitPrice;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Amount;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ DeleteProduct;
+	private: System::Windows::Forms::ComboBox^ cmbBoxASUbication;
 
 
 
@@ -83,6 +84,11 @@ namespace AppView {
 		void InitializeComponent(void)
 		{
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->Product = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Quantity = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->UnitPrice = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Amount = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->DeleteProduct = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->txtTotalSale = (gcnew System::Windows::Forms::TextBox());
 			this->labelTotal = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
@@ -94,16 +100,9 @@ namespace AppView {
 			this->btnDeleteSale = (gcnew System::Windows::Forms::Button());
 			this->cmbBoxBPSelect = (gcnew System::Windows::Forms::ComboBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->txtAdressSale = (gcnew System::Windows::Forms::TextBox());
-			this->txtASHome = (gcnew System::Windows::Forms::Button());
 			this->txtASCustom = (gcnew System::Windows::Forms::Button());
-			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->Product = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Quantity = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->UnitPrice = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Amount = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->DeleteProduct = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->cmbBoxASUbication = (gcnew System::Windows::Forms::ComboBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -118,6 +117,39 @@ namespace AppView {
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->Size = System::Drawing::Size(420, 158);
 			this->dataGridView1->TabIndex = 0;
+			// 
+			// Product
+			// 
+			this->Product->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::ColumnHeader;
+			this->Product->HeaderText = L"Producto";
+			this->Product->Name = L"Product";
+			this->Product->Width = 75;
+			// 
+			// Quantity
+			// 
+			this->Quantity->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::ColumnHeader;
+			this->Quantity->HeaderText = L"Cantidad";
+			this->Quantity->Name = L"Quantity";
+			this->Quantity->Width = 74;
+			// 
+			// UnitPrice
+			// 
+			this->UnitPrice->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::ColumnHeader;
+			this->UnitPrice->HeaderText = L"Precio Unitario";
+			this->UnitPrice->Name = L"UnitPrice";
+			this->UnitPrice->Width = 101;
+			// 
+			// Amount
+			// 
+			this->Amount->HeaderText = L"Importe";
+			this->Amount->Name = L"Amount";
+			this->Amount->Width = 80;
+			// 
+			// DeleteProduct
+			// 
+			this->DeleteProduct->HeaderText = L"Borrar";
+			this->DeleteProduct->Name = L"DeleteProduct";
+			this->DeleteProduct->Width = 45;
 			// 
 			// txtTotalSale
 			// 
@@ -212,96 +244,43 @@ namespace AppView {
 			this->label4->TabIndex = 12;
 			this->label4->Text = L"Lugar de Entrega:";
 			// 
-			// txtAdressSale
-			// 
-			this->txtAdressSale->Location = System::Drawing::Point(44, 252);
-			this->txtAdressSale->Name = L"txtAdressSale";
-			this->txtAdressSale->Size = System::Drawing::Size(100, 20);
-			this->txtAdressSale->TabIndex = 13;
-			// 
-			// txtASHome
-			// 
-			this->txtASHome->Location = System::Drawing::Point(58, 285);
-			this->txtASHome->Name = L"txtASHome";
-			this->txtASHome->Size = System::Drawing::Size(75, 23);
-			this->txtASHome->TabIndex = 14;
-			this->txtASHome->Text = L"Mi casa";
-			this->txtASHome->UseVisualStyleBackColor = true;
-			// 
 			// txtASCustom
 			// 
-			this->txtASCustom->Location = System::Drawing::Point(58, 314);
+			this->txtASCustom->Enabled = false;
+			this->txtASCustom->Location = System::Drawing::Point(58, 282);
 			this->txtASCustom->Name = L"txtASCustom";
 			this->txtASCustom->Size = System::Drawing::Size(75, 23);
 			this->txtASCustom->TabIndex = 15;
 			this->txtASCustom->Text = L"Personalizar";
 			this->txtASCustom->UseVisualStyleBackColor = true;
 			// 
-			// label5
-			// 
-			this->label5->AutoSize = true;
-			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 26.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(37, 269);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(27, 39);
-			this->label5->TabIndex = 16;
-			this->label5->Text = L".";
-			this->label5->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
 			// label6
 			// 
 			this->label6->AutoSize = true;
 			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 26.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label6->Location = System::Drawing::Point(37, 298);
+			this->label6->Location = System::Drawing::Point(37, 266);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(27, 39);
 			this->label6->TabIndex = 17;
 			this->label6->Text = L".";
 			this->label6->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
-			// Product
+			// cmbBoxASUbication
 			// 
-			this->Product->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::ColumnHeader;
-			this->Product->HeaderText = L"Producto";
-			this->Product->Name = L"Product";
-			this->Product->Width = 75;
-			// 
-			// Quantity
-			// 
-			this->Quantity->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::ColumnHeader;
-			this->Quantity->HeaderText = L"Cantidad";
-			this->Quantity->Name = L"Quantity";
-			this->Quantity->Width = 74;
-			// 
-			// UnitPrice
-			// 
-			this->UnitPrice->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::ColumnHeader;
-			this->UnitPrice->HeaderText = L"Precio Unitario";
-			this->UnitPrice->Name = L"UnitPrice";
-			this->UnitPrice->Width = 101;
-			// 
-			// Amount
-			// 
-			this->Amount->HeaderText = L"Importe";
-			this->Amount->Name = L"Amount";
-			this->Amount->Width = 80;
-			// 
-			// DeleteProduct
-			// 
-			this->DeleteProduct->HeaderText = L"Borrar";
-			this->DeleteProduct->Name = L"DeleteProduct";
-			this->DeleteProduct->Width = 45;
+			this->cmbBoxASUbication->FormattingEnabled = true;
+			this->cmbBoxASUbication->Location = System::Drawing::Point(44, 247);
+			this->cmbBoxASUbication->Name = L"cmbBoxASUbication";
+			this->cmbBoxASUbication->Size = System::Drawing::Size(121, 21);
+			this->cmbBoxASUbication->TabIndex = 18;
 			// 
 			// CarritoCustomerForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(494, 370);
+			this->Controls->Add(this->cmbBoxASUbication);
 			this->Controls->Add(this->txtASCustom);
-			this->Controls->Add(this->txtASHome);
-			this->Controls->Add(this->txtAdressSale);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->cmbBoxBPSelect);
 			this->Controls->Add(this->btnDeleteSale);
@@ -314,7 +293,6 @@ namespace AppView {
 			this->Controls->Add(this->labelTotal);
 			this->Controls->Add(this->txtTotalSale);
 			this->Controls->Add(this->dataGridView1);
-			this->Controls->Add(this->label5);
 			this->Controls->Add(this->label6);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"CarritoCustomerForm";
