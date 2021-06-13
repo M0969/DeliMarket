@@ -62,14 +62,17 @@ namespace AppController {
 		static void UpdateProduct(Product^); //actualizar
 		static void DeleteProduct(int productId); //borrar
 		static List<Product^>^ QueryAllProducts(); // Consulta todos los productos
+		static int QueryLastProductId();
 		static List<Groceries^>^ QueryAllGroceries();
-		static Product^ QueryProductByName(String^);
 		static List<HealthCare^>^ QueryAllHealthCare();
-		static Product^ QueryAllProductById(int productId); //DEVOLDERÁ UN PRODUCTO COMPLETO
+		static Product^ QueryProductById(int productId); //DEVOLDERÁ UN PRODUCTO COMPLETO
 		static Groceries^ QueryGroceriesById(int productId);
 		static HealthCare^ QueryHealthCareById(int productId);
-	//User*/
-
+		static Product^ QueryProductByName(String^);
+	
+		/*Category*/
+		static List<Groceries^>^ QueryAllGroceriesByCoincidence(String^);
+		static List<HealthCare^>^ QueryAllHealthCareByCoincidence(String^);
 
 	};
 }

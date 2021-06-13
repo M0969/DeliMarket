@@ -12,12 +12,15 @@ namespace AppController {
 			static void AddProduct(Product^); // agregar
 			static void UpdateProduct(Product^); //actualizar
 			static void DeleteProduct(int productId); //borrar
+			static Product^ QueryProductById(int productId);
 			static List<Product^>^ QueryAllProducts(); // Consulta todos los productos
+			static List<Product^>^ QueryProductsByDescription(String^ description);
+			static List<Product^>^ QueryProductsByName(String^ name);
 			static List<Groceries^>^ QueryAllGroceries();
 			static List<HealthCare^>^ QueryAllHealthCare();
-			static Product^ QueryAllProductById(int productId); //DEVOLDERÁ UN PRODUCTO COMPLETO
 			static Groceries^ QueryGroceriesById(int productId);
 			static HealthCare^ QueryHealthCareById(int productId);
+			static int QueryLastProductId();
 			static Product^ QueryProductByName(String^);
 			//
 

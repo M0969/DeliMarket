@@ -6,11 +6,11 @@ using namespace System::Runtime::Serialization;
 using namespace System::Runtime::Serialization::Formatters::Binary;
 using namespace System::Xml::Serialization;
 
-
-
+/*Producto*/
 void AppController::DBController::AddProduct(Product^ product)
 {
     productDB->ListDB->Add(product);
+    productDB->Persist();
 }
 
 void AppController::DBController::UpdateProduct(Product^ product)
@@ -18,6 +18,7 @@ void AppController::DBController::UpdateProduct(Product^ product)
     for (int i = 0; i < productDB->ListDB->Count; i++)
         if (productDB->ListDB[i]->Id == product->Id) { // verificando id
             productDB->ListDB[i] = product;  // actualiza el producto anterior con el actual
+            productDB->Persist();
             return;
         }
 }
@@ -26,7 +27,9 @@ void AppController::DBController::DeleteProduct(int productId)
 {
     for (int i = 0; i < productDB->ListDB->Count; i++)
         if (productDB->ListDB[i]->Id == productId) { // si coincide, se procede a eliminar
-            productDB->ListDB[i]->Status = 'I';  // en lugar de borrarlo (por temas de seguridad), se le cambia de estado: INACTIVO
+            //productDB->ListDB[i]->Status = 'I';  // en lugar de borrarlo (por temas de seguridad), se le cambia de estado: INACTIVO
+            productDB->ListDB->RemoveAt(i);
+            productDB->Persist();
             return;
         }
 }
@@ -36,45 +39,44 @@ List<Product^>^ AppController::DBController::QueryAllProducts()
     return productDB->ListDB;
 }
 
-List<Groceries^>^ AppController::DBController::QueryAllGroceries()
+int AppController::DBController::QueryLastProductId()
 {
-    List <Groceries^>^ groceriesList = gcnew List <Groceries^>();
-    for (int i = 0; i < productDB->ListDB->Count; i++)
-        if (productDB->ListDB[i]->GetType() == Groceries::typeid) { // GetType obtiene el tipo de la instancia actual, nos indica de que clase es 
-            groceriesList->Add((Groceries^)productDB->ListDB[i]); //cada vez que encuentra un grocery, lo agrega a la lista
-        }   //está casteada porque un producto no es un grocery, sino que un grocery es un producto
-    return groceriesList;
+    if (productDB->ListDB->Count > 0)
+        return productDB->ListDB[productDB->ListDB->Count - 1]->Id;
+    else
+        return 0;
 }
 
-Product^ AppController::DBController::QueryProductByName(String^ name)
+List<Groceries^>^ AppController::DBController::QueryAllGroceries()
 {
-    for (int i = 0; i < productDB->ListDB->Count; i++)
-        if (productDB->ListDB[i]->Name->CompareTo(name)==0) { // si coincide, se procede a eliminar
-             // en lugar de borrarlo (por temas de seguridad), se le cambia de estado: INACTIVO
-            return productDB->ListDB[i];
+    productDB->LoadFromBinaryFile();
+    List<Groceries^>^ grocerieslist = gcnew List<Groceries^>();
+    for (int i = 0; i < productDB->ListDB->Count; i++) {
+        if (productDB->ListDB[i]->GetType() == Groceries::typeid && productDB->ListDB[i]->Status == 'A') {
+            grocerieslist->Add(dynamic_cast<Groceries^>(productDB->ListDB[i]));
         }
-    return nullptr;
-
+    }
+    return grocerieslist;
 }
 
 List<HealthCare^>^ AppController::DBController::QueryAllHealthCare()
 {
-    
-    List <HealthCare^>^ healthCareList = gcnew List <HealthCare^>();
+    productDB->LoadFromBinaryFile();
+    List <HealthCare^>^ healthcareList = gcnew List<HealthCare^>();
     for (int i = 0; i < productDB->ListDB->Count; i++)
-        if (productDB->ListDB[i]->GetType() == HealthCare::typeid) //tiene un atributo general que deriva de object, este tiene un atributo "typeid" . Como todas derivan de object, entonces TODOS TIENEN ACCESO A ESE ATRIBUTO
-            healthCareList->Add((HealthCare^)productDB->ListDB[i]);
-    return healthCareList;
+        if (productDB->ListDB[i]->GetType() == HealthCare::typeid)
+            healthcareList->Add((HealthCare^)productDB->ListDB[i]);
+    return healthcareList;
 }
 
-Product^ AppController::DBController::QueryAllProductById(int productId)
+Product^ AppController::DBController::QueryProductById(int productId)
 {   //como lo tengo que buscar por id, tengo que hacer un for
+    productDB->LoadFromBinaryFile();
     for (int i = 0; i < productDB->ListDB->Count; i++)
         if (productDB->ListDB[i]->Id == productId)
             return productDB->ListDB[i];
     return nullptr; // es un puntero a nulo
 }
-
 
 Groceries^ AppController::DBController::QueryGroceriesById(int productId)
 {
@@ -92,6 +94,29 @@ HealthCare^ AppController::DBController::QueryHealthCareById(int productId)
             productDB->ListDB[i]->GetType() == HealthCare::typeid)
             return (HealthCare^)productDB->ListDB[i]; // se requeria un casting para evitar el error
     return nullptr;
+}
+
+List<Groceries^>^ AppController::DBController::QueryAllGroceriesByCoincidence(String^)
+{
+    List<Groceries^>^ list = gcnew List<Groceries^>();
+    return list;
+}
+
+List<HealthCare^>^ AppController::DBController::QueryAllHealthCareByCoincidence(String^)
+{
+    List<HealthCare^>^ list = gcnew List<HealthCare^>();
+    return list;
+}
+
+Product^ AppController::DBController::QueryProductByName(String^ name)
+{
+    for (int i = 0; i < productDB->ListDB->Count; i++)
+        if (productDB->ListDB[i]->Name->CompareTo(name)==0) { // si coincide, se procede a eliminar
+             // en lugar de borrarlo (por temas de seguridad), se le cambia de estado: INACTIVO
+            return productDB->ListDB[i];
+        }
+    return nullptr;
+
 }
 
 

@@ -143,7 +143,7 @@
     <ClCompile Include="CustomerMainForm.cpp" />
     <ClCompile Include="DeliveryForm.cpp" />
     <ClCompile Include="Login.cpp" />
-    <ClCompile Include="ProductForm.cpp" />
+    <ClCompile Include="ProductInventoryForm.cpp" />
     <ClCompile Include="ProductsCustomerForm.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -159,7 +159,7 @@
     <ClInclude Include="Login.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="ProductForm.h">
+    <ClInclude Include="ProductInventoryForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="ProductsCustomerForm.h">
@@ -179,8 +179,8 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProductForm.resx">
-      <DependentUpon>ProductForm.h</DependentUpon>
+    <EmbeddedResource Include="ProductInventoryForm.resx">
+      <DependentUpon>ProductInventoryForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductsCustomerForm.resx">
       <DependentUpon>ProductsCustomerForm.h</DependentUpon>

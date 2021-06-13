@@ -1,9 +1,7 @@
 #include "pch.h"
-
 #include "AppController.h"
 
-
-
+/*productos*/
 void AppController::AppManager::AddProduct(Product^ p)
 {	// base de datos simulada, no es tal
 	DBController::AddProduct(p);
@@ -34,9 +32,14 @@ List<HealthCare^>^ AppController::AppManager::QueryAllHealthCare()
 	return DBController::QueryAllHealthCare();
 }
 
-Product^ AppController::AppManager::QueryAllProductById(int productId)
+int AppController::AppManager::QueryLastProductId()
 {
-	return DBController::QueryAllProductById(productId);
+	return DBController::QueryLastProductId();
+}
+
+Product^ AppController::AppManager::QueryProductById(int productId)
+{
+	return DBController::QueryProductById(productId);
 }
 
 Groceries^ AppController::AppManager::QueryGroceriesById(int productId)
@@ -49,12 +52,38 @@ HealthCare^ AppController::AppManager::QueryHealthCareById(int productId)
 	return DBController::QueryHealthCareById(productId);
 }
 
+List<Product^>^ AppController::AppManager::QueryProductsByDescription(String^ description)
+{
+	List<Groceries^>^ groceriesList = DBController::QueryAllGroceriesByCoincidence(description);
+	List<HealthCare^>^ healthcareList = DBController::QueryAllHealthCareByCoincidence(description);
+	List<Product^>^ productList = gcnew List<Product^>();
+
+	for (int i = 0; i < groceriesList->Count; i++)
+		productList->Add(groceriesList[i]);
+	for (int i = 0; i < healthcareList->Count; i++)
+		productList->Add(healthcareList[i]);
+
+	return productList;
+}
+
+List<Product^>^ AppController::AppManager::QueryProductsByName(String^ name)
+{
+	List<Groceries^>^ groceriesList = DBController::QueryAllGroceriesByCoincidence(name);
+	List<HealthCare^>^ healthcareList = DBController::QueryAllHealthCareByCoincidence(name);
+	List<Product^>^ productList = gcnew List<Product^>();
+
+	for (int i = 0; i < groceriesList->Count; i++)
+		productList->Add(groceriesList[i]);
+	for (int i = 0; i < healthcareList->Count; i++)
+		productList->Add(healthcareList[i]);
+
+	return productList;
+}
+
 Product^ AppController::AppManager::QueryProductByName(String^ name)
 {
 	return DBController::QueryProductByName(name);
 }
-
-
 
 
 /// /// ////////////////////////////////////////////////////////////////////////////////////////////
