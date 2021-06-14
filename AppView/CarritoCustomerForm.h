@@ -1,5 +1,7 @@
 #pragma once
-
+#include "Ubicacion.h"
+#include "ProductsCustomerForm.h"
+#include "ComboBoxItem.h"
 namespace AppView {
 
 	using namespace System;
@@ -57,9 +59,10 @@ namespace AppView {
 	private: System::Windows::Forms::Button^ btnDeleteSale;
 	private: System::Windows::Forms::ComboBox^ cmbBoxBPSelect;
 	private: System::Windows::Forms::Label^ label4;
+	private: System::Windows::Forms::Button^ btnASCustom;
 
 
-	private: System::Windows::Forms::Button^ txtASCustom;
+
 
 	private: System::Windows::Forms::Label^ label6;
 
@@ -73,6 +76,16 @@ namespace AppView {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ UnitPrice;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Amount;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ DeleteProduct;
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -105,7 +118,7 @@ namespace AppView {
 			this->btnDeleteSale = (gcnew System::Windows::Forms::Button());
 			this->cmbBoxBPSelect = (gcnew System::Windows::Forms::ComboBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->txtASCustom = (gcnew System::Windows::Forms::Button());
+			this->btnASCustom = (gcnew System::Windows::Forms::Button());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->cmbBoxASUbication = (gcnew System::Windows::Forms::ComboBox());
 			this->Name = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -127,6 +140,7 @@ namespace AppView {
 			this->dgvCarrito->Name = L"dgvCarrito";
 			this->dgvCarrito->Size = System::Drawing::Size(420, 158);
 			this->dgvCarrito->TabIndex = 0;
+			this->dgvCarrito->CellValueChanged += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &CarritoCustomerForm::dgvCarrito_CellValueChanged);
 			// 
 			// txtTotalSale
 			// 
@@ -153,6 +167,7 @@ namespace AppView {
 			this->label1->Size = System::Drawing::Size(133, 13);
 			this->label1->TabIndex = 3;
 			this->label1->Text = L"Puntos Bonus Disponibles:";
+			this->label1->Click += gcnew System::EventHandler(this, &CarritoCustomerForm::label1_Click);
 			// 
 			// label2
 			// 
@@ -221,15 +236,15 @@ namespace AppView {
 			this->label4->TabIndex = 12;
 			this->label4->Text = L"Lugar de Entrega:";
 			// 
-			// txtASCustom
+			// btnASCustom
 			// 
-			this->txtASCustom->Enabled = false;
-			this->txtASCustom->Location = System::Drawing::Point(58, 282);
-			this->txtASCustom->Name = L"txtASCustom";
-			this->txtASCustom->Size = System::Drawing::Size(75, 23);
-			this->txtASCustom->TabIndex = 15;
-			this->txtASCustom->Text = L"Personalizar";
-			this->txtASCustom->UseVisualStyleBackColor = true;
+			this->btnASCustom->Location = System::Drawing::Point(58, 282);
+			this->btnASCustom->Name = L"btnASCustom";
+			this->btnASCustom->Size = System::Drawing::Size(75, 23);
+			this->btnASCustom->TabIndex = 15;
+			this->btnASCustom->Text = L"Personalizar";
+			this->btnASCustom->UseVisualStyleBackColor = true;
+			this->btnASCustom->Click += gcnew System::EventHandler(this, &CarritoCustomerForm::btnASCustom_Click);
 			// 
 			// label6
 			// 
@@ -256,6 +271,7 @@ namespace AppView {
 			this->Name->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::ColumnHeader;
 			this->Name->HeaderText = L"Producto";
 			this->Name->Name = L"Name";
+			this->Name->ReadOnly = true;
 			this->Name->Width = 75;
 			// 
 			// Quantity
@@ -268,14 +284,16 @@ namespace AppView {
 			// UnitPrice
 			// 
 			this->UnitPrice->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::ColumnHeader;
-			this->UnitPrice->HeaderText = L"Precio Unitario";
+			this->UnitPrice->HeaderText = L"Precio Unitario(S/)";
 			this->UnitPrice->Name = L"UnitPrice";
-			this->UnitPrice->Width = 101;
+			this->UnitPrice->ReadOnly = true;
+			this->UnitPrice->Width = 109;
 			// 
 			// Amount
 			// 
-			this->Amount->HeaderText = L"Importe";
+			this->Amount->HeaderText = L"Importe(S/)";
 			this->Amount->Name = L"Amount";
+			this->Amount->ReadOnly = true;
 			this->Amount->Width = 80;
 			// 
 			// DeleteProduct
@@ -290,7 +308,7 @@ namespace AppView {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(494, 370);
 			this->Controls->Add(this->cmbBoxASUbication);
-			this->Controls->Add(this->txtASCustom);
+			this->Controls->Add(this->btnASCustom);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->cmbBoxBPSelect);
 			this->Controls->Add(this->btnDeleteSale);
@@ -305,7 +323,7 @@ namespace AppView {
 			this->Controls->Add(this->dgvCarrito);
 			this->Controls->Add(this->label6);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-	
+//			this->Name = L"CarritoCustomerForm";
 			this->Text = L"CarritoCustomerForm";
 			this->Load += gcnew System::EventHandler(this, &CarritoCustomerForm::CarritoCustomerForm_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvCarrito))->EndInit();
@@ -314,24 +332,59 @@ namespace AppView {
 
 		}
 #pragma endregion
-	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
+
+
 private: System::Void CarritoCustomerForm_Load(System::Object^ sender, System::EventArgs^ e) {
+	LoadCmbCustomer();
+	LoadCmbBoints();
 	RefreshDGVCarrito();
 }
-	   public:
-		   void RefreshDGVCarrito() {
+
+void LoadCmbCustomer() {
+	//cmbBoxASUbication->Items->Clear();
+	//List<Customer^>^ customerList = UserManager::QueryAllCustomer();
+	//for(int i=0; customerList->Count;i++)
+    //cmbBoxASUbication->Items->Add(gcnew ComboBoxItem(customerList[i]->Address,customerList[i] ->Address));
+}
+void LoadCmbBoints() {
+}
+
+public: void RefreshDGVCarrito() {
 			   List <Product^>^ productList = AppManager::QueryAllCarrito();
 			   dgvCarrito->Rows->Clear();
 			   for (int i = 0; i < productList->Count; i++) {
 				   dgvCarrito->Rows->Add(gcnew array<String^> {
-					   "" + productList[i]->Id,
-						   productList[i]->Name,
-						   "" + productList[i]->Brand,
-						   "S/." + productList[i]->Price,
-
+					       productList[i]->Name,
+						   "1",
+						   "" + productList[i]->Price,
+						   "" + productList[i]->Price
 				   });
+				 double total = 0;
+				   for(int i = 0; i < dgvCarrito->RowCount - 1; i++)
+					total += Double::Parse(dgvCarrito->Rows[i]->Cells[3]->Value->ToString());
+				    txtTotalSale->Text = "" + total;
 			   }
 		   }
+private: System::Void btnASCustom_Click(System::Object^ sender, System::EventArgs^ e) {
+	Ubicacion^ aForm = gcnew Ubicacion();
+	aForm->ShowDialog();
+}
+private: System::Void dgvCarrito_CellValueChanged(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+	if (dgvCarrito->Columns[e->ColumnIndex]->Name == "Quantity") {
+		if (dgvCarrito->CurrentCell != nullptr &&
+			dgvCarrito->CurrentCell->Value != nullptr &&
+			dgvCarrito->CurrentCell->Value->ToString() != "") {
+			dgvCarrito->Rows[e->RowIndex]->Cells[3]->Value =
+				Int32::Parse(dgvCarrito->CurrentCell->Value->ToString())*Double::Parse(dgvCarrito->Rows[e->RowIndex]->Cells[2]->Value->ToString());
+			double total = 0;
+			for (int i = 0; i < dgvCarrito->RowCount - 1; i++)
+				total += Double::Parse(dgvCarrito->Rows[i]->Cells[3]->Value->ToString());
+			txtTotalSale->Text = "" + total;
+		}
+
+	}
+}
+private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }

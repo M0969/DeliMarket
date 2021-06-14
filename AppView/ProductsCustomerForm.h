@@ -374,7 +374,7 @@ namespace AppView {
 							"" + productList[i]->Id,
 								productList[i]->Name,
 								"" + productList[i]->Brand,
-								"S/." + productList[i]->Price,});
+								"" + productList[i]->Price});
 
 					}
 				}
@@ -386,7 +386,7 @@ namespace AppView {
 						"" + productList[i]->Id,
 							productList[i]->Name,
 							"" + productList[i]->Brand,
-							"S/." + productList[i]->Price,
+							"" + productList[i]->Price
 
 					});
 				}
@@ -398,7 +398,7 @@ namespace AppView {
 						"" + productList[i]->Id,
 							productList[i]->Name,
 							"" + productList[i]->Brand,
-							"S/." + productList[i]->Price,
+							"" + productList[i]->Price
 
 					});
 				}
@@ -412,7 +412,7 @@ namespace AppView {
 					"" + product->Id,
 						product->Name,
 						product->Brand,
-					"" + product->Price,
+					"" + product->Price
 
 				});
 			}

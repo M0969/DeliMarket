@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<CustomerDB xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<CustomerDB xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <ListDB>
     <Customer>
       <Status>0</Status>
-      <Address>Direccion</Address>
+      <Address>San Miguel - PUCP</Address>
       <Category>Cliente</Category>
-      <Email>E-mail</Email>
-      <PhoneNumber>Telefono</PhoneNumber>
-      <DocumentNumber>645634562</DocumentNumber>
+      <Email>asdasdasdsf</Email>
+      <PhoneNumber>9849516</PhoneNumber>
+      <DocumentNumber>6684516</DocumentNumber>
       <Gender>77</Gender>
       <LastName>Apellido</LastName>
       <FirstName>Nombre</FirstName>
-      <Password>Contraseña</Password>
-      <Username>Usuario213231</Username>
+      <Password>1234</Password>
+      <Username>Customer</Username>
       <Id>1</Id>
       <CustomerPoints>0</CustomerPoints>
     </Customer>
