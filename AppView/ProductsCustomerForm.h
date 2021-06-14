@@ -56,14 +56,39 @@ namespace AppView {
 	private: System::Windows::Forms::ComboBox^ cmbCattegory;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label2;
+
+
+
+
+
+	private: System::Windows::Forms::PictureBox^ pbProduct;
+
+	private: System::Windows::Forms::TextBox^ txtDescripcion;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Id;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Name;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Brand;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Price;
 	private: System::Windows::Forms::DataGridViewImageColumn^ addCarrito;
-	private: System::Windows::Forms::PictureBox^ pbProduct;
 
-	private: System::Windows::Forms::TextBox^ txtDescripcion;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -117,11 +142,6 @@ namespace AppView {
 			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(ProductsCustomerForm::typeid));
 			this->dgvProducts = (gcnew System::Windows::Forms::DataGridView());
-			this->Id = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Name = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Brand = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Price = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->addCarrito = (gcnew System::Windows::Forms::DataGridViewImageColumn());
 			this->Buscar = (gcnew System::Windows::Forms::Label());
 			this->btn_Search = (gcnew System::Windows::Forms::Button());
 			this->cmbSearch = (gcnew System::Windows::Forms::ComboBox());
@@ -131,6 +151,11 @@ namespace AppView {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->pbProduct = (gcnew System::Windows::Forms::PictureBox());
 			this->txtDescripcion = (gcnew System::Windows::Forms::TextBox());
+			this->Id = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Name = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Brand = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Price = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->addCarrito = (gcnew System::Windows::Forms::DataGridViewImageColumn());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvProducts))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pbProduct))->BeginInit();
 			this->SuspendLayout();
@@ -144,7 +169,6 @@ namespace AppView {
 			this->dgvProducts->CellBorderStyle = System::Windows::Forms::DataGridViewCellBorderStyle::SingleHorizontal;
 			this->dgvProducts->ColumnHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::None;
 			this->dgvProducts->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dgvProducts->ColumnHeadersVisible = false;
 			this->dgvProducts->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(5) {
 				this->Id, this->Name,
 					this->Brand, this->Price, this->addCarrito
@@ -164,44 +188,9 @@ namespace AppView {
 			this->dgvProducts->RowHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::None;
 			this->dgvProducts->RowHeadersVisible = false;
 			this->dgvProducts->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::CellSelect;
-			this->dgvProducts->Size = System::Drawing::Size(451, 172);
+			this->dgvProducts->Size = System::Drawing::Size(466, 172);
 			this->dgvProducts->TabIndex = 0;
 			this->dgvProducts->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &ProductsCustomerForm::dgvProducts_CellContentClick);
-			// 
-			// Id
-			// 
-			this->Id->FillWeight = 12.59347F;
-			this->Id->HeaderText = L"Id";
-			this->Id->Name = L"Id";
-			this->Id->ReadOnly = true;
-			// 
-			// Name
-			// 
-			this->Name->FillWeight = 228.4263F;
-			this->Name->HeaderText = L"Nombre";
-			this->Name->Name = L"Name";
-			this->Name->ReadOnly = true;
-			// 
-			// Brand
-			// 
-			this->Brand->FillWeight = 158.6062F;
-			this->Brand->HeaderText = L"Marca";
-			this->Brand->Name = L"Brand";
-			this->Brand->ReadOnly = true;
-			// 
-			// Price
-			// 
-			this->Price->FillWeight = 25.18694F;
-			this->Price->HeaderText = L"Precio";
-			this->Price->Name = L"Price";
-			this->Price->ReadOnly = true;
-			// 
-			// addCarrito
-			// 
-			this->addCarrito->FillWeight = 25.18694F;
-			this->addCarrito->HeaderText = L"addCarrito";
-			this->addCarrito->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"addCarrito.Image")));
-			this->addCarrito->Name = L"addCarrito";
 			// 
 			// Buscar
 			// 
@@ -308,6 +297,41 @@ namespace AppView {
 			this->txtDescripcion->Size = System::Drawing::Size(236, 19);
 			this->txtDescripcion->TabIndex = 11;
 			// 
+			// Id
+			// 
+			this->Id->FillWeight = 33.30356F;
+			this->Id->HeaderText = L"Id";
+			this->Id->Name = L"Id";
+			this->Id->ReadOnly = true;
+			// 
+			// Name
+			// 
+			this->Name->FillWeight = 137.6965F;
+			this->Name->HeaderText = L"Nombre";
+			this->Name->Name = L"Name";
+			this->Name->ReadOnly = true;
+			// 
+			// Brand
+			// 
+			this->Brand->FillWeight = 114.2132F;
+			this->Brand->HeaderText = L"Marca";
+			this->Brand->Name = L"Brand";
+			this->Brand->ReadOnly = true;
+			// 
+			// Price
+			// 
+			this->Price->FillWeight = 92.71082F;
+			this->Price->HeaderText = L"Precio";
+			this->Price->Name = L"Price";
+			this->Price->ReadOnly = true;
+			// 
+			// addCarrito
+			// 
+			this->addCarrito->FillWeight = 72.07586F;
+			this->addCarrito->HeaderText = L"addCarrito";
+			this->addCarrito->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"addCarrito.Image")));
+			this->addCarrito->Name = L"addCarrito";
+			// 
 			// ProductsCustomerForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -324,7 +348,7 @@ namespace AppView {
 			this->Controls->Add(this->Buscar);
 			this->Controls->Add(this->dgvProducts);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-
+			//this->Name = L"ProductsCustomerForm";
 			this->Text = L"ProductsCustomerForm";
 			this->Load += gcnew System::EventHandler(this, &ProductsCustomerForm::ProductsCustomerForm_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvProducts))->EndInit();
