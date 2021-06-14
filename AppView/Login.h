@@ -911,9 +911,9 @@ private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArg
 	txtPasswordchck->Text="Contraseña";
 	chckGenM->Checked = false;
 	chckGenF->Checked = false;
-	chckCatM->Checked == false;
-	chckCatR->Checked == false;
-	chckCatC->Checked == false;
+	chckCatM->Checked = false;
+	chckCatR->Checked = false;
+	chckCatC->Checked = false;
 }
 
 

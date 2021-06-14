@@ -1,5 +1,6 @@
 #pragma once
 #include "ProductDB.h"
+#include "BonusPointsDB.h"
 #include "UserDB.h"
 #include "DeliveryManDB.h"
 #include "CustomerDB.h"
@@ -13,6 +14,7 @@ namespace AppController {
 	{
 	private:
 		static ProductDB^ productDB = gcnew ProductDB();
+		static BonusPointsDB^ bonuspointsDB = gcnew BonusPointsDB();
 		static UserDB^ userDB = gcnew UserDB();
 		static CustomerDB^ customerDB = gcnew CustomerDB();
 		static DeliveryManDB^ deliveryManDB = gcnew DeliveryManDB();
@@ -82,6 +84,18 @@ namespace AppController {
 		/*Category*/
 		static List<Groceries^>^ QueryAllGroceriesByCoincidence(String^);
 		static List<HealthCare^>^ QueryAllHealthCareByCoincidence(String^);
+
+		/*BonusPoints*/
+		static void AddBonusPointsPQ(BonusPoints^);
+		static void AddBonusPointsSQ(BonusPoints^);
+		static void UpdateBonusPointsPQ(BonusPoints^);
+		static void UpdateBonusPointsSQ(BonusPoints^);
+		static void DeleteBonusPointsSQ(int solesQuantity);
+		static void DeleteBonusPointsPQ(int pointsQuantity);
+		static BonusPoints^ QueryBonusPointsByPQ(int pointsQuantity);
+		static BonusPoints^ QueryBonusPointsBySQ(int solesQuantity);
+		static List<BonusPoints^>^ QueryAllBonusPointsPQ();
+		static List<BonusPoints^>^ QueryAllBonusPointsSQ();
 
 	};
 }

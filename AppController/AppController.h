@@ -24,6 +24,17 @@ namespace AppController {
 			static Product^ QueryProductByName(String^);
 			//
 
+			// Métodos CRUD para puntos bonus
+			static void AddBonusPointsPQ(BonusPoints^); // agregar
+			static void AddBonusPointsSQ(BonusPoints^); // agregar
+			static void UpdateBonusPointsPQ(BonusPoints^); //actualizar
+			static void UpdateBonusPointsSQ(BonusPoints^); //actualizar
+			static void DeleteBonusPointsSQ(int solesQuantity);
+			static void DeleteBonusPointsPQ(int pointsQuantity); //borrar
+			static BonusPoints^ QueryBonusPointsByPQ(int pointsQuantity);
+			static BonusPoints^ QueryBonusPointsBySQ(int solesQuantity);
+			static List<BonusPoints^>^ QueryAllBonusPointsPQ();
+			static List<BonusPoints^>^ QueryAllBonusPointsSQ();
 
 			/*Carrito*/
 			static void AddtoCarrito(Product^);
@@ -46,7 +57,7 @@ namespace AppController {
 				static void UpdateUser(User^);
 				static void	DeleteUser(int userId);
 				static bool ConfirmUser(User^);
-				static List<User^>^ QueryAllUser();
+				static List<User^>^ QueryAllUsers();
 				static User^ QueryUserbyId(int userId);
 				static int QueryLastUserId();
 

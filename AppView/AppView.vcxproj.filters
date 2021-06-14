@@ -47,6 +47,9 @@
     <ClCompile Include="ComboBoxItem.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="BonusPointsForm.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CustomerMainForm.h">
@@ -70,7 +73,7 @@
     <ClInclude Include="ProductInventoryForm.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="ComboBoxItem.h">
+    <ClInclude Include="BonusPointsForm.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
