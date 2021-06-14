@@ -346,11 +346,15 @@ void LoadCmbCustomer() {
 	cmbBoxASUbication->Items->Clear();
 	Customer^ c = gcnew Customer();
 	//for(int i=0; customerList->Count;i++)
-	cmbBoxASUbication->Items->Add(gcnew ComboBoxItem(c->Address, "Mi dirección"));
-    cmbBoxASUbication->Items->Add(gcnew ComboBoxItem(c->Address,"Personalizar"));
+	//cmbBoxASUbication->Items->Add(gcnew ComboBoxItem(c->Address, "Mi dirección"));
+    //cmbBoxASUbication->Items->Add(gcnew ComboBoxItem(c->Address,"Personalizar"));
 
 }
 void LoadCmbBoints() {
+	//cmbBoxBPSelect->Items->Clear();
+	//List<BonusPoints^>^ bpList = AppManager::QueryAllBonusPointsPQ();
+	//for (int i = 0; bpList->Count; i++)
+		//cmbBoxBPSelect->Items->Add(gcnew ComboBoxItem(bpList[i]->PointsQuantity, ""));
 }
 
 public: void RefreshDGVCarrito() {

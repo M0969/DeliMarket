@@ -1,21 +1,23 @@
 #pragma once
-
 using namespace System;
 
 public ref class ComboBoxItem
 {
 public:
-	String^ Address;
-	String^ Custom;
-	ComboBoxItem(String^ Address, String^ Custom)
+	int PointsQuantity;
+	String^ Name;
+	//property int SolesQuantity;
+	//property double PercentageDiscount;
+	//property int PointsEarned;
+	ComboBoxItem(int PointsQuantity, String^ Name)
 	{
-		this->Address = Address;
-		this->Custom = Custom;
+		this->PointsQuantity = PointsQuantity;
+		this->Name = Name;
 	}
 
 	String^ ToString()  override
 	{
-		return this->Address + " - " + this->Custom;
+		return this->PointsQuantity + "" + this->Name;
 	}
 
 };
