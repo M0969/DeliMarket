@@ -1,6 +1,7 @@
 #include "Login.h"
 #include "CustomerMainForm.h"
 #include "DeliveryForm.h"
+#include "ManagerMainForm.h"
 
 System::Void AppView::Login::btnLogin_Click(System::Object^ sender, System::EventArgs^ e) {
 	User^ user = AppController::UserManager::ValidateUser(txtUserName->Text, txtPassword->Text);
@@ -22,8 +23,8 @@ System::Void AppView::Login::btnLogin_Click(System::Object^ sender, System::Even
 		else if (user->Category->Equals("Manager")) {
 			MessageBox::Show("Bienvenido " + user->FirstName + " " + user->LastName + " : " + user->Category);
 			this->Hide();
-			DeliveryForm::user = user;
-			DeliveryForm^ form = gcnew DeliveryForm();
+			ManagerMainForm::user = user;
+			ManagerMainForm^ form = gcnew ManagerMainForm();
 			form->Show();
 		}
 		else {
