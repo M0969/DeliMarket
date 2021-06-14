@@ -8,6 +8,9 @@ namespace AppView {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace AppController;
+	using namespace AppModel;
+	using namespace System::Collections::Generic;
 
 	/// <summary>
 	/// Resumen de CarritoCustomerForm
@@ -34,7 +37,9 @@ namespace AppView {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::DataGridView^ dataGridView1;
+	private: System::Windows::Forms::DataGridView^ dgvCarrito;
+	protected:
+
 
 
 
@@ -57,12 +62,17 @@ namespace AppView {
 	private: System::Windows::Forms::Button^ txtASCustom;
 
 	private: System::Windows::Forms::Label^ label6;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Product;
+
+
+
+
+
+	private: System::Windows::Forms::ComboBox^ cmbBoxASUbication;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Name;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Quantity;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ UnitPrice;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Amount;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ DeleteProduct;
-	private: System::Windows::Forms::ComboBox^ cmbBoxASUbication;
 
 
 
@@ -83,12 +93,7 @@ namespace AppView {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			this->Product = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Quantity = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->UnitPrice = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Amount = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->DeleteProduct = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dgvCarrito = (gcnew System::Windows::Forms::DataGridView());
 			this->txtTotalSale = (gcnew System::Windows::Forms::TextBox());
 			this->labelTotal = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
@@ -103,53 +108,25 @@ namespace AppView {
 			this->txtASCustom = (gcnew System::Windows::Forms::Button());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->cmbBoxASUbication = (gcnew System::Windows::Forms::ComboBox());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			this->Name = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Quantity = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->UnitPrice = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Amount = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->DeleteProduct = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvCarrito))->BeginInit();
 			this->SuspendLayout();
 			// 
-			// dataGridView1
+			// dgvCarrito
 			// 
-			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(5) {
-				this->Product,
-					this->Quantity, this->UnitPrice, this->Amount, this->DeleteProduct
+			this->dgvCarrito->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dgvCarrito->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(5) {
+				this->Name, this->Quantity,
+					this->UnitPrice, this->Amount, this->DeleteProduct
 			});
-			this->dataGridView1->Location = System::Drawing::Point(44, 32);
-			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->Size = System::Drawing::Size(420, 158);
-			this->dataGridView1->TabIndex = 0;
-			// 
-			// Product
-			// 
-			this->Product->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::ColumnHeader;
-			this->Product->HeaderText = L"Producto";
-			this->Product->Name = L"Product";
-			this->Product->Width = 75;
-			// 
-			// Quantity
-			// 
-			this->Quantity->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::ColumnHeader;
-			this->Quantity->HeaderText = L"Cantidad";
-			this->Quantity->Name = L"Quantity";
-			this->Quantity->Width = 74;
-			// 
-			// UnitPrice
-			// 
-			this->UnitPrice->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::ColumnHeader;
-			this->UnitPrice->HeaderText = L"Precio Unitario";
-			this->UnitPrice->Name = L"UnitPrice";
-			this->UnitPrice->Width = 101;
-			// 
-			// Amount
-			// 
-			this->Amount->HeaderText = L"Importe";
-			this->Amount->Name = L"Amount";
-			this->Amount->Width = 80;
-			// 
-			// DeleteProduct
-			// 
-			this->DeleteProduct->HeaderText = L"Borrar";
-			this->DeleteProduct->Name = L"DeleteProduct";
-			this->DeleteProduct->Width = 45;
+			this->dgvCarrito->Location = System::Drawing::Point(44, 32);
+			this->dgvCarrito->Name = L"dgvCarrito";
+			this->dgvCarrito->Size = System::Drawing::Size(420, 158);
+			this->dgvCarrito->TabIndex = 0;
 			// 
 			// txtTotalSale
 			// 
@@ -274,6 +251,39 @@ namespace AppView {
 			this->cmbBoxASUbication->Size = System::Drawing::Size(121, 21);
 			this->cmbBoxASUbication->TabIndex = 18;
 			// 
+			// Name
+			// 
+			this->Name->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::ColumnHeader;
+			this->Name->HeaderText = L"Producto";
+			this->Name->Name = L"Name";
+			this->Name->Width = 75;
+			// 
+			// Quantity
+			// 
+			this->Quantity->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::ColumnHeader;
+			this->Quantity->HeaderText = L"Cantidad";
+			this->Quantity->Name = L"Quantity";
+			this->Quantity->Width = 74;
+			// 
+			// UnitPrice
+			// 
+			this->UnitPrice->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::ColumnHeader;
+			this->UnitPrice->HeaderText = L"Precio Unitario";
+			this->UnitPrice->Name = L"UnitPrice";
+			this->UnitPrice->Width = 101;
+			// 
+			// Amount
+			// 
+			this->Amount->HeaderText = L"Importe";
+			this->Amount->Name = L"Amount";
+			this->Amount->Width = 80;
+			// 
+			// DeleteProduct
+			// 
+			this->DeleteProduct->HeaderText = L"Borrar";
+			this->DeleteProduct->Name = L"DeleteProduct";
+			this->DeleteProduct->Width = 45;
+			// 
 			// CarritoCustomerForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -292,12 +302,13 @@ namespace AppView {
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->labelTotal);
 			this->Controls->Add(this->txtTotalSale);
-			this->Controls->Add(this->dataGridView1);
+			this->Controls->Add(this->dgvCarrito);
 			this->Controls->Add(this->label6);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Name = L"CarritoCustomerForm";
+	
 			this->Text = L"CarritoCustomerForm";
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			this->Load += gcnew System::EventHandler(this, &CarritoCustomerForm::CarritoCustomerForm_Load);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvCarrito))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -305,5 +316,22 @@ namespace AppView {
 #pragma endregion
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
+private: System::Void CarritoCustomerForm_Load(System::Object^ sender, System::EventArgs^ e) {
+	RefreshDGVCarrito();
+}
+	   public:
+		   void RefreshDGVCarrito() {
+			   List <Product^>^ productList = AppManager::QueryAllCarrito();
+			   dgvCarrito->Rows->Clear();
+			   for (int i = 0; i < productList->Count; i++) {
+				   dgvCarrito->Rows->Add(gcnew array<String^> {
+					   "" + productList[i]->Id,
+						   productList[i]->Name,
+						   "" + productList[i]->Brand,
+						   "S/." + productList[i]->Price,
+
+				   });
+			   }
+		   }
 };
 }

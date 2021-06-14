@@ -85,6 +85,26 @@ Product^ AppController::AppManager::QueryProductByName(String^ name)
 	return DBController::QueryProductByName(name);
 }
 
+void AppController::AppManager::AddtoCarrito(Product^ product)
+{
+	return DBController::AddtoCarrito(product);
+}
+
+void AppController::AppManager::DeletefromCarrito(int productId)
+{
+	return DBController::DeletefromCarrito(productId);
+}
+
+void AppController::AppManager::DeleteAllCarrito()
+{
+	return DBController::DeleteAllCarrito();
+}
+
+List<Product^>^ AppController::AppManager::QueryAllCarrito()
+{
+	return DBController::QueryAllCarrito();
+}
+
 
 /// /// ////////////////////////////////////////////////////////////////////////////////////////////
 /// /// ////////////////////////////////////////////////////////////////////////////////////////////

@@ -120,6 +120,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="AppController.h" />
+    <ClInclude Include="CarritoDB.h" />
     <ClInclude Include="CustomerDB.h" />
     <ClInclude Include="DBController.h" />
     <ClInclude Include="DeliveryManDB.h" />
@@ -132,6 +133,7 @@
   <ItemGroup>
     <ClCompile Include="AppController.cpp" />
     <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="CarritoDB.cpp" />
     <ClCompile Include="CustomerDB.cpp" />
     <ClCompile Include="DBController.cpp" />
     <ClCompile Include="DeliveryManDB.cpp" />

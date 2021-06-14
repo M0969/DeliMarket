@@ -4,6 +4,7 @@
 #include "DeliveryManDB.h"
 #include "CustomerDB.h"
 #include "ManagerDB.h"
+#include "CarritoDB.h"
 using namespace AppModel;
 using namespace System::Collections::Generic;
 
@@ -16,6 +17,7 @@ namespace AppController {
 		static CustomerDB^ customerDB = gcnew CustomerDB();
 		static DeliveryManDB^ deliveryManDB = gcnew DeliveryManDB();
 		static ManagerDB^ managerDB = gcnew ManagerDB();
+		static CarritoDB^ carritoDB = gcnew CarritoDB();
 	public:
 
 	/*User*/
@@ -55,6 +57,13 @@ namespace AppController {
 		static void AddManagers(Manager^);
 		static void SaveManagers();
 		static void LoadManagers();
+
+		/*Carrito*/
+		static void AddtoCarrito(Product^);
+		static void DeletefromCarrito(int productId);
+		static void DeleteAllCarrito();
+		static List<Product^>^ QueryAllCarrito();
+
 
 
 		/*Product*/

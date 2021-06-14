@@ -351,6 +351,38 @@ void AppController::DBController::LoadManagers()
     }
 }
 
+void AppController::DBController::AddtoCarrito(Product^product)
+{
+    carritoDB->ListDB->Add(product);
+    productDB->Persist();
+}
+
+void AppController::DBController::DeletefromCarrito(int productId)
+{
+    for (int i = 0; i < carritoDB->ListDB->Count; i++)
+        if (carritoDB->ListDB[i]->Id == productId) {
+   
+            carritoDB->ListDB->RemoveAt(i);
+            carritoDB->Persist();
+            return;
+        }
+}
+
+void AppController::DBController::DeleteAllCarrito()
+{
+    int a = carritoDB->ListDB->Count;
+    for (int i = 0; i < a; i++) {
+        carritoDB->ListDB->RemoveAt(i);
+        carritoDB->Persist();
+    }
+}
+
+List<Product^>^ AppController::DBController::QueryAllCarrito()
+{
+    carritoDB->LoadFromBinaryFile();
+    return carritoDB->ListDB;
+}
+
 
 /*Deliveryman*/
 

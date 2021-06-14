@@ -24,6 +24,13 @@ namespace AppController {
 			static Product^ QueryProductByName(String^);
 			//
 
+
+			/*Carrito*/
+			static void AddtoCarrito(Product^);
+			static void DeletefromCarrito(int productId);
+			static void DeleteAllCarrito();
+			static List<Product^>^ QueryAllCarrito();
+
 		// Métodos CRUD para cliente
 
 		// Métodos CRUD para venta
