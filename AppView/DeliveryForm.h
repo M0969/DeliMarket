@@ -185,6 +185,7 @@ namespace AppView {
 			this->btnSignoff->TabIndex = 8;
 			this->btnSignoff->Text = L"CERRAR SESIÓN";
 			this->btnSignoff->UseVisualStyleBackColor = true;
+			this->btnSignoff->Click += gcnew System::EventHandler(this, &DeliveryForm::btnSignoff_Click);
 			// 
 			// btnSale
 			// 
@@ -248,6 +249,7 @@ namespace AppView {
 			this->btnReset->TabIndex = 5;
 			this->btnReset->TabStop = false;
 			this->btnReset->Visible = false;
+			this->btnReset->Click += gcnew System::EventHandler(this, &DeliveryForm::btnReset_Click);
 			// 
 			// btnClose
 			// 
@@ -259,6 +261,7 @@ namespace AppView {
 			this->btnClose->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->btnClose->TabIndex = 6;
 			this->btnClose->TabStop = false;
+			this->btnClose->Click += gcnew System::EventHandler(this, &DeliveryForm::btnClose_Click);
 			// 
 			// btnMax
 			// 
@@ -292,6 +295,7 @@ namespace AppView {
 			this->btnMin->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->btnMin->TabIndex = 4;
 			this->btnMin->TabStop = false;
+			this->btnMin->Click += gcnew System::EventHandler(this, &DeliveryForm::btnMin_Click);
 			// 
 			// Title
 			// 
@@ -346,5 +350,21 @@ namespace AppView {
 		}
 
 	}
+private: System::Void btnClose_Click(System::Object^ sender, System::EventArgs^ e) {
+	Windows::Forms::Application::Exit();
+}
+private: System::Void btnReset_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->WindowState = Windows::Forms::FormWindowState::Normal;
+	btnReset->Visible = false;
+	btnMax->Visible = true;
+}
+private: System::Void btnMin_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->WindowState = Windows::Forms::FormWindowState::Minimized;
+}
+private: System::Void btnSignoff_Click(System::Object^ sender, System::EventArgs^ e) {
+	Login^ login = gcnew Login();
+	login->Show();
+	this->Hide();
+}
 };
 }

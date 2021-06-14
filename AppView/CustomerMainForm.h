@@ -615,7 +615,7 @@ namespace AppView {
 
 		Login^ login = gcnew Login();
 		login->Show();
-		this->Visible = false;
+		this->Hide();
 	}
 
 	private: System::Void inventarioToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
