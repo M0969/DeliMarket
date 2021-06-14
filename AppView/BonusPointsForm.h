@@ -1,4 +1,7 @@
 #pragma once
+using namespace AppModel;
+using namespace AppController;
+using namespace System::Collections::Generic;
 
 namespace AppView {
 
@@ -77,14 +80,14 @@ namespace AppView {
 			this->txtSolesQuantity = (gcnew System::Windows::Forms::TextBox());
 			this->txtPointsEarned = (gcnew System::Windows::Forms::TextBox());
 			this->dgvDiscount = (gcnew System::Windows::Forms::DataGridView());
+			this->Points = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Discount = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->dgvPointsEarned = (gcnew System::Windows::Forms::DataGridView());
+			this->ForEachQuantity = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->PointsEarned = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->btnAdd = (gcnew System::Windows::Forms::Button());
 			this->btnUpdate = (gcnew System::Windows::Forms::Button());
 			this->btnDelete = (gcnew System::Windows::Forms::Button());
-			this->Points = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Discount = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->ForEachQuantity = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->PointsEarned = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvDiscount))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvPointsEarned))->BeginInit();
 			this->SuspendLayout();
@@ -170,45 +173,7 @@ namespace AppView {
 			this->dgvDiscount->Name = L"dgvDiscount";
 			this->dgvDiscount->Size = System::Drawing::Size(188, 150);
 			this->dgvDiscount->TabIndex = 9;
-			// 
-			// dgvPointsEarned
-			// 
-			this->dgvPointsEarned->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dgvPointsEarned->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(2) {
-				this->ForEachQuantity,
-					this->PointsEarned
-			});
-			this->dgvPointsEarned->Location = System::Drawing::Point(267, 192);
-			this->dgvPointsEarned->Name = L"dgvPointsEarned";
-			this->dgvPointsEarned->Size = System::Drawing::Size(188, 150);
-			this->dgvPointsEarned->TabIndex = 10;
-			// 
-			// btnAdd
-			// 
-			this->btnAdd->Location = System::Drawing::Point(94, 148);
-			this->btnAdd->Name = L"btnAdd";
-			this->btnAdd->Size = System::Drawing::Size(75, 23);
-			this->btnAdd->TabIndex = 11;
-			this->btnAdd->Text = L"&Agregar";
-			this->btnAdd->UseVisualStyleBackColor = true;
-			// 
-			// btnUpdate
-			// 
-			this->btnUpdate->Location = System::Drawing::Point(206, 148);
-			this->btnUpdate->Name = L"btnUpdate";
-			this->btnUpdate->Size = System::Drawing::Size(75, 23);
-			this->btnUpdate->TabIndex = 12;
-			this->btnUpdate->Text = L"&Actualizar";
-			this->btnUpdate->UseVisualStyleBackColor = true;
-			// 
-			// btnDelete
-			// 
-			this->btnDelete->Location = System::Drawing::Point(321, 148);
-			this->btnDelete->Name = L"btnDelete";
-			this->btnDelete->Size = System::Drawing::Size(75, 23);
-			this->btnDelete->TabIndex = 13;
-			this->btnDelete->Text = L"&Eliminar";
-			this->btnDelete->UseVisualStyleBackColor = true;
+			this->dgvDiscount->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &BonusPointsForm::dgvDiscount_CellClick);
 			// 
 			// Points
 			// 
@@ -221,6 +186,19 @@ namespace AppView {
 			this->Discount->HeaderText = L"Descuento (%)";
 			this->Discount->Name = L"Discount";
 			// 
+			// dgvPointsEarned
+			// 
+			this->dgvPointsEarned->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dgvPointsEarned->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(2) {
+				this->ForEachQuantity,
+					this->PointsEarned
+			});
+			this->dgvPointsEarned->Location = System::Drawing::Point(267, 192);
+			this->dgvPointsEarned->Name = L"dgvPointsEarned";
+			this->dgvPointsEarned->Size = System::Drawing::Size(188, 150);
+			this->dgvPointsEarned->TabIndex = 10;
+			this->dgvPointsEarned->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &BonusPointsForm::dgvPointsEarned_CellClick);
+			// 
 			// ForEachQuantity
 			// 
 			this->ForEachQuantity->HeaderText = L"Cada S/.";
@@ -231,6 +209,36 @@ namespace AppView {
 			// 
 			this->PointsEarned->HeaderText = L"Puntos Ganados";
 			this->PointsEarned->Name = L"PointsEarned";
+			// 
+			// btnAdd
+			// 
+			this->btnAdd->Location = System::Drawing::Point(94, 148);
+			this->btnAdd->Name = L"btnAdd";
+			this->btnAdd->Size = System::Drawing::Size(75, 23);
+			this->btnAdd->TabIndex = 11;
+			this->btnAdd->Text = L"&Agregar";
+			this->btnAdd->UseVisualStyleBackColor = true;
+			this->btnAdd->Click += gcnew System::EventHandler(this, &BonusPointsForm::btnAdd_Click);
+			// 
+			// btnUpdate
+			// 
+			this->btnUpdate->Location = System::Drawing::Point(206, 148);
+			this->btnUpdate->Name = L"btnUpdate";
+			this->btnUpdate->Size = System::Drawing::Size(75, 23);
+			this->btnUpdate->TabIndex = 12;
+			this->btnUpdate->Text = L"&Actualizar";
+			this->btnUpdate->UseVisualStyleBackColor = true;
+			this->btnUpdate->Click += gcnew System::EventHandler(this, &BonusPointsForm::btnUpdate_Click);
+			// 
+			// btnDelete
+			// 
+			this->btnDelete->Location = System::Drawing::Point(321, 148);
+			this->btnDelete->Name = L"btnDelete";
+			this->btnDelete->Size = System::Drawing::Size(75, 23);
+			this->btnDelete->TabIndex = 13;
+			this->btnDelete->Text = L"&Eliminar";
+			this->btnDelete->UseVisualStyleBackColor = true;
+			this->btnDelete->Click += gcnew System::EventHandler(this, &BonusPointsForm::btnDelete_Click);
 			// 
 			// BonusPointsForm
 			// 
@@ -253,6 +261,7 @@ namespace AppView {
 			this->Controls->Add(this->label1);
 			this->Name = L"BonusPointsForm";
 			this->Text = L"BonusPointsForm";
+			this->Load += gcnew System::EventHandler(this, &BonusPointsForm::BonusPointsForm_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvDiscount))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvPointsEarned))->EndInit();
 			this->ResumeLayout(false);
@@ -260,5 +269,188 @@ namespace AppView {
 
 		}
 #pragma endregion
+		private: System::Void BonusPointsForm_Load(System::Object^ sender, System::EventArgs^ e) {
+			RefreshDGVBonusPoints();
+		}
+		
+		public:
+			void RefreshDGVBonusPoints() {
+				RefreshDGVDiscount();
+				RefreshDGVPointsEarned();
+			}
+			Void RefreshDGVDiscount() {
+				List<BonusPoints^>^ bonuspointsList = AppManager::QueryAllBonusPointsPQ();
+				dgvDiscount->Rows->Clear();
+				for (int i = 0; i < bonuspointsList->Count; i++) {
+					dgvDiscount->Rows->Add(gcnew array<String^> {
+						"" + bonuspointsList[i]->PointsQuantity, //casteando
+							"" + bonuspointsList[i]->PercentageDiscount,
+					});
+				}
+			}
+			Void RefreshDGVPointsEarned() {
+				List<BonusPoints^>^ solesquantityList = AppManager::QueryAllBonusPointsSQ();
+				dgvPointsEarned->Rows->Clear();
+				for (int i = 0; i < solesquantityList->Count; i++) {
+					dgvPointsEarned->Rows->Add(gcnew array<String^> {
+						"" + solesquantityList[i]->SolesQuantity, //es double entonces se castea / se le agrega "" para que se convierta en String
+							"" + solesquantityList[i]->PointsEarned,
+
+					});
+				}
+			}
+
+		private: System::Void btnAdd_Click(System::Object^ sender, System::EventArgs^ e) {
+			BonusPoints^ bp = gcnew BonusPoints();
+			BonusPoints^ sq = gcnew BonusPoints();
+			try {
+				if (txtPoints->Text->Trim() == "") {
+					MessageBox::Show("El cajetín de puntos no debe estar vacío.");
+					return;
+				}
+				if (txtDiscount->Text->Trim() == "") {
+					MessageBox::Show("El porcentaje de descuento no debe estar vacío.");
+					return;
+				}
+				bp->PointsQuantity = Int32::Parse(txtPoints->Text);
+				bp->PercentageDiscount = Double::Parse(txtDiscount->Text);
+				sq->SolesQuantity = Int32::Parse(txtSolesQuantity->Text);
+				sq->PointsEarned = Int32::Parse(txtPointsEarned->Text);
+
+				AppManager::AddBonusPointsPQ(bp);
+				AppManager::AddBonusPointsSQ(sq);
+				RefreshDGVBonusPoints();
+				//btnAdd->Enabled = false;
+				ClearControls();
+			}
+			catch (Exception^ ex) {
+				MessageBox::Show(ex->ToString(), "Error al guardar las equilavencias por error en los datos.");
+				return;
+			}
+		}
+
+		private: System::Void btnDelete_Click(System::Object^ sender, System::EventArgs^ e) {
+			int pointsQuantity = -1;
+			int solesQuantity = -1;
+			try {
+				//|| (txtSolesQuantity->Text->Trim() == "")
+				if (txtPoints->Text->Trim() == "") {
+					MessageBox::Show("No se puede eliminar porque no hay ninguna equivalencia seleccionada.");
+					return;
+				}
+				pointsQuantity = Int32::Parse(txtPoints->Text);
+				solesQuantity = Int32::Parse(txtSolesQuantity->Text);
+			}
+			catch (...) {
+				MessageBox::Show("No se puede eliminar la equivalencia de puntos porque la cantidad de puntos bonus o soles no es válida.");
+				return;
+			}
+			if (MessageBox::Show(
+				"¿Está seguro de eliminar la equivalencia?",
+				"Confirmación", MessageBoxButtons::YesNo,
+				MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes)
+			{
+				AppManager::DeleteBonusPointsPQ(pointsQuantity);
+				AppManager::DeleteBonusPointsSQ(solesQuantity);
+				RefreshDGVBonusPoints();
+				ClearControls();
+			}
+		}
+
+		private: System::Void dgvDiscount_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+			if (dgvDiscount->CurrentCell != nullptr &&
+				dgvDiscount->CurrentCell->Value != nullptr &&
+				dgvDiscount->CurrentCell->Value->ToString() != "") {
+				int selectedrowindex = dgvDiscount->SelectedCells[0]->RowIndex;
+				DataGridViewRow^ selectedRow = dgvDiscount->Rows[selectedrowindex];
+				String^ a = selectedRow->Cells[0]->Value->ToString();
+
+				int pointsQuantity = Int32::Parse(a);
+				BonusPoints^ bp = AppManager::QueryBonusPointsByPQ(pointsQuantity);
+				txtPoints->Text = "" + bp->PointsQuantity;
+				txtDiscount->Text = "" + bp->PercentageDiscount;
+			}
+		}
+
+		private: System::Void btnUpdate_Click(System::Object^ sender, System::EventArgs^ e) {
+			if (txtPoints->Text->Trim() == "") {
+				MessageBox::Show("El cajetín de puntos no debe estar vacío.");
+				return;
+			}
+			if (txtDiscount->Text->Trim() == "") {
+				MessageBox::Show("El porcentaje de descuento no debe estar vacío.");
+				return;
+			}
+
+			/*if (txtSolesQuantity->Text->Trim() == "") {
+				MessageBox::Show("El cajetín de cantidad en soles no debe estar vacío.");
+				return;
+
+			}
+			if (txtPointsEarned->Text->Trim() == "") {
+				MessageBox::Show("El cajetín de puntos ganados no debe estar vacío.");
+				return;
+			}*/
+			//
+			if (MessageBox::Show(
+				"¿Está seguro de actualizar la equivalencia?",
+				"Confirmación", MessageBoxButtons::YesNo,
+				MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes)
+			{
+				BonusPoints^ bp = gcnew BonusPoints();
+				BonusPoints^ sq = gcnew BonusPoints();
+
+				try {
+					bp->PointsQuantity = Int32::Parse(txtPoints->Text);
+					bp->PercentageDiscount = Double::Parse(txtDiscount->Text);
+					sq->SolesQuantity = Int32::Parse(txtSolesQuantity->Text);
+					sq->PointsEarned = Int32::Parse(txtPointsEarned->Text);
+
+					AppManager::UpdateBonusPointsPQ(bp);
+					AppManager::UpdateBonusPointsSQ(sq);
+					//btnAdd->Enabled = false;
+					//btnUpdate->Enabled = false;
+					//btnDelete->Enabled = false;
+					RefreshDGVBonusPoints();
+				}
+				catch (Exception^ ex) {
+					MessageBox::Show(ex->ToString(), "Error al grabar.");
+					return;
+				}
+			}
+			else
+			{
+				// If 'No', do something here.
+			}
+		}
+
+			   System::Void ClearControls() {
+				   txtPoints->Clear();
+				   txtDiscount->Clear();
+				   txtSolesQuantity->Clear();
+				   txtPointsEarned->Clear();
+			   }
+			   Void EnableControls() {
+				   txtPoints->ReadOnly = false;
+				   txtDiscount->ReadOnly = false;
+				   txtSolesQuantity->ReadOnly = false;
+				   txtPointsEarned->ReadOnly = false;
+				   btnAdd->Enabled = true;
+			   }
+
+		private: System::Void dgvPointsEarned_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+			if (dgvPointsEarned->CurrentCell != nullptr &&
+				dgvPointsEarned->CurrentCell->Value != nullptr &&
+				dgvPointsEarned->CurrentCell->Value->ToString() != "") {
+				int selectedrowindex = dgvPointsEarned->SelectedCells[0]->RowIndex;
+				DataGridViewRow^ selectedRow = dgvPointsEarned->Rows[selectedrowindex];
+				String^ a = selectedRow->Cells[0]->Value->ToString();
+
+				int solesQuantity = Int32::Parse(a);
+				BonusPoints^ sq = AppManager::QueryBonusPointsBySQ(solesQuantity);
+				txtSolesQuantity->Text = "" + sq->SolesQuantity;
+				txtPointsEarned->Text = "" + sq->PointsEarned;
+			}
+		}
 	};
 }

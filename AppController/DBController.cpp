@@ -119,6 +119,93 @@ Product^ AppController::DBController::QueryProductByName(String^ name)
 
 }
 
+///////////////////////////////////////////////////////////////
+/*Bonus Points*/
+void AppController::DBController::AddBonusPointsPQ(BonusPoints^ bonuspoints)
+{
+    bonuspointsDB->ListPQDB->Add(bonuspoints);
+    bonuspointsDB->PersistPQ();
+}
+
+void AppController::DBController::AddBonusPointsSQ(BonusPoints^ bonuspoints)
+{
+    bonuspointsDB->ListSQDB->Add(bonuspoints);
+    bonuspointsDB->PersistSQ();
+}
+
+void AppController::DBController::UpdateBonusPointsPQ(BonusPoints^ bonuspoints)
+{
+    for (int i = 0; i < bonuspointsDB->ListPQDB->Count; i++)
+        if (bonuspointsDB->ListPQDB[i]->PointsQuantity == bonuspoints->PointsQuantity) { // verificando cantidad de puntos
+            bonuspointsDB->ListPQDB[i] = bonuspoints;  // actualiza el producto anterior con el actual
+            bonuspointsDB->PersistPQ();
+            return;
+        }
+}
+
+void AppController::DBController::UpdateBonusPointsSQ(BonusPoints^ bonuspoints)
+{
+    for (int i = 0; i < bonuspointsDB->ListSQDB->Count; i++)
+        if (bonuspointsDB->ListSQDB[i]->PointsQuantity == bonuspoints->PointsQuantity) { // verificando cantidad de puntos
+            bonuspointsDB->ListSQDB[i] = bonuspoints;  // actualiza el producto anterior con el actual
+            bonuspointsDB->PersistSQ();
+            return;
+        }
+}
+
+void AppController::DBController::DeleteBonusPointsSQ(int solesQuantity)
+{
+    for (int i = 0; i < bonuspointsDB->ListSQDB->Count; i++)
+        if (bonuspointsDB->ListSQDB[i]->SolesQuantity == solesQuantity) { // si coincide, se procede a eliminar
+            //productDB->ListDB[i]->Status = 'I';  // en lugar de borrarlo (por temas de seguridad), se le cambia de estado: INACTIVO
+            bonuspointsDB->ListSQDB->RemoveAt(i);
+            bonuspointsDB->PersistSQ();
+            return;
+        }
+}
+
+void AppController::DBController::DeleteBonusPointsPQ(int pointsQuantity)
+{
+
+    for (int i = 0; i < bonuspointsDB->ListPQDB->Count; i++)
+        if (bonuspointsDB->ListPQDB[i]->PointsQuantity == pointsQuantity) { // si coincide, se procede a eliminar
+            //productDB->ListDB[i]->Status = 'I';  // en lugar de borrarlo (por temas de seguridad), se le cambia de estado: INACTIVO
+            bonuspointsDB->ListPQDB->RemoveAt(i);
+            bonuspointsDB->PersistPQ();
+            return;
+        }
+}
+
+BonusPoints^ AppController::DBController::QueryBonusPointsByPQ(int pointsQuantity)
+{
+    bonuspointsDB->LoadFromBinaryFilePQ();
+    for (int i = 0; i < productDB->ListDB->Count; i++)
+        if (bonuspointsDB->ListPQDB[i]->PointsQuantity == pointsQuantity &&
+            bonuspointsDB->ListPQDB[i]->GetType() == BonusPoints::typeid)
+            return (BonusPoints^)bonuspointsDB->ListPQDB[i]; // se requeria un casting para evitar el error
+    return nullptr;
+}
+
+BonusPoints^ AppController::DBController::QueryBonusPointsBySQ(int solesQuantity)
+{
+    bonuspointsDB->LoadFromBinaryFileSQ();
+    for (int i = 0; i < productDB->ListDB->Count; i++)
+        if (bonuspointsDB->ListSQDB[i]->SolesQuantity == solesQuantity &&
+            bonuspointsDB->ListSQDB[i]->GetType() == BonusPoints::typeid)
+            return (BonusPoints^)bonuspointsDB->ListSQDB[i]; // se requeria un casting para evitar el error
+    return nullptr;
+}
+
+List<BonusPoints^>^ AppController::DBController::QueryAllBonusPointsPQ()
+{
+    bonuspointsDB->LoadFromBinaryFilePQ();
+    return bonuspointsDB->ListPQDB;
+}
+List<BonusPoints^>^ AppController::DBController::QueryAllBonusPointsSQ()
+{
+    bonuspointsDB->LoadFromBinaryFileSQ();
+    return bonuspointsDB->ListSQDB;
+}
 
 /////////////////////////////////////////////////
 

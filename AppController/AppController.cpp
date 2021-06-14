@@ -105,6 +105,56 @@ List<Product^>^ AppController::AppManager::QueryAllCarrito()
 	return DBController::QueryAllCarrito();
 }
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
+/*Bonnus Points*/
+void AppController::AppManager::AddBonusPointsPQ(BonusPoints^ bp)
+{
+	DBController::AddBonusPointsPQ(bp);
+}
+
+void AppController::AppManager::AddBonusPointsSQ(BonusPoints^ bp)
+{
+	DBController::AddBonusPointsSQ(bp);
+}
+
+void AppController::AppManager::UpdateBonusPointsPQ(BonusPoints^ bp)
+{
+	DBController::UpdateBonusPointsPQ(bp);
+}
+
+void AppController::AppManager::UpdateBonusPointsSQ(BonusPoints^ bp)
+{
+	DBController::UpdateBonusPointsSQ(bp);
+}
+void AppController::AppManager::DeleteBonusPointsSQ(int solesQuantity)
+{
+	DBController::DeleteBonusPointsSQ(solesQuantity);
+}
+
+void AppController::AppManager::DeleteBonusPointsPQ(int pointsQuantity)
+{
+	DBController::DeleteBonusPointsPQ(pointsQuantity);
+}
+
+BonusPoints^ AppController::AppManager::QueryBonusPointsByPQ(int pointsQuantity)
+{
+	return DBController::QueryBonusPointsByPQ(pointsQuantity);
+}
+
+BonusPoints^ AppController::AppManager::QueryBonusPointsBySQ(int solesQuantity)
+{
+	return DBController::QueryBonusPointsBySQ(solesQuantity);
+}
+
+List<BonusPoints^>^ AppController::AppManager::QueryAllBonusPointsPQ()
+{
+	return DBController::QueryAllBonusPointsPQ();
+}
+
+List<BonusPoints^>^ AppController::AppManager::QueryAllBonusPointsSQ()
+{
+	return DBController::QueryAllBonusPointsSQ();
+}
 
 /// /// ////////////////////////////////////////////////////////////////////////////////////////////
 /// /// ////////////////////////////////////////////////////////////////////////////////////////////
