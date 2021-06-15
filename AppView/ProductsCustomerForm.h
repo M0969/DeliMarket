@@ -142,6 +142,11 @@ namespace AppView {
 			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(ProductsCustomerForm::typeid));
 			this->dgvProducts = (gcnew System::Windows::Forms::DataGridView());
+			this->Id = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Name = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Brand = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Price = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->addCarrito = (gcnew System::Windows::Forms::DataGridViewImageColumn());
 			this->Buscar = (gcnew System::Windows::Forms::Label());
 			this->btn_Search = (gcnew System::Windows::Forms::Button());
 			this->cmbSearch = (gcnew System::Windows::Forms::ComboBox());
@@ -151,17 +156,13 @@ namespace AppView {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->pbProduct = (gcnew System::Windows::Forms::PictureBox());
 			this->txtDescripcion = (gcnew System::Windows::Forms::TextBox());
-			this->Id = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Name = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Brand = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Price = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->addCarrito = (gcnew System::Windows::Forms::DataGridViewImageColumn());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvProducts))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pbProduct))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// dgvProducts
 			// 
+			this->dgvProducts->AllowUserToAddRows = false;
 			this->dgvProducts->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
 			this->dgvProducts->AutoSizeRowsMode = System::Windows::Forms::DataGridViewAutoSizeRowsMode::AllCells;
 			this->dgvProducts->BackgroundColor = System::Drawing::SystemColors::Control;
@@ -191,6 +192,41 @@ namespace AppView {
 			this->dgvProducts->Size = System::Drawing::Size(466, 172);
 			this->dgvProducts->TabIndex = 0;
 			this->dgvProducts->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &ProductsCustomerForm::dgvProducts_CellContentClick);
+			// 
+			// Id
+			// 
+			this->Id->FillWeight = 33.30356F;
+			this->Id->HeaderText = L"Id";
+			this->Id->Name = L"Id";
+			this->Id->ReadOnly = true;
+			// 
+			// Name
+			// 
+			this->Name->FillWeight = 137.6965F;
+			this->Name->HeaderText = L"Nombre";
+			this->Name->Name = L"Name";
+			this->Name->ReadOnly = true;
+			// 
+			// Brand
+			// 
+			this->Brand->FillWeight = 114.2132F;
+			this->Brand->HeaderText = L"Marca";
+			this->Brand->Name = L"Brand";
+			this->Brand->ReadOnly = true;
+			// 
+			// Price
+			// 
+			this->Price->FillWeight = 92.71082F;
+			this->Price->HeaderText = L"Precio";
+			this->Price->Name = L"Price";
+			this->Price->ReadOnly = true;
+			// 
+			// addCarrito
+			// 
+			this->addCarrito->FillWeight = 72.07586F;
+			this->addCarrito->HeaderText = L"addCarrito";
+			this->addCarrito->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"addCarrito.Image")));
+			this->addCarrito->Name = L"addCarrito";
 			// 
 			// Buscar
 			// 
@@ -297,41 +333,6 @@ namespace AppView {
 			this->txtDescripcion->Size = System::Drawing::Size(236, 19);
 			this->txtDescripcion->TabIndex = 11;
 			// 
-			// Id
-			// 
-			this->Id->FillWeight = 33.30356F;
-			this->Id->HeaderText = L"Id";
-			this->Id->Name = L"Id";
-			this->Id->ReadOnly = true;
-			// 
-			// Name
-			// 
-			this->Name->FillWeight = 137.6965F;
-			this->Name->HeaderText = L"Nombre";
-			this->Name->Name = L"Name";
-			this->Name->ReadOnly = true;
-			// 
-			// Brand
-			// 
-			this->Brand->FillWeight = 114.2132F;
-			this->Brand->HeaderText = L"Marca";
-			this->Brand->Name = L"Brand";
-			this->Brand->ReadOnly = true;
-			// 
-			// Price
-			// 
-			this->Price->FillWeight = 92.71082F;
-			this->Price->HeaderText = L"Precio";
-			this->Price->Name = L"Price";
-			this->Price->ReadOnly = true;
-			// 
-			// addCarrito
-			// 
-			this->addCarrito->FillWeight = 72.07586F;
-			this->addCarrito->HeaderText = L"addCarrito";
-			this->addCarrito->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"addCarrito.Image")));
-			this->addCarrito->Name = L"addCarrito";
-			// 
 			// ProductsCustomerForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -348,7 +349,7 @@ namespace AppView {
 			this->Controls->Add(this->Buscar);
 			this->Controls->Add(this->dgvProducts);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			//this->Name = L"ProductsCustomerForm";
+	//		this->Name = L"ProductsCustomerForm";
 			this->Text = L"ProductsCustomerForm";
 			this->Load += gcnew System::EventHandler(this, &ProductsCustomerForm::ProductsCustomerForm_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvProducts))->EndInit();
@@ -365,7 +366,7 @@ namespace AppView {
 	}
 	public:
 		void RefreshDGVProducts(int mode) {
-			if (mode == 2 | mode == 3| mode == 4) {
+			if (mode == 2 || mode == 3 || mode == 4) {
 				if (mode == 2) {
 					List <Groceries^>^ productList = AppManager::QueryAllGroceries();
 					dgvProducts->Rows->Clear();
@@ -391,7 +392,7 @@ namespace AppView {
 					});
 				}
 				}
-				else { List <Product^>^ productList = AppManager::QueryAllProducts();
+				else if(mode==4){ List <Product^>^ productList = AppManager::QueryAllProducts();
 				dgvProducts->Rows->Clear();
 				for (int i = 0; i < productList->Count; i++) {
 					dgvProducts->Rows->Add(gcnew array<String^> {
@@ -434,7 +435,7 @@ namespace AppView {
 			else if (cmbCattegory->SelectedIndex == 1) {RefreshDGVProducts(MODEHEALTH);}
 		}
 		else  {
-			RefreshDGVProducts(MODEID);
+			RefreshDGVProducts(MODEALL);
 		}
 	}
 
