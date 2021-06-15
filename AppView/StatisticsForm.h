@@ -75,15 +75,15 @@ namespace AppView {
 			System::Windows::Forms::DataVisualization::Charting::Series^ series4 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			this->tabIncome = (gcnew System::Windows::Forms::TabControl());
 			this->tabProducts = (gcnew System::Windows::Forms::TabPage());
-			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
-			this->chart1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->chart2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
+			this->chart1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
+			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
 			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->chart2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
 			this->tabIncome->SuspendLayout();
 			this->tabProducts->SuspendLayout();
-			this->tabPage2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->BeginInit();
+			this->tabPage2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart2))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -109,17 +109,16 @@ namespace AppView {
 			this->tabProducts->Text = L"Demanda de productos";
 			this->tabProducts->UseVisualStyleBackColor = true;
 			// 
-			// tabPage2
+			// label1
 			// 
-			this->tabPage2->Controls->Add(this->label2);
-			this->tabPage2->Controls->Add(this->chart2);
-			this->tabPage2->Location = System::Drawing::Point(4, 22);
-			this->tabPage2->Name = L"tabPage2";
-			this->tabPage2->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage2->Size = System::Drawing::Size(452, 297);
-			this->tabPage2->TabIndex = 1;
-			this->tabPage2->Text = L"Ingresos";
-			this->tabPage2->UseVisualStyleBackColor = true;
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->Location = System::Drawing::Point(289, 252);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(58, 13);
+			this->label1->TabIndex = 1;
+			this->label1->Text = L"Producto";
 			// 
 			// chart1
 			// 
@@ -146,16 +145,28 @@ namespace AppView {
 			this->chart1->TabIndex = 0;
 			this->chart1->Text = L"chart1";
 			// 
-			// label1
+			// tabPage2
 			// 
-			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->tabPage2->Controls->Add(this->label2);
+			this->tabPage2->Controls->Add(this->chart2);
+			this->tabPage2->Location = System::Drawing::Point(4, 22);
+			this->tabPage2->Name = L"tabPage2";
+			this->tabPage2->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage2->Size = System::Drawing::Size(452, 297);
+			this->tabPage2->TabIndex = 1;
+			this->tabPage2->Text = L"Ingresos";
+			this->tabPage2->UseVisualStyleBackColor = true;
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(289, 252);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(58, 13);
-			this->label1->TabIndex = 1;
-			this->label1->Text = L"Producto";
+			this->label2->Location = System::Drawing::Point(346, 253);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(75, 13);
+			this->label2->TabIndex = 2;
+			this->label2->Text = L"N° de venta";
 			// 
 			// chart2
 			// 
@@ -183,31 +194,21 @@ namespace AppView {
 			this->chart2->TabIndex = 1;
 			this->chart2->Text = L"chart2";
 			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(346, 253);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(75, 13);
-			this->label2->TabIndex = 2;
-			this->label2->Text = L"N° de venta";
-			// 
 			// StatisticsForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(494, 370);
+			this->ClientSize = System::Drawing::Size(510, 409);
 			this->Controls->Add(this->tabIncome);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"StatisticsForm";
 			this->Text = L"StatisticsForm";
 			this->tabIncome->ResumeLayout(false);
 			this->tabProducts->ResumeLayout(false);
 			this->tabProducts->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->EndInit();
 			this->tabPage2->ResumeLayout(false);
 			this->tabPage2->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart2))->EndInit();
 			this->ResumeLayout(false);
 

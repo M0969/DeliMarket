@@ -105,6 +105,11 @@ List<Product^>^ AppController::AppManager::QueryAllCarrito()
 	return DBController::QueryAllCarrito();
 }
 
+bool AppController::AppManager::QueryCarritoByName(String^ name)
+{
+	return DBController::QueryCarritoByName(name);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 /*Bonnus Points*/
 void AppController::AppManager::AddBonusPointsPQ(BonusPoints^ bp)

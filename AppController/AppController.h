@@ -41,6 +41,8 @@ namespace AppController {
 			static void DeletefromCarrito(int productId);
 			static void DeleteAllCarrito();
 			static List<Product^>^ QueryAllCarrito();
+			static bool QueryCarritoByName(String^ );
+			
 
 		// Métodos CRUD para cliente
 

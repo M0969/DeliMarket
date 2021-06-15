@@ -3,6 +3,7 @@
 #include "BonusPointsForm.h"
 #include "StatisticsForm.h"
 #include "ProductInventoryForm.h"
+#include "BonusPointsForm.h"
 
 namespace AppView {
 
@@ -15,6 +16,7 @@ namespace AppView {
 	using namespace AppModel;
 	using namespace AppController;
 	using namespace System::Collections::Generic;
+	using namespace std;
 
 	/// <summary>
 	/// Resumen de ManagerMainForm
@@ -63,7 +65,9 @@ namespace AppView {
 
 
 	private: Bunifu::Framework::UI::BunifuSeparator^ bunifuSeparator2;
-	private: System::Windows::Forms::DataGridView^ dataGridView1;
+	private: System::Windows::Forms::Panel^ Wrapper;
+	private: Bunifu::Framework::UI::BunifuFlatButton^ btnBonusPoints;
+
 
 	protected:
 
@@ -109,7 +113,8 @@ namespace AppView {
 			this->btnRating = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
 			this->lineSidebar = (gcnew Bunifu::Framework::UI::BunifuSeparator());
 			this->btnInventory = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
-			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->Wrapper = (gcnew System::Windows::Forms::Panel());
+			this->btnBonusPoints = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
 			this->panel2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnReset))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnClose))->BeginInit();
@@ -117,7 +122,6 @@ namespace AppView {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnMin))->BeginInit();
 			this->panel1->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// panel2
@@ -215,7 +219,7 @@ namespace AppView {
 			this->bunifuSeparator1->LineColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)),
 				static_cast<System::Int32>(static_cast<System::Byte>(105)), static_cast<System::Int32>(static_cast<System::Byte>(105)), static_cast<System::Int32>(static_cast<System::Byte>(105)));
 			this->bunifuSeparator1->LineThickness = 2;
-			this->bunifuSeparator1->Location = System::Drawing::Point(3, 316);
+			this->bunifuSeparator1->Location = System::Drawing::Point(3, 238);
 			this->bunifuSeparator1->Name = L"bunifuSeparator1";
 			this->bunifuSeparator1->Size = System::Drawing::Size(149, 36);
 			this->bunifuSeparator1->TabIndex = 11;
@@ -239,6 +243,7 @@ namespace AppView {
 			// 
 			this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)), static_cast<System::Int32>(static_cast<System::Byte>(31)),
 				static_cast<System::Int32>(static_cast<System::Byte>(33)));
+			this->panel1->Controls->Add(this->btnBonusPoints);
 			this->panel1->Controls->Add(this->btnStatistics);
 			this->panel1->Controls->Add(this->bunifuSeparator2);
 			this->panel1->Controls->Add(this->bunifuSeparator1);
@@ -246,9 +251,10 @@ namespace AppView {
 			this->panel1->Controls->Add(this->lineSidebar);
 			this->panel1->Controls->Add(this->btnSignoff);
 			this->panel1->Controls->Add(this->btnInventory);
+			this->panel1->Dock = System::Windows::Forms::DockStyle::Left;
 			this->panel1->Location = System::Drawing::Point(0, 66);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(165, 415);
+			this->panel1->Size = System::Drawing::Size(165, 409);
 			this->panel1->TabIndex = 3;
 			// 
 			// btnStatistics
@@ -272,7 +278,7 @@ namespace AppView {
 			this->btnStatistics->IconVisible = true;
 			this->btnStatistics->IconZoom = 90;
 			this->btnStatistics->IsTab = false;
-			this->btnStatistics->Location = System::Drawing::Point(7, 153);
+			this->btnStatistics->Location = System::Drawing::Point(7, 93);
 			this->btnStatistics->Name = L"btnStatistics";
 			this->btnStatistics->Normalcolor = System::Drawing::Color::Transparent;
 			this->btnStatistics->OnHovercolor = System::Drawing::Color::Transparent;
@@ -295,7 +301,7 @@ namespace AppView {
 			this->bunifuSeparator2->LineColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)),
 				static_cast<System::Int32>(static_cast<System::Byte>(105)), static_cast<System::Int32>(static_cast<System::Byte>(105)), static_cast<System::Int32>(static_cast<System::Byte>(105)));
 			this->bunifuSeparator2->LineThickness = 2;
-			this->bunifuSeparator2->Location = System::Drawing::Point(7, 206);
+			this->bunifuSeparator2->Location = System::Drawing::Point(7, 146);
 			this->bunifuSeparator2->Name = L"bunifuSeparator2";
 			this->bunifuSeparator2->Size = System::Drawing::Size(149, 36);
 			this->bunifuSeparator2->TabIndex = 12;
@@ -326,7 +332,7 @@ namespace AppView {
 			this->btnRating->IconVisible = true;
 			this->btnRating->IconZoom = 90;
 			this->btnRating->IsTab = false;
-			this->btnRating->Location = System::Drawing::Point(7, 248);
+			this->btnRating->Location = System::Drawing::Point(7, 175);
 			this->btnRating->Name = L"btnRating";
 			this->btnRating->Normalcolor = System::Drawing::Color::Transparent;
 			this->btnRating->OnHovercolor = System::Drawing::Color::Transparent;
@@ -348,7 +354,7 @@ namespace AppView {
 			this->lineSidebar->LineColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)), static_cast<System::Int32>(static_cast<System::Byte>(105)),
 				static_cast<System::Int32>(static_cast<System::Byte>(105)), static_cast<System::Int32>(static_cast<System::Byte>(105)));
 			this->lineSidebar->LineThickness = 2;
-			this->lineSidebar->Location = System::Drawing::Point(7, 111);
+			this->lineSidebar->Location = System::Drawing::Point(7, 51);
 			this->lineSidebar->Name = L"lineSidebar";
 			this->lineSidebar->Size = System::Drawing::Size(149, 36);
 			this->lineSidebar->TabIndex = 9;
@@ -377,7 +383,7 @@ namespace AppView {
 			this->btnInventory->IconVisible = true;
 			this->btnInventory->IconZoom = 90;
 			this->btnInventory->IsTab = false;
-			this->btnInventory->Location = System::Drawing::Point(7, 66);
+			this->btnInventory->Location = System::Drawing::Point(13, 21);
 			this->btnInventory->Name = L"btnInventory";
 			this->btnInventory->Normalcolor = System::Drawing::Color::Transparent;
 			this->btnInventory->OnHovercolor = System::Drawing::Color::Transparent;
@@ -392,20 +398,59 @@ namespace AppView {
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->btnInventory->Click += gcnew System::EventHandler(this, &ManagerMainForm::btnInventory_Click);
 			// 
-			// dataGridView1
+			// Wrapper
 			// 
-			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(238, 116);
-			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->Size = System::Drawing::Size(240, 150);
-			this->dataGridView1->TabIndex = 4;
+			this->Wrapper->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->Wrapper->Location = System::Drawing::Point(165, 66);
+			this->Wrapper->Name = L"Wrapper";
+			this->Wrapper->Size = System::Drawing::Size(510, 409);
+			this->Wrapper->TabIndex = 4;
+			// 
+			// btnBonusPoints
+			// 
+			this->btnBonusPoints->Activecolor = System::Drawing::Color::Transparent;
+			this->btnBonusPoints->BackColor = System::Drawing::Color::Transparent;
+			this->btnBonusPoints->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btnBonusPoints->BorderRadius = 0;
+			this->btnBonusPoints->ButtonText = L"PUNTOS BONUS";
+			this->btnBonusPoints->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->btnBonusPoints->DisabledColor = System::Drawing::Color::Gray;
+			this->btnBonusPoints->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.5F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnBonusPoints->ForeColor = System::Drawing::Color::White;
+			this->btnBonusPoints->Iconcolor = System::Drawing::Color::White;
+			this->btnBonusPoints->Iconimage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnBonusPoints.Iconimage")));
+			this->btnBonusPoints->Iconimage_right = nullptr;
+			this->btnBonusPoints->Iconimage_right_Selected = nullptr;
+			this->btnBonusPoints->Iconimage_Selected = nullptr;
+			this->btnBonusPoints->IconMarginLeft = 0;
+			this->btnBonusPoints->IconMarginRight = 0;
+			this->btnBonusPoints->IconRightVisible = true;
+			this->btnBonusPoints->IconRightZoom = 0;
+			this->btnBonusPoints->IconVisible = true;
+			this->btnBonusPoints->IconZoom = 90;
+			this->btnBonusPoints->IsTab = false;
+			this->btnBonusPoints->Location = System::Drawing::Point(3, 270);
+			this->btnBonusPoints->Name = L"btnBonusPoints";
+			this->btnBonusPoints->Normalcolor = System::Drawing::Color::Transparent;
+			this->btnBonusPoints->OnHovercolor = System::Drawing::Color::Transparent;
+			this->btnBonusPoints->OnHoverTextColor = System::Drawing::Color::White;
+			this->btnBonusPoints->selected = false;
+			this->btnBonusPoints->Size = System::Drawing::Size(155, 57);
+			this->btnBonusPoints->TabIndex = 14;
+			this->btnBonusPoints->Text = L"PUNTOS BONUS";
+			this->btnBonusPoints->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->btnBonusPoints->Textcolor = System::Drawing::Color::White;
+			this->btnBonusPoints->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->btnBonusPoints->Click += gcnew System::EventHandler(this, &ManagerMainForm::btnBonusPoints_Click);
 			// 
 			// ManagerMainForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(675, 475);
-			this->Controls->Add(this->dataGridView1);
+			this->Controls->Add(this->Wrapper);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->panel2);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
@@ -420,11 +465,24 @@ namespace AppView {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnMin))->EndInit();
 			this->panel1->ResumeLayout(false);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
+		template<class T>
+		void AbrirPanel(T FormHijo) {
+			if (this->Wrapper->Controls->Count > 0)
+				this->Wrapper->Controls->RemoveAt(0);
+			FormHijo->TopLevel = false;
+			FormHijo->Dock = DockStyle::Fill;
+			this->Wrapper->Controls->Add(FormHijo);
+			this->Wrapper->Tag = FormHijo;
+			FormHijo->Show();
+
+		}
+
+
+
 	private: System::Void btnClose_Click(System::Object^ sender, System::EventArgs^ e) {
 		Windows::Forms::Application::Exit();
 	}
@@ -444,12 +502,13 @@ private: System::Void btnSignoff_Click(System::Object^ sender, System::EventArgs
 private: System::Void lineSidebar_Load(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void btnInventory_Click(System::Object^ sender, System::EventArgs^ e) {
-	ProductInventoryForm^ productinventoryForm = gcnew ProductInventoryForm();
-	productinventoryForm->Show();
+	this->AbrirPanel(gcnew AppView::ProductInventoryForm);
 }
 private: System::Void btnStatistics_Click(System::Object^ sender, System::EventArgs^ e) {
-	StatisticsForm^ statisticsForm = gcnew StatisticsForm();
-	statisticsForm->Show();
+	this->AbrirPanel(gcnew AppView::StatisticsForm);
+}
+private: System::Void btnBonusPoints_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->AbrirPanel(gcnew AppView::BonusPointsForm);
 }
 };
 }

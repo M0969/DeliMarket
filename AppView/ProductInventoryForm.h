@@ -37,14 +37,14 @@ namespace AppView {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::MenuStrip^ menuStrip1;
+
 	protected:
-	private: System::Windows::Forms::ToolStripMenuItem^ opcionesToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ nuevoToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ alimentosToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ saludToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ editarToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ cerrarToolStripMenuItem;
+
+
+
+
+
+
 	private: System::Windows::Forms::ContextMenuStrip^ contextMenuStrip1;
 	private: System::Windows::Forms::TabControl^ tabControl1;
 	private: System::Windows::Forms::TabPage^ tabPageGroceries;
@@ -142,14 +142,6 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Stockhealthcare;
 		void InitializeComponent(void)
 		{
 			this->components = (gcnew System::ComponentModel::Container());
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(ProductInventoryForm::typeid));
-			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
-			this->opcionesToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->nuevoToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->alimentosToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->saludToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->editarToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->cerrarToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->contextMenuStrip1 = (gcnew System::Windows::Forms::ContextMenuStrip(this->components));
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPageGroceries = (gcnew System::Windows::Forms::TabPage());
@@ -200,7 +192,6 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Stockhealthcare;
 			this->label11 = (gcnew System::Windows::Forms::Label());
 			this->label12 = (gcnew System::Windows::Forms::Label());
 			this->pbPhotohealthcare = (gcnew System::Windows::Forms::PictureBox());
-			this->menuStrip1->SuspendLayout();
 			this->tabControl1->SuspendLayout();
 			this->tabPageGroceries->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvGroceries))->BeginInit();
@@ -209,66 +200,6 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Stockhealthcare;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvHealthCare))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pbPhotohealthcare))->BeginInit();
 			this->SuspendLayout();
-			// 
-			// menuStrip1
-			// 
-			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->opcionesToolStripMenuItem });
-			this->menuStrip1->Location = System::Drawing::Point(0, 0);
-			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(642, 24);
-			this->menuStrip1->TabIndex = 0;
-			this->menuStrip1->Text = L"menuStrip1";
-			// 
-			// opcionesToolStripMenuItem
-			// 
-			this->opcionesToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
-				this->nuevoToolStripMenuItem,
-					this->editarToolStripMenuItem, this->cerrarToolStripMenuItem
-			});
-			this->opcionesToolStripMenuItem->Name = L"opcionesToolStripMenuItem";
-			this->opcionesToolStripMenuItem->Size = System::Drawing::Size(69, 20);
-			this->opcionesToolStripMenuItem->Text = L"&Opciones";
-			// 
-			// nuevoToolStripMenuItem
-			// 
-			this->nuevoToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
-				this->alimentosToolStripMenuItem,
-					this->saludToolStripMenuItem
-			});
-			this->nuevoToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"nuevoToolStripMenuItem.Image")));
-			this->nuevoToolStripMenuItem->Name = L"nuevoToolStripMenuItem";
-			this->nuevoToolStripMenuItem->Size = System::Drawing::Size(109, 22);
-			this->nuevoToolStripMenuItem->Text = L"Nuevo";
-			// 
-			// alimentosToolStripMenuItem
-			// 
-			this->alimentosToolStripMenuItem->Name = L"alimentosToolStripMenuItem";
-			this->alimentosToolStripMenuItem->Size = System::Drawing::Size(128, 22);
-			this->alimentosToolStripMenuItem->Text = L"Alimentos";
-			this->alimentosToolStripMenuItem->Click += gcnew System::EventHandler(this, &ProductInventoryForm::alimentosToolStripMenuItem_Click);
-			// 
-			// saludToolStripMenuItem
-			// 
-			this->saludToolStripMenuItem->Name = L"saludToolStripMenuItem";
-			this->saludToolStripMenuItem->Size = System::Drawing::Size(128, 22);
-			this->saludToolStripMenuItem->Text = L"Salud";
-			this->saludToolStripMenuItem->Click += gcnew System::EventHandler(this, &ProductInventoryForm::saludToolStripMenuItem_Click);
-			// 
-			// editarToolStripMenuItem
-			// 
-			this->editarToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"editarToolStripMenuItem.Image")));
-			this->editarToolStripMenuItem->Name = L"editarToolStripMenuItem";
-			this->editarToolStripMenuItem->Size = System::Drawing::Size(109, 22);
-			this->editarToolStripMenuItem->Text = L"Editar";
-			this->editarToolStripMenuItem->Click += gcnew System::EventHandler(this, &ProductInventoryForm::editarToolStripMenuItem_Click);
-			// 
-			// cerrarToolStripMenuItem
-			// 
-			this->cerrarToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"cerrarToolStripMenuItem.Image")));
-			this->cerrarToolStripMenuItem->Name = L"cerrarToolStripMenuItem";
-			this->cerrarToolStripMenuItem->Size = System::Drawing::Size(109, 22);
-			this->cerrarToolStripMenuItem->Text = L"Cerrar";
-			this->cerrarToolStripMenuItem->Click += gcnew System::EventHandler(this, &ProductInventoryForm::cerrarToolStripMenuItem_Click);
 			// 
 			// contextMenuStrip1
 			// 
@@ -279,10 +210,10 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Stockhealthcare;
 			// 
 			this->tabControl1->Controls->Add(this->tabPageGroceries);
 			this->tabControl1->Controls->Add(this->tabPageHealthCare);
-			this->tabControl1->Location = System::Drawing::Point(22, 30);
+			this->tabControl1->Location = System::Drawing::Point(3, 12);
 			this->tabControl1->Name = L"tabControl1";
 			this->tabControl1->SelectedIndex = 0;
-			this->tabControl1->Size = System::Drawing::Size(595, 488);
+			this->tabControl1->Size = System::Drawing::Size(567, 458);
 			this->tabControl1->TabIndex = 2;
 			this->tabControl1->Click += gcnew System::EventHandler(this, &ProductInventoryForm::tabControl1_Click);
 			// 
@@ -309,14 +240,14 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Stockhealthcare;
 			this->tabPageGroceries->Location = System::Drawing::Point(4, 22);
 			this->tabPageGroceries->Name = L"tabPageGroceries";
 			this->tabPageGroceries->Padding = System::Windows::Forms::Padding(3);
-			this->tabPageGroceries->Size = System::Drawing::Size(587, 462);
+			this->tabPageGroceries->Size = System::Drawing::Size(559, 432);
 			this->tabPageGroceries->TabIndex = 0;
 			this->tabPageGroceries->Text = L"Alimentos";
 			this->tabPageGroceries->UseVisualStyleBackColor = true;
 			// 
 			// btnUploadPhoto
 			// 
-			this->btnUploadPhoto->Location = System::Drawing::Point(431, 179);
+			this->btnUploadPhoto->Location = System::Drawing::Point(388, 170);
 			this->btnUploadPhoto->Name = L"btnUploadPhoto";
 			this->btnUploadPhoto->Size = System::Drawing::Size(84, 23);
 			this->btnUploadPhoto->TabIndex = 17;
@@ -326,7 +257,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Stockhealthcare;
 			// 
 			// btnDelete
 			// 
-			this->btnDelete->Location = System::Drawing::Point(382, 218);
+			this->btnDelete->Location = System::Drawing::Point(267, 170);
 			this->btnDelete->Name = L"btnDelete";
 			this->btnDelete->Size = System::Drawing::Size(75, 23);
 			this->btnDelete->TabIndex = 16;
@@ -336,7 +267,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Stockhealthcare;
 			// 
 			// btnUpdate
 			// 
-			this->btnUpdate->Location = System::Drawing::Point(256, 218);
+			this->btnUpdate->Location = System::Drawing::Point(141, 170);
 			this->btnUpdate->Name = L"btnUpdate";
 			this->btnUpdate->Size = System::Drawing::Size(75, 23);
 			this->btnUpdate->TabIndex = 15;
@@ -346,7 +277,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Stockhealthcare;
 			// 
 			// btnAdd
 			// 
-			this->btnAdd->Location = System::Drawing::Point(129, 218);
+			this->btnAdd->Location = System::Drawing::Point(14, 170);
 			this->btnAdd->Name = L"btnAdd";
 			this->btnAdd->Size = System::Drawing::Size(75, 23);
 			this->btnAdd->TabIndex = 14;
@@ -361,9 +292,9 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Stockhealthcare;
 				this->Id, this->NameGroceries,
 					this->Brand, this->Price, this->Stock
 			});
-			this->dgvGroceries->Location = System::Drawing::Point(35, 261);
+			this->dgvGroceries->Location = System::Drawing::Point(3, 219);
 			this->dgvGroceries->Name = L"dgvGroceries";
-			this->dgvGroceries->Size = System::Drawing::Size(512, 184);
+			this->dgvGroceries->Size = System::Drawing::Size(481, 137);
 			this->dgvGroceries->TabIndex = 13;
 			this->dgvGroceries->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &ProductInventoryForm::dgvGroceries_CellClick);
 			// 
@@ -396,21 +327,21 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Stockhealthcare;
 			// 
 			// txtStock
 			// 
-			this->txtStock->Location = System::Drawing::Point(288, 153);
+			this->txtStock->Location = System::Drawing::Point(262, 133);
 			this->txtStock->Name = L"txtStock";
 			this->txtStock->Size = System::Drawing::Size(88, 20);
 			this->txtStock->TabIndex = 12;
 			// 
 			// txtPrice
 			// 
-			this->txtPrice->Location = System::Drawing::Point(129, 153);
+			this->txtPrice->Location = System::Drawing::Point(103, 133);
 			this->txtPrice->Name = L"txtPrice";
 			this->txtPrice->Size = System::Drawing::Size(90, 20);
 			this->txtPrice->TabIndex = 11;
 			// 
 			// txtDescription
 			// 
-			this->txtDescription->Location = System::Drawing::Point(129, 104);
+			this->txtDescription->Location = System::Drawing::Point(103, 84);
 			this->txtDescription->Multiline = true;
 			this->txtDescription->Name = L"txtDescription";
 			this->txtDescription->Size = System::Drawing::Size(247, 43);
@@ -418,21 +349,21 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Stockhealthcare;
 			// 
 			// txtBrand
 			// 
-			this->txtBrand->Location = System::Drawing::Point(129, 78);
+			this->txtBrand->Location = System::Drawing::Point(103, 58);
 			this->txtBrand->Name = L"txtBrand";
 			this->txtBrand->Size = System::Drawing::Size(247, 20);
 			this->txtBrand->TabIndex = 9;
 			// 
 			// txtNamegroceries
 			// 
-			this->txtNamegroceries->Location = System::Drawing::Point(129, 52);
+			this->txtNamegroceries->Location = System::Drawing::Point(103, 32);
 			this->txtNamegroceries->Name = L"txtNamegroceries";
 			this->txtNamegroceries->Size = System::Drawing::Size(247, 20);
 			this->txtNamegroceries->TabIndex = 8;
 			// 
 			// txtId
 			// 
-			this->txtId->Location = System::Drawing::Point(129, 26);
+			this->txtId->Location = System::Drawing::Point(103, 6);
 			this->txtId->Name = L"txtId";
 			this->txtId->Size = System::Drawing::Size(100, 20);
 			this->txtId->TabIndex = 7;
@@ -440,7 +371,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Stockhealthcare;
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(234, 156);
+			this->label6->Location = System::Drawing::Point(208, 136);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(48, 13);
 			this->label6->TabIndex = 6;
@@ -449,7 +380,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Stockhealthcare;
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(32, 156);
+			this->label5->Location = System::Drawing::Point(6, 136);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(83, 13);
 			this->label5->TabIndex = 5;
@@ -458,7 +389,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Stockhealthcare;
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(32, 107);
+			this->label4->Location = System::Drawing::Point(6, 87);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(63, 13);
 			this->label4->TabIndex = 4;
@@ -467,7 +398,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Stockhealthcare;
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(32, 81);
+			this->label3->Location = System::Drawing::Point(6, 61);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(37, 13);
 			this->label3->TabIndex = 3;
@@ -476,7 +407,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Stockhealthcare;
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(32, 55);
+			this->label2->Location = System::Drawing::Point(6, 35);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(44, 13);
 			this->label2->TabIndex = 2;
@@ -485,7 +416,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Stockhealthcare;
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(32, 29);
+			this->label1->Location = System::Drawing::Point(6, 9);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(40, 13);
 			this->label1->TabIndex = 1;
@@ -494,9 +425,9 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Stockhealthcare;
 			// pbPhoto
 			// 
 			this->pbPhoto->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
-			this->pbPhoto->Location = System::Drawing::Point(399, 26);
+			this->pbPhoto->Location = System::Drawing::Point(368, 17);
 			this->pbPhoto->Name = L"pbPhoto";
-			this->pbPhoto->Size = System::Drawing::Size(148, 147);
+			this->pbPhoto->Size = System::Drawing::Size(116, 143);
 			this->pbPhoto->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pbPhoto->TabIndex = 0;
 			this->pbPhoto->TabStop = false;
@@ -524,14 +455,14 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Stockhealthcare;
 			this->tabPageHealthCare->Location = System::Drawing::Point(4, 22);
 			this->tabPageHealthCare->Name = L"tabPageHealthCare";
 			this->tabPageHealthCare->Padding = System::Windows::Forms::Padding(3);
-			this->tabPageHealthCare->Size = System::Drawing::Size(587, 462);
+			this->tabPageHealthCare->Size = System::Drawing::Size(559, 432);
 			this->tabPageHealthCare->TabIndex = 1;
 			this->tabPageHealthCare->Text = L"Salud";
 			this->tabPageHealthCare->UseVisualStyleBackColor = true;
 			// 
 			// btnUploadPhotohealthcare
 			// 
-			this->btnUploadPhotohealthcare->Location = System::Drawing::Point(431, 179);
+			this->btnUploadPhotohealthcare->Location = System::Drawing::Point(369, 166);
 			this->btnUploadPhotohealthcare->Name = L"btnUploadPhotohealthcare";
 			this->btnUploadPhotohealthcare->Size = System::Drawing::Size(84, 23);
 			this->btnUploadPhotohealthcare->TabIndex = 35;
@@ -541,7 +472,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Stockhealthcare;
 			// 
 			// btnDeletehealthcare
 			// 
-			this->btnDeletehealthcare->Location = System::Drawing::Point(382, 218);
+			this->btnDeletehealthcare->Location = System::Drawing::Point(255, 179);
 			this->btnDeletehealthcare->Name = L"btnDeletehealthcare";
 			this->btnDeletehealthcare->Size = System::Drawing::Size(75, 23);
 			this->btnDeletehealthcare->TabIndex = 34;
@@ -551,7 +482,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Stockhealthcare;
 			// 
 			// btnUpdatehealthcare
 			// 
-			this->btnUpdatehealthcare->Location = System::Drawing::Point(256, 218);
+			this->btnUpdatehealthcare->Location = System::Drawing::Point(155, 179);
 			this->btnUpdatehealthcare->Name = L"btnUpdatehealthcare";
 			this->btnUpdatehealthcare->Size = System::Drawing::Size(75, 23);
 			this->btnUpdatehealthcare->TabIndex = 33;
@@ -561,7 +492,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Stockhealthcare;
 			// 
 			// btnAddhealthcare
 			// 
-			this->btnAddhealthcare->Location = System::Drawing::Point(129, 218);
+			this->btnAddhealthcare->Location = System::Drawing::Point(64, 179);
 			this->btnAddhealthcare->Name = L"btnAddhealthcare";
 			this->btnAddhealthcare->Size = System::Drawing::Size(75, 23);
 			this->btnAddhealthcare->TabIndex = 32;
@@ -576,9 +507,9 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Stockhealthcare;
 				this->Idhealthcare,
 					this->Namehealthcare, this->Brandhealthcare, this->Pricehealthcare, this->Stockhealthcare
 			});
-			this->dgvHealthCare->Location = System::Drawing::Point(35, 261);
+			this->dgvHealthCare->Location = System::Drawing::Point(3, 217);
 			this->dgvHealthCare->Name = L"dgvHealthCare";
-			this->dgvHealthCare->Size = System::Drawing::Size(512, 184);
+			this->dgvHealthCare->Size = System::Drawing::Size(481, 184);
 			this->dgvHealthCare->TabIndex = 31;
 			this->dgvHealthCare->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &ProductInventoryForm::dgvHealthCare_CellClick);
 			// 
@@ -611,21 +542,21 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Stockhealthcare;
 			// 
 			// txtStockhealthcare
 			// 
-			this->txtStockhealthcare->Location = System::Drawing::Point(288, 153);
+			this->txtStockhealthcare->Location = System::Drawing::Point(262, 137);
 			this->txtStockhealthcare->Name = L"txtStockhealthcare";
 			this->txtStockhealthcare->Size = System::Drawing::Size(88, 20);
 			this->txtStockhealthcare->TabIndex = 30;
 			// 
 			// txtPricehealthcare
 			// 
-			this->txtPricehealthcare->Location = System::Drawing::Point(129, 153);
+			this->txtPricehealthcare->Location = System::Drawing::Point(103, 137);
 			this->txtPricehealthcare->Name = L"txtPricehealthcare";
 			this->txtPricehealthcare->Size = System::Drawing::Size(90, 20);
 			this->txtPricehealthcare->TabIndex = 29;
 			// 
 			// txtDescriptionhealthcare
 			// 
-			this->txtDescriptionhealthcare->Location = System::Drawing::Point(129, 104);
+			this->txtDescriptionhealthcare->Location = System::Drawing::Point(103, 88);
 			this->txtDescriptionhealthcare->Multiline = true;
 			this->txtDescriptionhealthcare->Name = L"txtDescriptionhealthcare";
 			this->txtDescriptionhealthcare->Size = System::Drawing::Size(247, 43);
@@ -633,21 +564,21 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Stockhealthcare;
 			// 
 			// txtBrandhealthcare
 			// 
-			this->txtBrandhealthcare->Location = System::Drawing::Point(129, 78);
+			this->txtBrandhealthcare->Location = System::Drawing::Point(103, 62);
 			this->txtBrandhealthcare->Name = L"txtBrandhealthcare";
 			this->txtBrandhealthcare->Size = System::Drawing::Size(247, 20);
 			this->txtBrandhealthcare->TabIndex = 27;
 			// 
 			// txtNamehealthcare
 			// 
-			this->txtNamehealthcare->Location = System::Drawing::Point(129, 52);
+			this->txtNamehealthcare->Location = System::Drawing::Point(103, 36);
 			this->txtNamehealthcare->Name = L"txtNamehealthcare";
 			this->txtNamehealthcare->Size = System::Drawing::Size(247, 20);
 			this->txtNamehealthcare->TabIndex = 26;
 			// 
 			// txtIdhealthcare
 			// 
-			this->txtIdhealthcare->Location = System::Drawing::Point(129, 26);
+			this->txtIdhealthcare->Location = System::Drawing::Point(103, 10);
 			this->txtIdhealthcare->Name = L"txtIdhealthcare";
 			this->txtIdhealthcare->Size = System::Drawing::Size(100, 20);
 			this->txtIdhealthcare->TabIndex = 25;
@@ -655,7 +586,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Stockhealthcare;
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(234, 156);
+			this->label7->Location = System::Drawing::Point(208, 140);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(48, 13);
 			this->label7->TabIndex = 24;
@@ -664,7 +595,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Stockhealthcare;
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(32, 156);
+			this->label8->Location = System::Drawing::Point(6, 140);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(83, 13);
 			this->label8->TabIndex = 23;
@@ -673,7 +604,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Stockhealthcare;
 			// label9
 			// 
 			this->label9->AutoSize = true;
-			this->label9->Location = System::Drawing::Point(32, 107);
+			this->label9->Location = System::Drawing::Point(6, 91);
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(63, 13);
 			this->label9->TabIndex = 22;
@@ -682,7 +613,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Stockhealthcare;
 			// label10
 			// 
 			this->label10->AutoSize = true;
-			this->label10->Location = System::Drawing::Point(32, 81);
+			this->label10->Location = System::Drawing::Point(6, 65);
 			this->label10->Name = L"label10";
 			this->label10->Size = System::Drawing::Size(37, 13);
 			this->label10->TabIndex = 21;
@@ -691,7 +622,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Stockhealthcare;
 			// label11
 			// 
 			this->label11->AutoSize = true;
-			this->label11->Location = System::Drawing::Point(32, 55);
+			this->label11->Location = System::Drawing::Point(6, 39);
 			this->label11->Name = L"label11";
 			this->label11->Size = System::Drawing::Size(44, 13);
 			this->label11->TabIndex = 20;
@@ -700,7 +631,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Stockhealthcare;
 			// label12
 			// 
 			this->label12->AutoSize = true;
-			this->label12->Location = System::Drawing::Point(32, 29);
+			this->label12->Location = System::Drawing::Point(6, 13);
 			this->label12->Name = L"label12";
 			this->label12->Size = System::Drawing::Size(40, 13);
 			this->label12->TabIndex = 19;
@@ -709,9 +640,9 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Stockhealthcare;
 			// pbPhotohealthcare
 			// 
 			this->pbPhotohealthcare->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
-			this->pbPhotohealthcare->Location = System::Drawing::Point(399, 26);
+			this->pbPhotohealthcare->Location = System::Drawing::Point(369, 13);
 			this->pbPhotohealthcare->Name = L"pbPhotohealthcare";
-			this->pbPhotohealthcare->Size = System::Drawing::Size(148, 147);
+			this->pbPhotohealthcare->Size = System::Drawing::Size(103, 147);
 			this->pbPhotohealthcare->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pbPhotohealthcare->TabIndex = 18;
 			this->pbPhotohealthcare->TabStop = false;
@@ -720,15 +651,12 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Stockhealthcare;
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(642, 530);
+			this->ClientSize = System::Drawing::Size(510, 409);
 			this->Controls->Add(this->tabControl1);
-			this->Controls->Add(this->menuStrip1);
-			this->MainMenuStrip = this->menuStrip1;
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"ProductInventoryForm";
 			this->Text = L"ProductInventoryForm";
 			this->Load += gcnew System::EventHandler(this, &ProductInventoryForm::ProductInventoryForm_Load);
-			this->menuStrip1->ResumeLayout(false);
-			this->menuStrip1->PerformLayout();
 			this->tabControl1->ResumeLayout(false);
 			this->tabPageGroceries->ResumeLayout(false);
 			this->tabPageGroceries->PerformLayout();
@@ -739,7 +667,6 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Stockhealthcare;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvHealthCare))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pbPhotohealthcare))->EndInit();
 			this->ResumeLayout(false);
-			this->PerformLayout();
 
 		}
 #pragma endregion
