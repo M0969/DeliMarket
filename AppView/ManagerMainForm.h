@@ -63,6 +63,7 @@ namespace AppView {
 
 
 	private: Bunifu::Framework::UI::BunifuSeparator^ bunifuSeparator2;
+	private: System::Windows::Forms::DataGridView^ dataGridView1;
 
 	protected:
 
@@ -108,6 +109,7 @@ namespace AppView {
 			this->btnRating = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
 			this->lineSidebar = (gcnew Bunifu::Framework::UI::BunifuSeparator());
 			this->btnInventory = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
+			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->panel2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnReset))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnClose))->BeginInit();
@@ -115,6 +117,7 @@ namespace AppView {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnMin))->BeginInit();
 			this->panel1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// panel2
@@ -389,11 +392,20 @@ namespace AppView {
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->btnInventory->Click += gcnew System::EventHandler(this, &ManagerMainForm::btnInventory_Click);
 			// 
+			// dataGridView1
+			// 
+			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView1->Location = System::Drawing::Point(238, 116);
+			this->dataGridView1->Name = L"dataGridView1";
+			this->dataGridView1->Size = System::Drawing::Size(240, 150);
+			this->dataGridView1->TabIndex = 4;
+			// 
 			// ManagerMainForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(675, 475);
+			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->panel2);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
@@ -408,6 +420,7 @@ namespace AppView {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnMin))->EndInit();
 			this->panel1->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 
 		}
