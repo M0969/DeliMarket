@@ -3,16 +3,16 @@
   <ListDB>
     <Manager>
       <Status>0</Status>
-      <Address>Cercado de Lima</Address>
+      <Address>Pamplona</Address>
       <Category>Manager</Category>
-      <Email>a20172892@pucp.edu.pe</Email>
-      <PhoneNumber>946233132</PhoneNumber>
-      <DocumentNumber>75936790</DocumentNumber>
-      <Gender>70</Gender>
-      <LastName>Taipe</LastName>
-      <FirstName>Elizabeth</FirstName>
-      <Password>elikuroko</Password>
-      <Username>Elikyu</Username>
+      <Email>fls@gmail.com</Email>
+      <PhoneNumber>963852741</PhoneNumber>
+      <DocumentNumber>1236996</DocumentNumber>
+      <Gender>77</Gender>
+      <LastName>Love</LastName>
+      <FirstName>Faraon</FirstName>
+      <Password>1234</Password>
+      <Username>Manager1</Username>
       <Id>0</Id>
       <VerificationCode>0</VerificationCode>
       <Salary>0</Salary>
