@@ -325,7 +325,7 @@ namespace AppView {
 			this->Controls->Add(this->dgvCarrito);
 			this->Controls->Add(this->label6);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			//this->Name = L"CarritoCustomerForm";
+//			this->Name = L"CarritoCustomerForm";
 			this->Text = L"CarritoCustomerForm";
 			this->Load += gcnew System::EventHandler(this, &CarritoCustomerForm::CarritoCustomerForm_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvCarrito))->EndInit();
@@ -368,7 +368,7 @@ public: void RefreshDGVCarrito() {
 						   "" + productList[i]->Price
 				   });
 				 double total = 0;
-				   for(int i = 0; i < dgvCarrito->RowCount - 1; i++)
+				   for(int i = 0; i < dgvCarrito->RowCount; i++)
 					total += Double::Parse(dgvCarrito->Rows[i]->Cells[3]->Value->ToString());
 				    txtTotalSale->Text = "" + total;
 			   }
@@ -385,7 +385,7 @@ private: System::Void dgvCarrito_CellValueChanged(System::Object^ sender, System
 			dgvCarrito->Rows[e->RowIndex]->Cells[3]->Value =
 				Int32::Parse(dgvCarrito->CurrentCell->Value->ToString())*Double::Parse(dgvCarrito->Rows[e->RowIndex]->Cells[2]->Value->ToString());
 			double total = 0;
-			for (int i = 0; i < dgvCarrito->RowCount - 1; i++)
+			for (int i = 0; i < dgvCarrito->RowCount; i++)
 				total += Double::Parse(dgvCarrito->Rows[i]->Cells[3]->Value->ToString());
 			txtTotalSale->Text = "" + total;
 		}
