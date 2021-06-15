@@ -373,7 +373,7 @@ namespace AppView {
 			this->txtCodeAccess->ForeColor = System::Drawing::Color::Gainsboro;
 			this->txtCodeAccess->HintForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->txtCodeAccess->HintText = L"";
+			this->txtCodeAccess->HintText = L"Cod. Acceso";
 			this->txtCodeAccess->isPassword = false;
 			this->txtCodeAccess->LineFocusedColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(32)),
 				static_cast<System::Int32>(static_cast<System::Byte>(199)), static_cast<System::Int32>(static_cast<System::Byte>(140)));
@@ -385,7 +385,6 @@ namespace AppView {
 			this->txtCodeAccess->Name = L"txtCodeAccess";
 			this->txtCodeAccess->Size = System::Drawing::Size(97, 30);
 			this->txtCodeAccess->TabIndex = 19;
-			this->txtCodeAccess->Text = L"Cod. Acceso";
 			this->txtCodeAccess->TextAlign = System::Windows::Forms::HorizontalAlignment::Left;
 			this->txtCodeAccess->Visible = false;
 			// 
@@ -397,7 +396,7 @@ namespace AppView {
 			this->txtCategorychck->ForeColor = System::Drawing::Color::Gainsboro;
 			this->txtCategorychck->HintForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->txtCategorychck->HintText = L"";
+			this->txtCategorychck->HintText = L"Categoria";
 			this->txtCategorychck->isPassword = false;
 			this->txtCategorychck->LineFocusedColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(32)),
 				static_cast<System::Int32>(static_cast<System::Byte>(199)), static_cast<System::Int32>(static_cast<System::Byte>(140)));
@@ -409,7 +408,6 @@ namespace AppView {
 			this->txtCategorychck->Name = L"txtCategorychck";
 			this->txtCategorychck->Size = System::Drawing::Size(97, 30);
 			this->txtCategorychck->TabIndex = 18;
-			this->txtCategorychck->Text = L"Categoria";
 			this->txtCategorychck->TextAlign = System::Windows::Forms::HorizontalAlignment::Left;
 			// 
 			// chckCatR
@@ -476,7 +474,7 @@ namespace AppView {
 			this->txtGenderchk->ForeColor = System::Drawing::Color::Gainsboro;
 			this->txtGenderchk->HintForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->txtGenderchk->HintText = L"";
+			this->txtGenderchk->HintText = L"Género";
 			this->txtGenderchk->isPassword = false;
 			this->txtGenderchk->LineFocusedColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(32)),
 				static_cast<System::Int32>(static_cast<System::Byte>(199)), static_cast<System::Int32>(static_cast<System::Byte>(140)));
@@ -488,7 +486,6 @@ namespace AppView {
 			this->txtGenderchk->Name = L"txtGenderchk";
 			this->txtGenderchk->Size = System::Drawing::Size(55, 30);
 			this->txtGenderchk->TabIndex = 13;
-			this->txtGenderchk->Text = L"Género";
 			this->txtGenderchk->TextAlign = System::Windows::Forms::HorizontalAlignment::Left;
 			// 
 			// btnExitchk
@@ -509,8 +506,8 @@ namespace AppView {
 			this->txtPasswordchck->ForeColor = System::Drawing::Color::Gainsboro;
 			this->txtPasswordchck->HintForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->txtPasswordchck->HintText = L"";
-			this->txtPasswordchck->isPassword = true;
+			this->txtPasswordchck->HintText = L"Contraseña";
+			this->txtPasswordchck->isPassword = false;
 			this->txtPasswordchck->LineFocusedColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(32)),
 				static_cast<System::Int32>(static_cast<System::Byte>(199)), static_cast<System::Int32>(static_cast<System::Byte>(140)));
 			this->txtPasswordchck->LineIdleColor = System::Drawing::Color::Gray;
@@ -521,8 +518,9 @@ namespace AppView {
 			this->txtPasswordchck->Name = L"txtPasswordchck";
 			this->txtPasswordchck->Size = System::Drawing::Size(149, 30);
 			this->txtPasswordchck->TabIndex = 11;
-			this->txtPasswordchck->Text = L"Contraseña";
 			this->txtPasswordchck->TextAlign = System::Windows::Forms::HorizontalAlignment::Left;
+			this->txtPasswordchck->OnValueChanged += gcnew System::EventHandler(this, &Login::txtPasswordchck_OnValueChanged);
+			this->txtPasswordchck->Leave += gcnew System::EventHandler(this, &Login::txtPasswordchck_Leave);
 			// 
 			// checkBox1
 			// 
@@ -545,7 +543,7 @@ namespace AppView {
 			this->txtEmailchck->ForeColor = System::Drawing::Color::Gainsboro;
 			this->txtEmailchck->HintForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->txtEmailchck->HintText = L"";
+			this->txtEmailchck->HintText = L"E-mail";
 			this->txtEmailchck->isPassword = false;
 			this->txtEmailchck->LineFocusedColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(32)),
 				static_cast<System::Int32>(static_cast<System::Byte>(199)), static_cast<System::Int32>(static_cast<System::Byte>(140)));
@@ -557,7 +555,6 @@ namespace AppView {
 			this->txtEmailchck->Name = L"txtEmailchck";
 			this->txtEmailchck->Size = System::Drawing::Size(149, 30);
 			this->txtEmailchck->TabIndex = 10;
-			this->txtEmailchck->Text = L"E-mail";
 			this->txtEmailchck->TextAlign = System::Windows::Forms::HorizontalAlignment::Left;
 			// 
 			// txtAddresschck
@@ -567,7 +564,7 @@ namespace AppView {
 			this->txtAddresschck->ForeColor = System::Drawing::Color::Gainsboro;
 			this->txtAddresschck->HintForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->txtAddresschck->HintText = L"";
+			this->txtAddresschck->HintText = L"Direccion";
 			this->txtAddresschck->isPassword = false;
 			this->txtAddresschck->LineFocusedColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(32)),
 				static_cast<System::Int32>(static_cast<System::Byte>(199)), static_cast<System::Int32>(static_cast<System::Byte>(140)));
@@ -579,7 +576,6 @@ namespace AppView {
 			this->txtAddresschck->Name = L"txtAddresschck";
 			this->txtAddresschck->Size = System::Drawing::Size(149, 30);
 			this->txtAddresschck->TabIndex = 9;
-			this->txtAddresschck->Text = L"Direccion";
 			this->txtAddresschck->TextAlign = System::Windows::Forms::HorizontalAlignment::Left;
 			// 
 			// txtPhoneNumberchck
@@ -589,7 +585,7 @@ namespace AppView {
 			this->txtPhoneNumberchck->ForeColor = System::Drawing::Color::Gainsboro;
 			this->txtPhoneNumberchck->HintForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->txtPhoneNumberchck->HintText = L"";
+			this->txtPhoneNumberchck->HintText = L"Telefono";
 			this->txtPhoneNumberchck->isPassword = false;
 			this->txtPhoneNumberchck->LineFocusedColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(32)),
 				static_cast<System::Int32>(static_cast<System::Byte>(199)), static_cast<System::Int32>(static_cast<System::Byte>(140)));
@@ -601,7 +597,6 @@ namespace AppView {
 			this->txtPhoneNumberchck->Name = L"txtPhoneNumberchck";
 			this->txtPhoneNumberchck->Size = System::Drawing::Size(149, 30);
 			this->txtPhoneNumberchck->TabIndex = 8;
-			this->txtPhoneNumberchck->Text = L"Telefono";
 			this->txtPhoneNumberchck->TextAlign = System::Windows::Forms::HorizontalAlignment::Left;
 			// 
 			// txtDnichck
@@ -611,7 +606,7 @@ namespace AppView {
 			this->txtDnichck->ForeColor = System::Drawing::Color::Gainsboro;
 			this->txtDnichck->HintForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->txtDnichck->HintText = L"";
+			this->txtDnichck->HintText = L"DNI";
 			this->txtDnichck->isPassword = false;
 			this->txtDnichck->LineFocusedColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(32)),
 				static_cast<System::Int32>(static_cast<System::Byte>(199)), static_cast<System::Int32>(static_cast<System::Byte>(140)));
@@ -623,7 +618,6 @@ namespace AppView {
 			this->txtDnichck->Name = L"txtDnichck";
 			this->txtDnichck->Size = System::Drawing::Size(149, 30);
 			this->txtDnichck->TabIndex = 7;
-			this->txtDnichck->Text = L"DNI";
 			this->txtDnichck->TextAlign = System::Windows::Forms::HorizontalAlignment::Left;
 			// 
 			// txtLastNamechck
@@ -633,7 +627,7 @@ namespace AppView {
 			this->txtLastNamechck->ForeColor = System::Drawing::Color::Gainsboro;
 			this->txtLastNamechck->HintForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->txtLastNamechck->HintText = L"";
+			this->txtLastNamechck->HintText = L"Apellido";
 			this->txtLastNamechck->isPassword = false;
 			this->txtLastNamechck->LineFocusedColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(32)),
 				static_cast<System::Int32>(static_cast<System::Byte>(199)), static_cast<System::Int32>(static_cast<System::Byte>(140)));
@@ -645,7 +639,6 @@ namespace AppView {
 			this->txtLastNamechck->Name = L"txtLastNamechck";
 			this->txtLastNamechck->Size = System::Drawing::Size(149, 30);
 			this->txtLastNamechck->TabIndex = 6;
-			this->txtLastNamechck->Text = L"Apellido";
 			this->txtLastNamechck->TextAlign = System::Windows::Forms::HorizontalAlignment::Left;
 			// 
 			// txtFirstNamechck
@@ -655,7 +648,7 @@ namespace AppView {
 			this->txtFirstNamechck->ForeColor = System::Drawing::Color::Gainsboro;
 			this->txtFirstNamechck->HintForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->txtFirstNamechck->HintText = L"";
+			this->txtFirstNamechck->HintText = L"Nombre";
 			this->txtFirstNamechck->isPassword = false;
 			this->txtFirstNamechck->LineFocusedColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(32)),
 				static_cast<System::Int32>(static_cast<System::Byte>(199)), static_cast<System::Int32>(static_cast<System::Byte>(140)));
@@ -667,7 +660,6 @@ namespace AppView {
 			this->txtFirstNamechck->Name = L"txtFirstNamechck";
 			this->txtFirstNamechck->Size = System::Drawing::Size(149, 30);
 			this->txtFirstNamechck->TabIndex = 5;
-			this->txtFirstNamechck->Text = L"Nombre";
 			this->txtFirstNamechck->TextAlign = System::Windows::Forms::HorizontalAlignment::Left;
 			// 
 			// btnRegister
@@ -716,7 +708,7 @@ namespace AppView {
 			this->txtUserchck->ForeColor = System::Drawing::Color::Gainsboro;
 			this->txtUserchck->HintForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->txtUserchck->HintText = L"";
+			this->txtUserchck->HintText = L"Usuario";
 			this->txtUserchck->isPassword = false;
 			this->txtUserchck->LineFocusedColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(32)),
 				static_cast<System::Int32>(static_cast<System::Byte>(199)), static_cast<System::Int32>(static_cast<System::Byte>(140)));
@@ -728,7 +720,6 @@ namespace AppView {
 			this->txtUserchck->Name = L"txtUserchck";
 			this->txtUserchck->Size = System::Drawing::Size(149, 30);
 			this->txtUserchck->TabIndex = 0;
-			this->txtUserchck->Text = L"Usuario";
 			this->txtUserchck->TextAlign = System::Windows::Forms::HorizontalAlignment::Left;
 			// 
 			// Login
@@ -1038,5 +1029,16 @@ private: System::Void txtPassword_Leave(System::Object^ sender, System::EventArg
 private: System::Void txtPassword_OnValueChanged(System::Object^ sender, System::EventArgs^ e) {
 	txtPassword->isPassword = true;
 }
+
+private: System::Void txtPasswordchck_Leave(System::Object^ sender, System::EventArgs^ e) {
+	if (txtPasswordchck->Text == "") {
+		txtPasswordchck->isPassword = false;
+	}
+}
+
+private: System::Void txtPasswordchck_OnValueChanged(System::Object^ sender, System::EventArgs^ e) {
+	txtPasswordchck->isPassword = true;
+}
+
 };
 }
