@@ -133,6 +133,7 @@ namespace AppView {
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(CustomerMainForm::typeid));
 			this->Top = (gcnew System::Windows::Forms::Panel());
+			this->textUserName2 = (gcnew System::Windows::Forms::TextBox());
 			this->btnReset = (gcnew System::Windows::Forms::PictureBox());
 			this->btnClose = (gcnew System::Windows::Forms::PictureBox());
 			this->Title = (gcnew System::Windows::Forms::Label());
@@ -150,7 +151,6 @@ namespace AppView {
 			this->lineSideBar3 = (gcnew Bunifu::Framework::UI::BunifuSeparator());
 			this->lineSidebar2 = (gcnew Bunifu::Framework::UI::BunifuSeparator());
 			this->Wrapper = (gcnew System::Windows::Forms::Panel());
-			this->textUserName2 = (gcnew System::Windows::Forms::TextBox());
 			this->Top->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnReset))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnClose))->BeginInit();
@@ -164,7 +164,6 @@ namespace AppView {
 			// 
 			this->Top->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)), static_cast<System::Int32>(static_cast<System::Byte>(31)),
 				static_cast<System::Int32>(static_cast<System::Byte>(33)));
-			this->Top->Controls->Add(this->textUserName2);
 			this->Top->Controls->Add(this->btnReset);
 			this->Top->Controls->Add(this->btnClose);
 			this->Top->Controls->Add(this->Title);
@@ -177,6 +176,14 @@ namespace AppView {
 			this->Top->Name = L"Top";
 			this->Top->Size = System::Drawing::Size(675, 66);
 			this->Top->TabIndex = 0;
+			// 
+			// textUserName2
+			// 
+			this->textUserName2->Location = System::Drawing::Point(10, 15);
+			this->textUserName2->Name = L"textUserName2";
+			this->textUserName2->ReadOnly = true;
+			this->textUserName2->Size = System::Drawing::Size(145, 20);
+			this->textUserName2->TabIndex = 4;
 			// 
 			// btnReset
 			// 
@@ -254,6 +261,7 @@ namespace AppView {
 			// 
 			this->SideBarWrapper->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)), static_cast<System::Int32>(static_cast<System::Byte>(31)),
 				static_cast<System::Int32>(static_cast<System::Byte>(33)));
+			this->SideBarWrapper->Controls->Add(this->textUserName2);
 			this->SideBarWrapper->Controls->Add(this->bunifuSeparator1);
 			this->SideBarWrapper->Controls->Add(this->btnSignoff);
 			this->SideBarWrapper->Controls->Add(this->btnMyshopping);
@@ -498,14 +506,6 @@ namespace AppView {
 			this->Wrapper->Size = System::Drawing::Size(510, 409);
 			this->Wrapper->TabIndex = 2;
 			// 
-			// textUserName2
-			// 
-			this->textUserName2->Location = System::Drawing::Point(270, 30);
-			this->textUserName2->Name = L"textUserName2";
-			this->textUserName2->ReadOnly = true;
-			this->textUserName2->Size = System::Drawing::Size(145, 20);
-			this->textUserName2->TabIndex = 4;
-			// 
 			// CustomerMainForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -527,6 +527,7 @@ namespace AppView {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnMin))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnMax))->EndInit();
 			this->SideBarWrapper->ResumeLayout(false);
+			this->SideBarWrapper->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
