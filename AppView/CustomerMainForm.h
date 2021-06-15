@@ -28,6 +28,10 @@ namespace AppView {
 	public:
 		static User^ user;
 	private: System::Windows::Forms::Panel^ Wrapper;
+	public: System::Windows::Forms::TextBox^ textUserName2;
+	private:
+
+
 
 
 
@@ -146,6 +150,7 @@ namespace AppView {
 			this->lineSideBar3 = (gcnew Bunifu::Framework::UI::BunifuSeparator());
 			this->lineSidebar2 = (gcnew Bunifu::Framework::UI::BunifuSeparator());
 			this->Wrapper = (gcnew System::Windows::Forms::Panel());
+			this->textUserName2 = (gcnew System::Windows::Forms::TextBox());
 			this->Top->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnReset))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnClose))->BeginInit();
@@ -159,6 +164,7 @@ namespace AppView {
 			// 
 			this->Top->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)), static_cast<System::Int32>(static_cast<System::Byte>(31)),
 				static_cast<System::Int32>(static_cast<System::Byte>(33)));
+			this->Top->Controls->Add(this->textUserName2);
 			this->Top->Controls->Add(this->btnReset);
 			this->Top->Controls->Add(this->btnClose);
 			this->Top->Controls->Add(this->Title);
@@ -491,6 +497,14 @@ namespace AppView {
 			this->Wrapper->Name = L"Wrapper";
 			this->Wrapper->Size = System::Drawing::Size(510, 409);
 			this->Wrapper->TabIndex = 2;
+			// 
+			// textUserName2
+			// 
+			this->textUserName2->Location = System::Drawing::Point(270, 30);
+			this->textUserName2->Name = L"textUserName2";
+			this->textUserName2->ReadOnly = true;
+			this->textUserName2->Size = System::Drawing::Size(145, 20);
+			this->textUserName2->TabIndex = 4;
 			// 
 			// CustomerMainForm
 			// 

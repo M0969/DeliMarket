@@ -29,6 +29,7 @@ namespace AppController {
 		static void DeleteUser(int userId);
 		static User^ ValidateUser(String^ username, String^ password);
 		static User^ QueryUserbyId(int userId);
+		static int ReturnIDbyUserName(String^ username);
 		static int QueryLastUserId();
 		static List<User^>^ QueryAllUsers();
 		static bool ConfirmUser(User^);

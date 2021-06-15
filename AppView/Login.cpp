@@ -2,6 +2,11 @@
 #include "CustomerMainForm.h"
 #include "DeliveryForm.h"
 #include "ManagerMainForm.h"
+//#include <sstream>
+//#include <iostream>
+
+
+using namespace AppController;
 
 System::Void AppView::Login::btnLogin_Click(System::Object^ sender, System::EventArgs^ e) {
 	User^ user = AppController::UserManager::ValidateUser(txtUserName->Text, txtPassword->Text);
@@ -12,6 +17,12 @@ System::Void AppView::Login::btnLogin_Click(System::Object^ sender, System::Even
 			CustomerMainForm::user = user;
 			CustomerMainForm^ form = gcnew CustomerMainForm();
 			form->Show();
+			//user->Id = UserManager::ReturnIDbyUserName(txtUserName->Text);
+			//stringstream ss;
+			//ss << user->Id;
+			//string newString = ss.str();
+			form->textUserName2->Text = user->Username;
+			
 		}
 		else if (user->Category->Equals("Repartidor")) {
 			MessageBox::Show("Bienvenido " + user->FirstName + " " + user->LastName + " : " + user->Category);

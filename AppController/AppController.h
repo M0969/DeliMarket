@@ -59,6 +59,7 @@ namespace AppController {
 				static bool ConfirmUser(User^);
 				static List<User^>^ QueryAllUsers();
 				static User^ QueryUserbyId(int userId);
+				static int ReturnIDbyUserName(String^ username);
 				static int QueryLastUserId();
 
 				//DeliveryMan

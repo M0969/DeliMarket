@@ -57,8 +57,11 @@ namespace AppView {
 	protected:
 
 	private: Bunifu::Framework::UI::BunifuMaterialTextbox^ txtPassword;
-
 	private: Bunifu::Framework::UI::BunifuMaterialTextbox^ txtUserName;
+
+	private:
+
+
 	private: Bunifu::Framework::UI::BunifuFlatButton^ btnLogin;
 
 	private: System::Windows::Forms::PictureBox^ pictureBox1;

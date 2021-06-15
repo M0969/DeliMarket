@@ -199,6 +199,11 @@ User^ AppController::UserManager::QueryUserbyId(int userId)
 	return DBController::QueryUserbyId(userId);
 }
 
+int AppController::UserManager::ReturnIDbyUserName(String^ username)
+{
+	return DBController::ReturnIDbyUserName(username);
+}
+
 
 int AppController::UserManager::QueryLastUserId()
 {

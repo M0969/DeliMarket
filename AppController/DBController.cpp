@@ -261,6 +261,14 @@ User^ AppController::DBController::QueryUserbyId(int userId)
     return nullptr;
 }
 
+int AppController::DBController::ReturnIDbyUserName(String^ username)
+{
+    userDB->LoadUsers();
+    for (int i = 0; i < userDB->ListDB->Count; i++)
+        if (userDB->ListDB[i]->Username == username)
+            return userDB->ListDB[i]->Id;
+}
+
 int AppController::DBController::QueryLastUserId()
 {
     
