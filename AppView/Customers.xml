@@ -3,16 +3,16 @@
   <ListDB>
     <Customer>
       <Status>0</Status>
-      <Address>Lima</Address>
+      <Address>Lima Sur</Address>
       <Category>Cliente</Category>
-      <Email>asdasdasdsf</Email>
-      <PhoneNumber>9849516</PhoneNumber>
-      <DocumentNumber>6684516</DocumentNumber>
+      <Email>matxezel@hotmail.com</Email>
+      <PhoneNumber>7806322</PhoneNumber>
+      <DocumentNumber>75936785</DocumentNumber>
       <Gender>77</Gender>
-      <LastName>Apellido</LastName>
-      <FirstName>Nombre</FirstName>
-      <Password>1234</Password>
-      <Username>Customer</Username>
+      <LastName>Taipe</LastName>
+      <FirstName>Metzelder</FirstName>
+      <Password>met123</Password>
+      <Username>Met</Username>
       <Id>1</Id>
       <CustomerPoints>0</CustomerPoints>
     </Customer>
