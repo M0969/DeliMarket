@@ -451,6 +451,7 @@ namespace AppView {
 				txtSolesQuantity->Text = "" + sq->SolesQuantity;
 				txtPointsEarned->Text = "" + sq->PointsEarned;
 			}
+			//Hola
 		}
 	};
 }
