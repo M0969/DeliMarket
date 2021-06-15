@@ -811,7 +811,7 @@ private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArg
 				MessageBox::Show("Debe introducir un email");
 				return;
 			}
-			if (txtPassword->Text->Trim() == "") {
+			if (txtPasswordchck->Text->Trim() == "") {
 				MessageBox::Show("Debe introducir una contraseña");
 				return;
 			}

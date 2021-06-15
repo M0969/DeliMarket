@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<DeliveryManDB xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<DeliveryManDB xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <ListDB>
     <DeliveryMan>
       <Status>0</Status>
-      <Address>LAS ROSITAS</Address>
+      <Address>Cercado de Lima</Address>
       <Category>Repartidor</Category>
-      <Email>belen@gmail.com</Email>
-      <PhoneNumber>984653</PhoneNumber>
-      <DocumentNumber>DNI</DocumentNumber>
-      <Gender>70</Gender>
-      <LastName>Zavaleta</LastName>
-      <FirstName>Sofia</FirstName>
-      <Password>fofi</Password>
-      <Username>f69</Username>
+      <Email>aaron@hotmail.com</Email>
+      <PhoneNumber>3300543</PhoneNumber>
+      <DocumentNumber>85936790</DocumentNumber>
+      <Gender>77</Gender>
+      <LastName>Taipe</LastName>
+      <FirstName>Aarón</FirstName>
+      <Password>aaron123</Password>
+      <Username>Yorca</Username>
       <Id>1</Id>
       <VerificationCode>123456</VerificationCode>
       <Salary>0</Salary>

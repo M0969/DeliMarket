@@ -211,6 +211,7 @@ namespace AppView {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(494, 370);
 			this->Controls->Add(this->tabControl1);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"StatisticsForm";
 			this->Text = L"StatisticsForm";
 			this->Load += gcnew System::EventHandler(this, &StatisticsForm::StatisticsForm_Load);
@@ -231,19 +232,19 @@ namespace AppView {
 				List<HealthCare^>^ healthCareList = AppManager::QueryAllHealthCare();
 
 				if (groceriesList != nullptr) {
-					for (int i = 0; i < groceriesList->Count; i++) {
-						barchartSoldProducts->Series["Cantidad vendida"]->Points->Add(groceriesList[i]->QuantitySold);
-						barchartSoldProducts->Series["Cantidad vendida"]->Points[i]->AxisLabel = groceriesList[i]->Name;
-						barchartSoldProducts->Series["Cantidad vendida"]->Points[i]->Label = "" + groceriesList[i]->QuantitySold;
-					}
+					//for (int i = 0; i < groceriesList->Count; i++) {
+					//	barchartSoldProducts->Series["Cantidad vendida"]->Points->Add(groceriesList[i]->QuantitySold);
+					//	barchartSoldProducts->Series["Cantidad vendida"]->Points[i]->AxisLabel = groceriesList[i]->Name;
+					//	barchartSoldProducts->Series["Cantidad vendida"]->Points[i]->Label = "" + groceriesList[i]->QuantitySold;
+					//}
 				}
 
 				if (healthCareList != nullptr) {
-					for (int i = 0; i < healthCareList->Count; i++) {
-						barchartSoldProducts->Series["Cantidad vendida"]->Points->Add(healthCareList[i]->QuantitySold);
-						barchartSoldProducts->Series["Cantidad vendida"]->Points[i]->AxisLabel = healthCareList[i]->Name;
-						barchartSoldProducts->Series["Cantidad vendida"]->Points[i]->Label = "" + healthCareList[i]->QuantitySold;
-					}
+					//for (int i = 0; i < healthCareList->Count; i++) {
+					//	barchartSoldProducts->Series["Cantidad vendida"]->Points->Add(healthCareList[i]->QuantitySold);
+					//	barchartSoldProducts->Series["Cantidad vendida"]->Points[i]->AxisLabel = healthCareList[i]->Name;
+					//	barchartSoldProducts->Series["Cantidad vendida"]->Points[i]->Label = "" + healthCareList[i]->QuantitySold;
+					//}
 				}
 			}
 			if (tabIncome->Visible) {
