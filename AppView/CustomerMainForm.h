@@ -628,9 +628,15 @@ namespace AppView {
 
 	private: System::Void btnSignoff_Click(System::Object^ sender, System::EventArgs^ e) {
 	//Programar Cerrar Sesion
-		Login^ login = gcnew Login();
-		login->Show();
-		this->Hide();
+		if (MessageBox::Show(
+			"¿Está seguro(a) de cerrar sesión?",
+			"Confirmación", MessageBoxButtons::YesNo,
+			MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes)
+		{
+			Login^ login = gcnew Login();
+			login->Show();
+			this->Hide();
+		}
 	}
 };
 }
