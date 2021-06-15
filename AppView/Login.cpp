@@ -33,15 +33,6 @@ System::Void AppView::Login::btnLogin_Click(System::Object^ sender, System::Even
 	}
 }
 
-		MessageBox::Show("Bienvenido " + user->FirstName + " " + user->LastName + " : "+ user->Category);
-		this->Hide();
-		CustomerMainForm::user = user;
-	}
-	else {
-		MessageBox::Show("Usuario y/o contraseña incorrecto(s)");
-	}
-}
-
 System::Void AppView::Login::txtPassword_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e)
 {
 	if (e->KeyData == Keys::Enter)
