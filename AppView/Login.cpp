@@ -21,7 +21,9 @@ System::Void AppView::Login::btnLogin_Click(System::Object^ sender, System::Even
 			//stringstream ss;
 			//ss << user->Id;
 			//string newString = ss.str();
-			form->textUserName2->Text = user->Username;
+			form->txtNameC->Text = user->FirstName + " " + user->LastName;
+			form->textUserNameC->Text = user->Username;
+			
 			
 		}
 		else if (user->Category->Equals("Repartidor")) {

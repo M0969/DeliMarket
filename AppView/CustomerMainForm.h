@@ -3,6 +3,7 @@
 #include "Login.h"
 #include "CarritoCustomerForm.h"
 #include "ProductsCustomerForm.h"
+#include "BonusPointsForm.h"
 
 #include "StatisticsForm.h"
 
@@ -28,7 +29,14 @@ namespace AppView {
 	public:
 		static User^ user;
 	private: System::Windows::Forms::Panel^ Wrapper;
-	public: System::Windows::Forms::TextBox^ textUserName2;
+	public: System::Windows::Forms::TextBox^ textUserNameC;
+	public: System::Windows::Forms::TextBox^ txtNameC;
+
+	public:
+	private:
+
+	public:
+
 	private:
 
 
@@ -133,7 +141,7 @@ namespace AppView {
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(CustomerMainForm::typeid));
 			this->Top = (gcnew System::Windows::Forms::Panel());
-			this->textUserName2 = (gcnew System::Windows::Forms::TextBox());
+			this->textUserNameC = (gcnew System::Windows::Forms::TextBox());
 			this->btnReset = (gcnew System::Windows::Forms::PictureBox());
 			this->btnClose = (gcnew System::Windows::Forms::PictureBox());
 			this->Title = (gcnew System::Windows::Forms::Label());
@@ -151,6 +159,7 @@ namespace AppView {
 			this->lineSideBar3 = (gcnew Bunifu::Framework::UI::BunifuSeparator());
 			this->lineSidebar2 = (gcnew Bunifu::Framework::UI::BunifuSeparator());
 			this->Wrapper = (gcnew System::Windows::Forms::Panel());
+			this->txtNameC = (gcnew System::Windows::Forms::TextBox());
 			this->Top->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnReset))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnClose))->BeginInit();
@@ -177,13 +186,16 @@ namespace AppView {
 			this->Top->Size = System::Drawing::Size(675, 66);
 			this->Top->TabIndex = 0;
 			// 
-			// textUserName2
+			// textUserNameC
 			// 
-			this->textUserName2->Location = System::Drawing::Point(10, 15);
-			this->textUserName2->Name = L"textUserName2";
-			this->textUserName2->ReadOnly = true;
-			this->textUserName2->Size = System::Drawing::Size(145, 20);
-			this->textUserName2->TabIndex = 4;
+			this->textUserNameC->BackColor = System::Drawing::SystemColors::AppWorkspace;
+			this->textUserNameC->ForeColor = System::Drawing::SystemColors::InfoText;
+			this->textUserNameC->Location = System::Drawing::Point(24, 15);
+			this->textUserNameC->Name = L"textUserNameC";
+			this->textUserNameC->ReadOnly = true;
+			this->textUserNameC->Size = System::Drawing::Size(116, 20);
+			this->textUserNameC->TabIndex = 4;
+			this->textUserNameC->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
 			// btnReset
 			// 
@@ -261,7 +273,8 @@ namespace AppView {
 			// 
 			this->SideBarWrapper->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)), static_cast<System::Int32>(static_cast<System::Byte>(31)),
 				static_cast<System::Int32>(static_cast<System::Byte>(33)));
-			this->SideBarWrapper->Controls->Add(this->textUserName2);
+			this->SideBarWrapper->Controls->Add(this->textUserNameC);
+			this->SideBarWrapper->Controls->Add(this->txtNameC);
 			this->SideBarWrapper->Controls->Add(this->bunifuSeparator1);
 			this->SideBarWrapper->Controls->Add(this->btnSignoff);
 			this->SideBarWrapper->Controls->Add(this->btnMyshopping);
@@ -286,7 +299,7 @@ namespace AppView {
 			this->bunifuSeparator1->LineColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)),
 				static_cast<System::Int32>(static_cast<System::Byte>(105)), static_cast<System::Int32>(static_cast<System::Byte>(105)), static_cast<System::Int32>(static_cast<System::Byte>(105)));
 			this->bunifuSeparator1->LineThickness = 2;
-			this->bunifuSeparator1->Location = System::Drawing::Point(10, 301);
+			this->bunifuSeparator1->Location = System::Drawing::Point(7, 320);
 			this->bunifuSeparator1->Name = L"bunifuSeparator1";
 			this->bunifuSeparator1->Size = System::Drawing::Size(152, 36);
 			this->bunifuSeparator1->TabIndex = 8;
@@ -299,9 +312,9 @@ namespace AppView {
 			this->btnSignoff->FlatAppearance->BorderSize = 0;
 			this->btnSignoff->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btnSignoff->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->btnSignoff->Location = System::Drawing::Point(0, 329);
+			this->btnSignoff->Location = System::Drawing::Point(9, 338);
 			this->btnSignoff->Name = L"btnSignoff";
-			this->btnSignoff->Size = System::Drawing::Size(182, 68);
+			this->btnSignoff->Size = System::Drawing::Size(150, 68);
 			this->btnSignoff->TabIndex = 7;
 			this->btnSignoff->Text = L"CERRAR SESIÓN";
 			this->btnSignoff->UseVisualStyleBackColor = true;
@@ -328,7 +341,7 @@ namespace AppView {
 			this->btnMyshopping->IconVisible = true;
 			this->btnMyshopping->IconZoom = 90;
 			this->btnMyshopping->IsTab = false;
-			this->btnMyshopping->Location = System::Drawing::Point(12, 255);
+			this->btnMyshopping->Location = System::Drawing::Point(7, 274);
 			this->btnMyshopping->Name = L"btnMyshopping";
 			this->btnMyshopping->Normalcolor = System::Drawing::Color::Transparent;
 			this->btnMyshopping->OnHovercolor = System::Drawing::Color::Transparent;
@@ -365,7 +378,7 @@ namespace AppView {
 			this->btnListofproducts->IconVisible = true;
 			this->btnListofproducts->IconZoom = 90;
 			this->btnListofproducts->IsTab = false;
-			this->btnListofproducts->Location = System::Drawing::Point(12, 55);
+			this->btnListofproducts->Location = System::Drawing::Point(9, 81);
 			this->btnListofproducts->Name = L"btnListofproducts";
 			this->btnListofproducts->Normalcolor = System::Drawing::Color::Transparent;
 			this->btnListofproducts->OnHovercolor = System::Drawing::Color::Transparent;
@@ -401,7 +414,7 @@ namespace AppView {
 			this->btnBonuspoints->IconVisible = true;
 			this->btnBonuspoints->IconZoom = 90;
 			this->btnBonuspoints->IsTab = false;
-			this->btnBonuspoints->Location = System::Drawing::Point(10, 189);
+			this->btnBonuspoints->Location = System::Drawing::Point(9, 214);
 			this->btnBonuspoints->Name = L"btnBonuspoints";
 			this->btnBonuspoints->Normalcolor = System::Drawing::Color::Transparent;
 			this->btnBonuspoints->OnHovercolor = System::Drawing::Color::Transparent;
@@ -437,13 +450,13 @@ namespace AppView {
 			this->btnShoppingcart->IconVisible = true;
 			this->btnShoppingcart->IconZoom = 90;
 			this->btnShoppingcart->IsTab = false;
-			this->btnShoppingcart->Location = System::Drawing::Point(12, 125);
+			this->btnShoppingcart->Location = System::Drawing::Point(9, 139);
 			this->btnShoppingcart->Name = L"btnShoppingcart";
 			this->btnShoppingcart->Normalcolor = System::Drawing::Color::Transparent;
 			this->btnShoppingcart->OnHovercolor = System::Drawing::Color::Transparent;
 			this->btnShoppingcart->OnHoverTextColor = System::Drawing::Color::White;
 			this->btnShoppingcart->selected = false;
-			this->btnShoppingcart->Size = System::Drawing::Size(131, 30);
+			this->btnShoppingcart->Size = System::Drawing::Size(131, 40);
 			this->btnShoppingcart->TabIndex = 4;
 			this->btnShoppingcart->Text = L"     CARRITO";
 			this->btnShoppingcart->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
@@ -460,7 +473,7 @@ namespace AppView {
 			this->lineSidebar->LineColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)), static_cast<System::Int32>(static_cast<System::Byte>(105)),
 				static_cast<System::Int32>(static_cast<System::Byte>(105)), static_cast<System::Int32>(static_cast<System::Byte>(105)));
 			this->lineSidebar->LineThickness = 2;
-			this->lineSidebar->Location = System::Drawing::Point(12, 95);
+			this->lineSidebar->Location = System::Drawing::Point(13, 108);
 			this->lineSidebar->Name = L"lineSidebar";
 			this->lineSidebar->Size = System::Drawing::Size(149, 36);
 			this->lineSidebar->TabIndex = 0;
@@ -475,7 +488,7 @@ namespace AppView {
 			this->lineSideBar3->LineColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)), static_cast<System::Int32>(static_cast<System::Byte>(105)),
 				static_cast<System::Int32>(static_cast<System::Byte>(105)), static_cast<System::Int32>(static_cast<System::Byte>(105)));
 			this->lineSideBar3->LineThickness = 2;
-			this->lineSideBar3->Location = System::Drawing::Point(9, 225);
+			this->lineSideBar3->Location = System::Drawing::Point(7, 241);
 			this->lineSideBar3->Name = L"lineSideBar3";
 			this->lineSideBar3->Size = System::Drawing::Size(152, 36);
 			this->lineSideBar3->TabIndex = 2;
@@ -490,7 +503,7 @@ namespace AppView {
 			this->lineSidebar2->LineColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)), static_cast<System::Int32>(static_cast<System::Byte>(105)),
 				static_cast<System::Int32>(static_cast<System::Byte>(105)), static_cast<System::Int32>(static_cast<System::Byte>(105)));
 			this->lineSidebar2->LineThickness = 2;
-			this->lineSidebar2->Location = System::Drawing::Point(12, 161);
+			this->lineSidebar2->Location = System::Drawing::Point(10, 172);
 			this->lineSidebar2->Name = L"lineSidebar2";
 			this->lineSidebar2->Size = System::Drawing::Size(149, 36);
 			this->lineSidebar2->TabIndex = 1;
@@ -505,6 +518,17 @@ namespace AppView {
 			this->Wrapper->Name = L"Wrapper";
 			this->Wrapper->Size = System::Drawing::Size(510, 409);
 			this->Wrapper->TabIndex = 2;
+			// 
+			// txtNameC
+			// 
+			this->txtNameC->BackColor = System::Drawing::SystemColors::AppWorkspace;
+			this->txtNameC->ForeColor = System::Drawing::SystemColors::InfoText;
+			this->txtNameC->Location = System::Drawing::Point(31, 41);
+			this->txtNameC->Name = L"txtNameC";
+			this->txtNameC->ReadOnly = true;
+			this->txtNameC->Size = System::Drawing::Size(100, 20);
+			this->txtNameC->TabIndex = 9;
+			this->txtNameC->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
 			// CustomerMainForm
 			// 
@@ -553,6 +577,8 @@ namespace AppView {
 			login->ControlBox = false;
 			login->Text = "";
 			login->ShowDialog();
+			//BonusPointsForm^ form = gcnew BonusPointsForm();
+
 		}
 	}
 	private: System::Void btnClose_Click(System::Object^ sender, System::EventArgs^ e) {
