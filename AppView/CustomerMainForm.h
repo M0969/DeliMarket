@@ -3,7 +3,7 @@
 #include "Login.h"
 #include "CarritoCustomerForm.h"
 #include "ProductsCustomerForm.h"
-#include "BonusPointsForm.h"
+#include "BonusPointsCustomerForm.h"
 
 #include "StatisticsForm.h"
 
@@ -619,7 +619,7 @@ namespace AppView {
 	}
 
 	private: System::Void btnBonuspoints_Click(System::Object^ sender, System::EventArgs^ e) {
-
+		this->AbrirPanel(gcnew AppView::BonusPointsCustomerForm);
 	}
 		
 	private: System::Void btnListofproducts_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -628,7 +628,6 @@ namespace AppView {
 
 	private: System::Void btnSignoff_Click(System::Object^ sender, System::EventArgs^ e) {
 	//Programar Cerrar Sesion
-
 		Login^ login = gcnew Login();
 		login->Show();
 		this->Hide();
