@@ -1,5 +1,9 @@
 #pragma once
 #include "Login.h"
+#include "BonusPointsForm.h"
+#include "StatisticsForm.h"
+#include "ProductInventoryForm.h"
+
 namespace AppView {
 
 	using namespace System;
@@ -278,6 +282,7 @@ namespace AppView {
 			this->btnStatistics->Textcolor = System::Drawing::Color::White;
 			this->btnStatistics->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->btnStatistics->Click += gcnew System::EventHandler(this, &ManagerMainForm::btnStatistics_Click);
 			// 
 			// bunifuSeparator2
 			// 
@@ -382,6 +387,7 @@ namespace AppView {
 			this->btnInventory->Textcolor = System::Drawing::Color::White;
 			this->btnInventory->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->btnInventory->Click += gcnew System::EventHandler(this, &ManagerMainForm::btnInventory_Click);
 			// 
 			// ManagerMainForm
 			// 
@@ -423,6 +429,14 @@ private: System::Void btnSignoff_Click(System::Object^ sender, System::EventArgs
 	this->Hide();
 }
 private: System::Void lineSidebar_Load(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void btnInventory_Click(System::Object^ sender, System::EventArgs^ e) {
+	ProductInventoryForm^ productinventoryForm = gcnew ProductInventoryForm();
+	productinventoryForm->Show();
+}
+private: System::Void btnStatistics_Click(System::Object^ sender, System::EventArgs^ e) {
+	StatisticsForm^ statisticsForm = gcnew StatisticsForm();
+	statisticsForm->Show();
 }
 };
 }

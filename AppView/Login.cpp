@@ -32,3 +32,13 @@ System::Void AppView::Login::btnLogin_Click(System::Object^ sender, System::Even
 		}
 	}
 }
+
+System::Void AppView::Login::txtPassword_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e)
+{
+	if (e->KeyData == Keys::Enter)
+	{
+		//CustomerMainForm^ customerMainForm = gcnew CustomerMainForm();
+		//customerMainForm->Show();
+	}
+}
+

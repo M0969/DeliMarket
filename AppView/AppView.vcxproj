@@ -125,6 +125,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Management" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
@@ -144,14 +145,10 @@
     <ClCompile Include="ComboBoxItem.cpp" />
     <ClCompile Include="CustomerMainForm.cpp" />
     <ClCompile Include="DeliveryForm.cpp" />
-    <ClCompile Include="InventoryManagerForm.cpp" />
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="ManagerMainForm.cpp" />
-    <ClCompile Include="MapDeliveryForm.cpp" />
-    <ClCompile Include="OrderDeliveryForm.cpp" />
     <ClCompile Include="ProductInventoryForm.cpp" />
     <ClCompile Include="ProductsCustomerForm.cpp" />
-    <ClCompile Include="RatingMForm.cpp" />
     <ClCompile Include="StatisticsForm.cpp" />
     <ClCompile Include="Ubicacion.cpp" />
   </ItemGroup>
@@ -169,28 +166,16 @@
     <ClInclude Include="DeliveryForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="InventoryManagerForm.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
     <ClInclude Include="Login.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="ManagerMainForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="MapDeliveryForm.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="OrderDeliveryForm.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
     <ClInclude Include="ProductInventoryForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="ProductsCustomerForm.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="RatingMForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="StatisticsForm.h">
@@ -219,14 +204,14 @@
     <EmbeddedResource Include="ManagerMainForm.resx">
       <DependentUpon>ManagerMainForm.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OrderDeliveryForm.resx">
-      <DependentUpon>OrderDeliveryForm.h</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ProductInventoryForm.resx">
       <DependentUpon>ProductInventoryForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductsCustomerForm.resx">
       <DependentUpon>ProductsCustomerForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatisticsForm.resx">
+      <DependentUpon>StatisticsForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ubicacion.resx">
       <DependentUpon>Ubicacion.h</DependentUpon>
