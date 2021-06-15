@@ -392,7 +392,7 @@ namespace AppView {
 					});
 				}
 				}
-				else if(mode==4){ List <Product^>^ productList = AppManager::QueryAllProducts();
+				else { List <Product^>^ productList = AppManager::QueryAllProducts();
 				dgvProducts->Rows->Clear();
 				for (int i = 0; i < productList->Count; i++) {
 					dgvProducts->Rows->Add(gcnew array<String^> {
