@@ -110,8 +110,9 @@ List<HealthCare^>^ AppController::DBController::QueryAllHealthCareByCoincidence(
 
 Product^ AppController::DBController::QueryProductByName(String^ name)
 {
+
     for (int i = 0; i < productDB->ListDB->Count; i++)
-        if (productDB->ListDB[i]->Name->CompareTo(name)==0) { // si coincide, se procede a eliminar
+        if (productDB->ListDB[i]->Name->ToUpper()->CompareTo(name->ToUpper())==0) { // si coincide, se procede a eliminar
              // en lugar de borrarlo (por temas de seguridad), se le cambia de estado: INACTIVO
             return productDB->ListDB[i];
         }
@@ -476,6 +477,17 @@ List<Product^>^ AppController::DBController::QueryAllCarrito()
 {
     carritoDB->LoadFromBinaryFile();
     return carritoDB->ListDB;
+}
+
+bool AppController::DBController::QueryCarritoByName(String^ name)
+{
+
+    for (int i = 0; i < carritoDB->ListDB->Count; i++)
+        if (carritoDB->ListDB[i]->Name->ToUpper()->CompareTo(name->ToUpper()) == 0) { // si coincide, se procede a eliminar
+             // en lugar de borrarlo (por temas de seguridad), se le cambia de estado: INACTIVO
+            return true;
+        }
+    return false;
 }
 
 

@@ -3,7 +3,7 @@
 #include "Login.h"
 #include "CarritoCustomerForm.h"
 #include "ProductsCustomerForm.h"
-#include "BonusPointsForm.h"
+
 #include "StatisticsForm.h"
 
 namespace AppView {
@@ -592,8 +592,7 @@ namespace AppView {
 	}
 
 	private: System::Void btnBonuspoints_Click(System::Object^ sender, System::EventArgs^ e) {
-		BonusPointsForm^ bonuspointsForm = gcnew BonusPointsForm();
-		bonuspointsForm->Show();
+
 	}
 		
 	private: System::Void btnListofproducts_Click(System::Object^ sender, System::EventArgs^ e) {

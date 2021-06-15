@@ -366,10 +366,12 @@ namespace AppView {
 	}
 	public:
 		void RefreshDGVProducts(int mode) {
+		
 			if (mode == 2 || mode == 3 || mode == 4) {
 				if (mode == 2) {
 					List <Groceries^>^ productList = AppManager::QueryAllGroceries();
 					dgvProducts->Rows->Clear();
+					
 					for (int i = 0; i < productList->Count; i++) {
 						dgvProducts->Rows->Add(gcnew array<String^> {
 							"" + productList[i]->Id,
@@ -382,6 +384,7 @@ namespace AppView {
 
 				else if(mode ==3) { List <HealthCare^>^ productList = AppManager::QueryAllHealthCare();
 				dgvProducts->Rows->Clear();
+				
 				for (int i = 0; i < productList->Count; i++) {
 					dgvProducts->Rows->Add(gcnew array<String^> {
 						"" + productList[i]->Id,
@@ -394,6 +397,7 @@ namespace AppView {
 				}
 				else if(mode==4){ List <Product^>^ productList = AppManager::QueryAllProducts();
 				dgvProducts->Rows->Clear();
+			
 				for (int i = 0; i < productList->Count; i++) {
 					dgvProducts->Rows->Add(gcnew array<String^> {
 						"" + productList[i]->Id,
@@ -408,6 +412,8 @@ namespace AppView {
 			}
 			else {
 				Product^ product = AppManager::QueryProductByName(txtName->Text);
+				if (product == nullptr) { MessageBox::Show("No se encuentra este producto"); }
+				else {
 				dgvProducts->Rows->Clear();
 				dgvProducts->Rows->Add(gcnew array<String^> {
 					"" + product->Id,
@@ -416,6 +422,7 @@ namespace AppView {
 					"" + product->Price
 
 				});
+				}
 			}
 			
 			}
@@ -433,6 +440,10 @@ namespace AppView {
 		if (cmbCattegory->Enabled == true) {
 			if (cmbCattegory->SelectedIndex == 0) { RefreshDGVProducts(MODEGROCERIES); }
 			else if (cmbCattegory->SelectedIndex == 1) {RefreshDGVProducts(MODEHEALTH);}
+		}
+		else if (txtName->Enabled == true) {
+			if (txtName->Text == "") { MessageBox::Show("Debe ingresar un nombre"); }
+			else RefreshDGVProducts(MODEID);
 		}
 		else  {
 			RefreshDGVProducts(MODEALL);
@@ -467,8 +478,16 @@ private: System::Void cmbSearch_SelectedIndexChanged(System::Object^ sender, Sys
 			String^ a = selectedRow->Cells[0]->Value->ToString();
 			int productId = Int32::Parse(a);
 			Product^ product =AppManager::QueryProductById(productId);
-			AppManager::AddtoCarrito(product);
-			MessageBox::Show("Se agrego al carrito");
+
+
+			if (!AppManager::QueryCarritoByName(product->Name)) {
+				if (product->StockTotal > 0) {
+					AppManager::AddtoCarrito(product);
+					MessageBox::Show("Se agrego al carrito");
+				}
+				else MessageBox::Show("No hay stock disponible");
+			}
+			else { MessageBox::Show("Ya agrego al carrito"); }
 
 		}
 	if (dgvProducts->CurrentCell != nullptr &&

@@ -95,7 +95,7 @@ namespace AppView {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(189, 31);
+			this->label1->Location = System::Drawing::Point(197, 45);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(92, 13);
 			this->label1->TabIndex = 0;
@@ -104,7 +104,7 @@ namespace AppView {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(32, 61);
+			this->label2->Location = System::Drawing::Point(40, 75);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(85, 13);
 			this->label2->TabIndex = 1;
@@ -113,7 +113,7 @@ namespace AppView {
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(32, 101);
+			this->label3->Location = System::Drawing::Point(40, 115);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(76, 13);
 			this->label3->TabIndex = 2;
@@ -122,7 +122,7 @@ namespace AppView {
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(256, 61);
+			this->label4->Location = System::Drawing::Point(264, 75);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(82, 13);
 			this->label4->TabIndex = 3;
@@ -131,7 +131,7 @@ namespace AppView {
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(256, 101);
+			this->label5->Location = System::Drawing::Point(264, 115);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(84, 13);
 			this->label5->TabIndex = 4;
@@ -139,28 +139,28 @@ namespace AppView {
 			// 
 			// txtPoints
 			// 
-			this->txtPoints->Location = System::Drawing::Point(123, 58);
+			this->txtPoints->Location = System::Drawing::Point(131, 72);
 			this->txtPoints->Name = L"txtPoints";
 			this->txtPoints->Size = System::Drawing::Size(100, 20);
 			this->txtPoints->TabIndex = 5;
 			// 
 			// txtDiscount
 			// 
-			this->txtDiscount->Location = System::Drawing::Point(123, 98);
+			this->txtDiscount->Location = System::Drawing::Point(131, 112);
 			this->txtDiscount->Name = L"txtDiscount";
 			this->txtDiscount->Size = System::Drawing::Size(100, 20);
 			this->txtDiscount->TabIndex = 6;
 			// 
 			// txtSolesQuantity
 			// 
-			this->txtSolesQuantity->Location = System::Drawing::Point(355, 58);
+			this->txtSolesQuantity->Location = System::Drawing::Point(363, 72);
 			this->txtSolesQuantity->Name = L"txtSolesQuantity";
 			this->txtSolesQuantity->Size = System::Drawing::Size(100, 20);
 			this->txtSolesQuantity->TabIndex = 7;
 			// 
 			// txtPointsEarned
 			// 
-			this->txtPointsEarned->Location = System::Drawing::Point(355, 98);
+			this->txtPointsEarned->Location = System::Drawing::Point(363, 112);
 			this->txtPointsEarned->Name = L"txtPointsEarned";
 			this->txtPointsEarned->Size = System::Drawing::Size(100, 20);
 			this->txtPointsEarned->TabIndex = 8;
@@ -169,7 +169,7 @@ namespace AppView {
 			// 
 			this->dgvDiscount->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dgvDiscount->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(2) { this->Points, this->Discount });
-			this->dgvDiscount->Location = System::Drawing::Point(35, 192);
+			this->dgvDiscount->Location = System::Drawing::Point(43, 206);
 			this->dgvDiscount->Name = L"dgvDiscount";
 			this->dgvDiscount->Size = System::Drawing::Size(188, 150);
 			this->dgvDiscount->TabIndex = 9;
@@ -193,7 +193,7 @@ namespace AppView {
 				this->ForEachQuantity,
 					this->PointsEarned
 			});
-			this->dgvPointsEarned->Location = System::Drawing::Point(267, 192);
+			this->dgvPointsEarned->Location = System::Drawing::Point(275, 206);
 			this->dgvPointsEarned->Name = L"dgvPointsEarned";
 			this->dgvPointsEarned->Size = System::Drawing::Size(188, 150);
 			this->dgvPointsEarned->TabIndex = 10;
@@ -212,7 +212,7 @@ namespace AppView {
 			// 
 			// btnAdd
 			// 
-			this->btnAdd->Location = System::Drawing::Point(94, 148);
+			this->btnAdd->Location = System::Drawing::Point(102, 162);
 			this->btnAdd->Name = L"btnAdd";
 			this->btnAdd->Size = System::Drawing::Size(75, 23);
 			this->btnAdd->TabIndex = 11;
@@ -222,7 +222,7 @@ namespace AppView {
 			// 
 			// btnUpdate
 			// 
-			this->btnUpdate->Location = System::Drawing::Point(206, 148);
+			this->btnUpdate->Location = System::Drawing::Point(214, 162);
 			this->btnUpdate->Name = L"btnUpdate";
 			this->btnUpdate->Size = System::Drawing::Size(75, 23);
 			this->btnUpdate->TabIndex = 12;
@@ -232,7 +232,7 @@ namespace AppView {
 			// 
 			// btnDelete
 			// 
-			this->btnDelete->Location = System::Drawing::Point(321, 148);
+			this->btnDelete->Location = System::Drawing::Point(329, 162);
 			this->btnDelete->Name = L"btnDelete";
 			this->btnDelete->Size = System::Drawing::Size(75, 23);
 			this->btnDelete->TabIndex = 13;
@@ -244,7 +244,7 @@ namespace AppView {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(494, 370);
+			this->ClientSize = System::Drawing::Size(510, 409);
 			this->Controls->Add(this->btnDelete);
 			this->Controls->Add(this->btnUpdate);
 			this->Controls->Add(this->btnAdd);
@@ -259,6 +259,7 @@ namespace AppView {
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"BonusPointsForm";
 			this->Text = L"BonusPointsForm";
 			this->Load += gcnew System::EventHandler(this, &BonusPointsForm::BonusPointsForm_Load);
