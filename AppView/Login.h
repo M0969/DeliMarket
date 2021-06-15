@@ -1,4 +1,5 @@
 #pragma once
+
 namespace AppView {
 
 	using namespace System;
@@ -8,10 +9,11 @@ namespace AppView {
 	using namespace System::Data;
 	using namespace System::Drawing;
 	using namespace AppModel;
+	using namespace AppView;
 	using namespace AppController;
 	using namespace System::Collections::Generic;
 
-
+	namespace F = System::Windows::Forms;
 	/// <summary>
 	/// Resumen de Login
 	/// </summary>
@@ -37,6 +39,19 @@ namespace AppView {
 				delete components;
 			}
 		}
+	/////////////////////
+	private: const int CP_NOCLOSE_BUTTON = 0x200;
+	protected:
+		virtual property F::CreateParams^ CreateParams
+		{
+			F::CreateParams^ get() override
+			{
+				F::CreateParams^ myCp = __super::CreateParams;
+				myCp->ClassStyle = myCp->ClassStyle | CP_NOCLOSE_BUTTON;
+				return myCp;
+			}
+		}
+	/////////////////
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::Panel^ panelLogin;
 	protected:
@@ -114,6 +129,7 @@ namespace AppView {
 		/// Método necesario para admitir el Diseñador. No se puede modificar
 		/// el contenido de este método con el editor de código.
 		/// </summary>
+		
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Login::typeid));
@@ -268,8 +284,8 @@ namespace AppView {
 			this->txtPassword->ForeColor = System::Drawing::Color::Gainsboro;
 			this->txtPassword->HintForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->txtPassword->HintText = L"";
-			this->txtPassword->isPassword = true;
+			this->txtPassword->HintText = L"Contraseña";
+			this->txtPassword->isPassword = false;
 			this->txtPassword->LineFocusedColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(32)),
 				static_cast<System::Int32>(static_cast<System::Byte>(199)), static_cast<System::Int32>(static_cast<System::Byte>(140)));
 			this->txtPassword->LineIdleColor = System::Drawing::Color::Gray;
@@ -280,12 +296,14 @@ namespace AppView {
 			this->txtPassword->Name = L"txtPassword";
 			this->txtPassword->Size = System::Drawing::Size(186, 30);
 			this->txtPassword->TabIndex = 1;
-			this->txtPassword->Text = L"Contraseña";
 			this->txtPassword->TextAlign = System::Windows::Forms::HorizontalAlignment::Left;
+			this->txtPassword->OnValueChanged += gcnew System::EventHandler(this, &Login::txtPassword_OnValueChanged);
+			this->txtPassword->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &Login::txtPassword_KeyDown);
+			this->txtPassword->Leave += gcnew System::EventHandler(this, &Login::txtPassword_Leave);
 			// 
 			// txtUserName
 			// 
-			this->txtUserName->AccessibleName = L"Usuario";
+			this->txtUserName->AccessibleName = L"";
 			this->txtUserName->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)), static_cast<System::Int32>(static_cast<System::Byte>(31)),
 				static_cast<System::Int32>(static_cast<System::Byte>(33)));
 			this->txtUserName->Cursor = System::Windows::Forms::Cursors::IBeam;
@@ -293,7 +311,7 @@ namespace AppView {
 			this->txtUserName->ForeColor = System::Drawing::Color::Gainsboro;
 			this->txtUserName->HintForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->txtUserName->HintText = L"";
+			this->txtUserName->HintText = L"Usuario";
 			this->txtUserName->isPassword = false;
 			this->txtUserName->LineFocusedColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(32)),
 				static_cast<System::Int32>(static_cast<System::Byte>(199)), static_cast<System::Int32>(static_cast<System::Byte>(140)));
@@ -305,7 +323,6 @@ namespace AppView {
 			this->txtUserName->Name = L"txtUserName";
 			this->txtUserName->Size = System::Drawing::Size(186, 30);
 			this->txtUserName->TabIndex = 0;
-			this->txtUserName->Text = L"Usuario";
 			this->txtUserName->TextAlign = System::Windows::Forms::HorizontalAlignment::Left;
 			this->txtUserName->Enter += gcnew System::EventHandler(this, &Login::txtUserName_Enter);
 			this->txtUserName->Leave += gcnew System::EventHandler(this, &Login::txtUserName_Leave);
@@ -1010,6 +1027,16 @@ private: System::Void chckCatM_CheckedChanged(System::Object^ sender, System::Ev
 		chckCatC->Enabled = true;
 		chckCatR->Enabled = true;
 	}
+}
+private: System::Void txtPassword_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e);
+
+private: System::Void txtPassword_Leave(System::Object^ sender, System::EventArgs^ e) {
+	if (txtPassword->Text == "") {
+		txtPassword->isPassword = false;
+	}
+}
+private: System::Void txtPassword_OnValueChanged(System::Object^ sender, System::EventArgs^ e) {
+	txtPassword->isPassword = true;
 }
 };
 }
