@@ -180,7 +180,7 @@ void AppController::DBController::DeleteBonusPointsPQ(int pointsQuantity)
 BonusPoints^ AppController::DBController::QueryBonusPointsByPQ(int pointsQuantity)
 {
     bonuspointsDB->LoadFromBinaryFilePQ();
-    for (int i = 0; i < productDB->ListDB->Count; i++)
+    for (int i = 0; i < bonuspointsDB->ListPQDB->Count; i++)
         if (bonuspointsDB->ListPQDB[i]->PointsQuantity == pointsQuantity &&
             bonuspointsDB->ListPQDB[i]->GetType() == BonusPoints::typeid)
             return (BonusPoints^)bonuspointsDB->ListPQDB[i]; // se requeria un casting para evitar el error
@@ -190,7 +190,7 @@ BonusPoints^ AppController::DBController::QueryBonusPointsByPQ(int pointsQuantit
 BonusPoints^ AppController::DBController::QueryBonusPointsBySQ(int solesQuantity)
 {
     bonuspointsDB->LoadFromBinaryFileSQ();
-    for (int i = 0; i < productDB->ListDB->Count; i++)
+    for (int i = 0; i < bonuspointsDB->ListSQDB->Count; i++)
         if (bonuspointsDB->ListSQDB[i]->SolesQuantity == solesQuantity &&
             bonuspointsDB->ListSQDB[i]->GetType() == BonusPoints::typeid)
             return (BonusPoints^)bonuspointsDB->ListSQDB[i]; // se requeria un casting para evitar el error
