@@ -125,6 +125,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Management" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
@@ -148,6 +149,7 @@
     <ClCompile Include="ManagerMainForm.cpp" />
     <ClCompile Include="ProductInventoryForm.cpp" />
     <ClCompile Include="ProductsCustomerForm.cpp" />
+    <ClCompile Include="StatisticsForm.cpp" />
     <ClCompile Include="Ubicacion.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -174,6 +176,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="ProductsCustomerForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="StatisticsForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Ubicacion.h">
@@ -204,6 +209,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ProductsCustomerForm.resx">
       <DependentUpon>ProductsCustomerForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatisticsForm.resx">
+      <DependentUpon>StatisticsForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ubicacion.resx">
       <DependentUpon>Ubicacion.h</DependentUpon>
