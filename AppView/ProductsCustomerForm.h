@@ -366,7 +366,7 @@ namespace AppView {
 	}
 	public:
 		void RefreshDGVProducts(int mode) {
-			if (mode == 2 | mode == 3| mode == 4) {
+			if (mode == 2 || mode == 3 || mode == 4) {
 				if (mode == 2) {
 					List <Groceries^>^ productList = AppManager::QueryAllGroceries();
 					dgvProducts->Rows->Clear();
@@ -392,7 +392,7 @@ namespace AppView {
 					});
 				}
 				}
-				else { List <Product^>^ productList = AppManager::QueryAllProducts();
+				else if(mode==4){ List <Product^>^ productList = AppManager::QueryAllProducts();
 				dgvProducts->Rows->Clear();
 				for (int i = 0; i < productList->Count; i++) {
 					dgvProducts->Rows->Add(gcnew array<String^> {
@@ -435,7 +435,7 @@ namespace AppView {
 			else if (cmbCattegory->SelectedIndex == 1) {RefreshDGVProducts(MODEHEALTH);}
 		}
 		else  {
-			RefreshDGVProducts(MODEID);
+			RefreshDGVProducts(MODEALL);
 		}
 	}
 
