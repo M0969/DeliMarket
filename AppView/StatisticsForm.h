@@ -1,4 +1,7 @@
 #pragma once
+using namespace AppModel;
+using namespace AppController;
+using namespace System::Collections::Generic;
 
 namespace AppView {
 
@@ -34,8 +37,11 @@ namespace AppView {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::TabControl^ tabIncome;
+	private: System::Windows::Forms::TabControl^ tabControl1;
 	protected:
+
+	private: System::Windows::Forms::TabPage^ tabSoldProducts;
+	private: System::Windows::Forms::DataVisualization::Charting::Chart^ barchartSoldProducts;
 
 	protected:
 
@@ -45,14 +51,19 @@ namespace AppView {
 
 	protected:
 
-	private: System::Windows::Forms::TabPage^ tabProducts;
 	protected:
 
-	private: System::Windows::Forms::DataVisualization::Charting::Chart^ chart1;
-	private: System::Windows::Forms::TabPage^ tabPage2;
+
+	protected:
+
+
+	private: System::Windows::Forms::TabPage^ tabIncome;
+
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::DataVisualization::Charting::Chart^ chart2;
+	private: System::Windows::Forms::DataVisualization::Charting::Chart^ linechartIncome;
+
+
 
 	private:
 		/// <summary>
@@ -67,47 +78,47 @@ namespace AppView {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea3 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-			System::Windows::Forms::DataVisualization::Charting::Legend^ legend3 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
-			System::Windows::Forms::DataVisualization::Charting::Series^ series3 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea4 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-			System::Windows::Forms::DataVisualization::Charting::Legend^ legend4 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
-			System::Windows::Forms::DataVisualization::Charting::Series^ series4 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			this->tabIncome = (gcnew System::Windows::Forms::TabControl());
-			this->tabProducts = (gcnew System::Windows::Forms::TabPage());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea1 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Legend^ legend1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea2 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Legend^ legend2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
+			this->tabSoldProducts = (gcnew System::Windows::Forms::TabPage());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->chart1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
-			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
+			this->barchartSoldProducts = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
+			this->tabIncome = (gcnew System::Windows::Forms::TabPage());
 			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->chart2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
+			this->linechartIncome = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
+			this->tabControl1->SuspendLayout();
+			this->tabSoldProducts->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->barchartSoldProducts))->BeginInit();
 			this->tabIncome->SuspendLayout();
-			this->tabProducts->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->BeginInit();
-			this->tabPage2->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart2))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->linechartIncome))->BeginInit();
 			this->SuspendLayout();
 			// 
-			// tabIncome
+			// tabControl1
 			// 
-			this->tabIncome->Controls->Add(this->tabProducts);
-			this->tabIncome->Controls->Add(this->tabPage2);
-			this->tabIncome->Location = System::Drawing::Point(18, 22);
-			this->tabIncome->Name = L"tabIncome";
-			this->tabIncome->SelectedIndex = 0;
-			this->tabIncome->Size = System::Drawing::Size(460, 323);
-			this->tabIncome->TabIndex = 0;
+			this->tabControl1->Controls->Add(this->tabSoldProducts);
+			this->tabControl1->Controls->Add(this->tabIncome);
+			this->tabControl1->Location = System::Drawing::Point(18, 22);
+			this->tabControl1->Name = L"tabControl1";
+			this->tabControl1->SelectedIndex = 0;
+			this->tabControl1->Size = System::Drawing::Size(460, 323);
+			this->tabControl1->TabIndex = 0;
 			// 
-			// tabProducts
+			// tabSoldProducts
 			// 
-			this->tabProducts->Controls->Add(this->label1);
-			this->tabProducts->Controls->Add(this->chart1);
-			this->tabProducts->Location = System::Drawing::Point(4, 22);
-			this->tabProducts->Name = L"tabProducts";
-			this->tabProducts->Padding = System::Windows::Forms::Padding(3);
-			this->tabProducts->Size = System::Drawing::Size(452, 297);
-			this->tabProducts->TabIndex = 0;
-			this->tabProducts->Text = L"Demanda de productos";
-			this->tabProducts->UseVisualStyleBackColor = true;
+			this->tabSoldProducts->Controls->Add(this->label1);
+			this->tabSoldProducts->Controls->Add(this->barchartSoldProducts);
+			this->tabSoldProducts->Location = System::Drawing::Point(4, 22);
+			this->tabSoldProducts->Name = L"tabSoldProducts";
+			this->tabSoldProducts->Padding = System::Windows::Forms::Padding(3);
+			this->tabSoldProducts->Size = System::Drawing::Size(452, 297);
+			this->tabSoldProducts->TabIndex = 0;
+			this->tabSoldProducts->Text = L"Demanda de productos";
+			this->tabSoldProducts->UseVisualStyleBackColor = true;
 			// 
 			// label1
 			// 
@@ -120,42 +131,42 @@ namespace AppView {
 			this->label1->TabIndex = 1;
 			this->label1->Text = L"Producto";
 			// 
-			// chart1
+			// barchartSoldProducts
 			// 
-			this->chart1->BorderlineWidth = 0;
-			chartArea3->AxisX->MajorGrid->LineColor = System::Drawing::Color::White;
-			chartArea3->AxisX->MajorTickMark->LineColor = System::Drawing::Color::White;
-			chartArea3->AxisY->MajorGrid->LineColor = System::Drawing::Color::White;
-			chartArea3->AxisY->MinorGrid->LineColor = System::Drawing::Color::Transparent;
-			chartArea3->AxisY->MinorTickMark->LineColor = System::Drawing::Color::Transparent;
-			chartArea3->Name = L"ChartArea1";
-			this->chart1->ChartAreas->Add(chartArea3);
-			legend3->Name = L"Legend1";
-			this->chart1->Legends->Add(legend3);
-			this->chart1->Location = System::Drawing::Point(22, 15);
-			this->chart1->Name = L"chart1";
-			series3->ChartArea = L"ChartArea1";
-			series3->Color = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
+			this->barchartSoldProducts->BorderlineWidth = 0;
+			chartArea1->AxisX->MajorGrid->LineColor = System::Drawing::Color::White;
+			chartArea1->AxisX->MajorTickMark->LineColor = System::Drawing::Color::White;
+			chartArea1->AxisY->MajorGrid->LineColor = System::Drawing::Color::White;
+			chartArea1->AxisY->MinorGrid->LineColor = System::Drawing::Color::Transparent;
+			chartArea1->AxisY->MinorTickMark->LineColor = System::Drawing::Color::Transparent;
+			chartArea1->Name = L"ChartArea1";
+			this->barchartSoldProducts->ChartAreas->Add(chartArea1);
+			legend1->Name = L"Legend1";
+			this->barchartSoldProducts->Legends->Add(legend1);
+			this->barchartSoldProducts->Location = System::Drawing::Point(22, 15);
+			this->barchartSoldProducts->Name = L"barchartSoldProducts";
+			series1->ChartArea = L"ChartArea1";
+			series1->Color = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
 				static_cast<System::Int32>(static_cast<System::Byte>(128)));
-			series3->Legend = L"Legend1";
-			series3->LegendText = L"Cantidad vendida";
-			series3->Name = L"Series1";
-			this->chart1->Series->Add(series3);
-			this->chart1->Size = System::Drawing::Size(412, 267);
-			this->chart1->TabIndex = 0;
-			this->chart1->Text = L"chart1";
+			series1->Legend = L"Legend1";
+			series1->LegendText = L"Cantidad vendida";
+			series1->Name = L"Series1";
+			this->barchartSoldProducts->Series->Add(series1);
+			this->barchartSoldProducts->Size = System::Drawing::Size(412, 267);
+			this->barchartSoldProducts->TabIndex = 0;
+			this->barchartSoldProducts->Text = L"chartSoldProduct";
 			// 
-			// tabPage2
+			// tabIncome
 			// 
-			this->tabPage2->Controls->Add(this->label2);
-			this->tabPage2->Controls->Add(this->chart2);
-			this->tabPage2->Location = System::Drawing::Point(4, 22);
-			this->tabPage2->Name = L"tabPage2";
-			this->tabPage2->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage2->Size = System::Drawing::Size(452, 297);
-			this->tabPage2->TabIndex = 1;
-			this->tabPage2->Text = L"Ingresos";
-			this->tabPage2->UseVisualStyleBackColor = true;
+			this->tabIncome->Controls->Add(this->label2);
+			this->tabIncome->Controls->Add(this->linechartIncome);
+			this->tabIncome->Location = System::Drawing::Point(4, 22);
+			this->tabIncome->Name = L"tabIncome";
+			this->tabIncome->Padding = System::Windows::Forms::Padding(3);
+			this->tabIncome->Size = System::Drawing::Size(452, 297);
+			this->tabIncome->TabIndex = 1;
+			this->tabIncome->Text = L"Ingresos";
+			this->tabIncome->UseVisualStyleBackColor = true;
 			// 
 			// label2
 			// 
@@ -168,51 +179,77 @@ namespace AppView {
 			this->label2->TabIndex = 2;
 			this->label2->Text = L"N° de venta";
 			// 
-			// chart2
+			// linechartIncome
 			// 
-			this->chart2->BorderlineWidth = 0;
-			chartArea4->AxisX->MajorGrid->LineColor = System::Drawing::Color::White;
-			chartArea4->AxisX->MajorTickMark->LineColor = System::Drawing::Color::White;
-			chartArea4->AxisY->MajorGrid->LineColor = System::Drawing::Color::White;
-			chartArea4->AxisY->MinorGrid->LineColor = System::Drawing::Color::Transparent;
-			chartArea4->AxisY->MinorTickMark->LineColor = System::Drawing::Color::Transparent;
-			chartArea4->Name = L"ChartArea1";
-			this->chart2->ChartAreas->Add(chartArea4);
-			legend4->Name = L"Legend1";
-			this->chart2->Legends->Add(legend4);
-			this->chart2->Location = System::Drawing::Point(22, 15);
-			this->chart2->Name = L"chart2";
-			series4->BorderWidth = 5;
-			series4->ChartArea = L"ChartArea1";
-			series4->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series4->Color = System::Drawing::Color::Red;
-			series4->Legend = L"Legend1";
-			series4->LegendText = L"Monto";
-			series4->Name = L"Series1";
-			this->chart2->Series->Add(series4);
-			this->chart2->Size = System::Drawing::Size(412, 267);
-			this->chart2->TabIndex = 1;
-			this->chart2->Text = L"chart2";
+			this->linechartIncome->BorderlineWidth = 0;
+			chartArea2->AxisX->MajorGrid->LineColor = System::Drawing::Color::White;
+			chartArea2->AxisX->MajorTickMark->LineColor = System::Drawing::Color::White;
+			chartArea2->AxisY->MajorGrid->LineColor = System::Drawing::Color::White;
+			chartArea2->AxisY->MinorGrid->LineColor = System::Drawing::Color::Transparent;
+			chartArea2->AxisY->MinorTickMark->LineColor = System::Drawing::Color::Transparent;
+			chartArea2->Name = L"ChartArea1";
+			this->linechartIncome->ChartAreas->Add(chartArea2);
+			legend2->Name = L"Legend1";
+			this->linechartIncome->Legends->Add(legend2);
+			this->linechartIncome->Location = System::Drawing::Point(22, 15);
+			this->linechartIncome->Name = L"linechartIncome";
+			series2->BorderWidth = 5;
+			series2->ChartArea = L"ChartArea1";
+			series2->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series2->Color = System::Drawing::Color::Red;
+			series2->Legend = L"Legend1";
+			series2->LegendText = L"Monto";
+			series2->Name = L"Series1";
+			this->linechartIncome->Series->Add(series2);
+			this->linechartIncome->Size = System::Drawing::Size(412, 267);
+			this->linechartIncome->TabIndex = 1;
+			this->linechartIncome->Text = L"chartIncome";
 			// 
 			// StatisticsForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(510, 409);
-			this->Controls->Add(this->tabIncome);
-			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->ClientSize = System::Drawing::Size(494, 370);
+			this->Controls->Add(this->tabControl1);
 			this->Name = L"StatisticsForm";
 			this->Text = L"StatisticsForm";
+			this->Load += gcnew System::EventHandler(this, &StatisticsForm::StatisticsForm_Load);
+			this->tabControl1->ResumeLayout(false);
+			this->tabSoldProducts->ResumeLayout(false);
+			this->tabSoldProducts->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->barchartSoldProducts))->EndInit();
 			this->tabIncome->ResumeLayout(false);
-			this->tabProducts->ResumeLayout(false);
-			this->tabProducts->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->EndInit();
-			this->tabPage2->ResumeLayout(false);
-			this->tabPage2->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart2))->EndInit();
+			this->tabIncome->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->linechartIncome))->EndInit();
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
+		private: System::Void StatisticsForm_Load(System::Object^ sender, System::EventArgs^ e) {
+			if (tabSoldProducts->Visible) {
+				List<Groceries^>^ groceriesList = AppManager::QueryAllGroceries();
+				List<HealthCare^>^ healthCareList = AppManager::QueryAllHealthCare();
+
+				if (groceriesList != nullptr) {
+					for (int i = 0; i < groceriesList->Count; i++) {
+						barchartSoldProducts->Series["Cantidad vendida"]->Points->Add(groceriesList[i]->QuantitySold);
+						barchartSoldProducts->Series["Cantidad vendida"]->Points[i]->AxisLabel = groceriesList[i]->Name;
+						barchartSoldProducts->Series["Cantidad vendida"]->Points[i]->Label = "" + groceriesList[i]->QuantitySold;
+					}
+				}
+
+				if (healthCareList != nullptr) {
+					for (int i = 0; i < healthCareList->Count; i++) {
+						barchartSoldProducts->Series["Cantidad vendida"]->Points->Add(healthCareList[i]->QuantitySold);
+						barchartSoldProducts->Series["Cantidad vendida"]->Points[i]->AxisLabel = healthCareList[i]->Name;
+						barchartSoldProducts->Series["Cantidad vendida"]->Points[i]->Label = "" + healthCareList[i]->QuantitySold;
+					}
+				}
+			}
+			if (tabIncome->Visible) {
+				//List<SaleDetail^>^ groceriesList = AppManager::QueryAllSaleDetail();
+			}
+
+		}
 	};
 }
