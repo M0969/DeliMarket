@@ -1,5 +1,7 @@
 #pragma once
 #include "Login.h"
+#include "OrderListForm.h"
+
 namespace AppView {
 
 	using namespace System;
@@ -11,6 +13,8 @@ namespace AppView {
 	using namespace AppModel;
 	using namespace AppController;
 	using namespace System::Collections::Generic;
+	using namespace Bunifu;
+	using namespace std;
 
 	/// <summary>
 	/// Resumen de DeliveryForm
@@ -19,7 +23,7 @@ namespace AppView {
 	{
 	public:
 		static User^ user;
-		
+
 		DeliveryForm(void)
 		{
 			InitializeComponent();
@@ -221,6 +225,7 @@ namespace AppView {
 			this->btnSale->Textcolor = System::Drawing::Color::White;
 			this->btnSale->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->btnSale->Click += gcnew System::EventHandler(this, &DeliveryForm::btnSale_Click);
 			// 
 			// panel2
 			// 
@@ -341,6 +346,7 @@ namespace AppView {
 
 		}
 #pragma endregion
+
 		private: System::Void DeliveryForm_Load(System::Object^ sender, System::EventArgs^ e) {
 			if (user == nullptr) {
 				Login^ login = gcnew Login();
@@ -372,5 +378,9 @@ namespace AppView {
 				this->Hide();
 			}
 		}
-	};
+		private: System::Void btnSale_Click(System::Object^ sender, System::EventArgs^ e) {
+				OrderListForm^ orderListForm = gcnew OrderListForm();
+				orderListForm->Show();
+		}
+};
 }
