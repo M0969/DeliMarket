@@ -66,11 +66,13 @@ namespace AppController {
 
 		/*Carrito*/
 		static void AddtoCarrito(Product^);
-
 		static void DeletefromCarrito(int productId);
 		static void DeleteAllCarrito();
 		static List<Product^>^ QueryAllCarrito();
 		static bool QueryCarritoByName(String^);
+
+		/*Sale*/
+		static void RegisterSale(Order^);
 
 
 
@@ -104,8 +106,7 @@ namespace AppController {
 		static List<BonusPoints^>^ QueryAllBonusPointsPQ();
 		static List<BonusPoints^>^ QueryAllBonusPointsSQ();
 
-		/*Sale*/
-		static void RegisterSale(Order^);
+
 	};
 }
 

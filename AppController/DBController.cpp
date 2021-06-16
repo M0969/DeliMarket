@@ -221,6 +221,8 @@ void AppController::DBController::RegisterSale(Order^ sale)
     saleDB->Persist();
 }
 
+
+
 /////////////////////////////////////////////////
 
 /*User*/
