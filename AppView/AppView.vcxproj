@@ -140,7 +140,7 @@
     <Image Include="btnreset.Image.png" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Boleta.cpp" />
+    <ClCompile Include="BonusPointsCustomerForm.cpp" />
     <ClCompile Include="BonusPointsForm.cpp" />
     <ClCompile Include="CarritoCustomerForm.cpp" />
     <ClCompile Include="ComboBoxItem.cpp" />
@@ -154,7 +154,7 @@
     <ClCompile Include="Ubicacion.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Boleta.h">
+    <ClInclude Include="BonusPointsCustomerForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="BonusPointsForm.h">
@@ -190,7 +190,9 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Boleta.resx" />
+    <EmbeddedResource Include="BonusPointsCustomerForm.resx">
+      <DependentUpon>BonusPointsCustomerForm.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BonusPointsForm.resx">
       <DependentUpon>BonusPointsForm.h</DependentUpon>
     </EmbeddedResource>

@@ -108,13 +108,13 @@ namespace AppView {
 			this->bunifuSeparator1 = (gcnew Bunifu::Framework::UI::BunifuSeparator());
 			this->btnSignoff = (gcnew System::Windows::Forms::Button());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->btnBonusPoints = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
 			this->btnStatistics = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
 			this->bunifuSeparator2 = (gcnew Bunifu::Framework::UI::BunifuSeparator());
 			this->btnRating = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
 			this->lineSidebar = (gcnew Bunifu::Framework::UI::BunifuSeparator());
 			this->btnInventory = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
 			this->Wrapper = (gcnew System::Windows::Forms::Panel());
-			this->btnBonusPoints = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
 			this->panel2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnReset))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnClose))->BeginInit();
@@ -231,7 +231,7 @@ namespace AppView {
 			this->btnSignoff->FlatAppearance->BorderSize = 0;
 			this->btnSignoff->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btnSignoff->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->btnSignoff->Location = System::Drawing::Point(0, 344);
+			this->btnSignoff->Location = System::Drawing::Point(-9, 344);
 			this->btnSignoff->Name = L"btnSignoff";
 			this->btnSignoff->Size = System::Drawing::Size(182, 68);
 			this->btnSignoff->TabIndex = 8;
@@ -256,6 +256,45 @@ namespace AppView {
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(165, 409);
 			this->panel1->TabIndex = 3;
+			// 
+			// btnBonusPoints
+			// 
+			this->btnBonusPoints->Activecolor = System::Drawing::Color::Transparent;
+			this->btnBonusPoints->BackColor = System::Drawing::Color::Transparent;
+			this->btnBonusPoints->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btnBonusPoints->BorderRadius = 0;
+			this->btnBonusPoints->ButtonText = L"PUNTOS BONUS";
+			this->btnBonusPoints->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->btnBonusPoints->DisabledColor = System::Drawing::Color::Gray;
+			this->btnBonusPoints->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.5F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnBonusPoints->ForeColor = System::Drawing::Color::White;
+			this->btnBonusPoints->Iconcolor = System::Drawing::Color::White;
+			this->btnBonusPoints->Iconimage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnBonusPoints.Iconimage")));
+			this->btnBonusPoints->Iconimage_right = nullptr;
+			this->btnBonusPoints->Iconimage_right_Selected = nullptr;
+			this->btnBonusPoints->Iconimage_Selected = nullptr;
+			this->btnBonusPoints->IconMarginLeft = 0;
+			this->btnBonusPoints->IconMarginRight = 0;
+			this->btnBonusPoints->IconRightVisible = true;
+			this->btnBonusPoints->IconRightZoom = 0;
+			this->btnBonusPoints->IconVisible = true;
+			this->btnBonusPoints->IconZoom = 90;
+			this->btnBonusPoints->IsTab = false;
+			this->btnBonusPoints->Location = System::Drawing::Point(3, 270);
+			this->btnBonusPoints->Name = L"btnBonusPoints";
+			this->btnBonusPoints->Normalcolor = System::Drawing::Color::Transparent;
+			this->btnBonusPoints->OnHovercolor = System::Drawing::Color::Transparent;
+			this->btnBonusPoints->OnHoverTextColor = System::Drawing::Color::White;
+			this->btnBonusPoints->selected = false;
+			this->btnBonusPoints->Size = System::Drawing::Size(155, 57);
+			this->btnBonusPoints->TabIndex = 14;
+			this->btnBonusPoints->Text = L"PUNTOS BONUS";
+			this->btnBonusPoints->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->btnBonusPoints->Textcolor = System::Drawing::Color::White;
+			this->btnBonusPoints->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->btnBonusPoints->Click += gcnew System::EventHandler(this, &ManagerMainForm::btnBonusPoints_Click);
 			// 
 			// btnStatistics
 			// 
@@ -406,45 +445,6 @@ namespace AppView {
 			this->Wrapper->Size = System::Drawing::Size(510, 409);
 			this->Wrapper->TabIndex = 4;
 			// 
-			// btnBonusPoints
-			// 
-			this->btnBonusPoints->Activecolor = System::Drawing::Color::Transparent;
-			this->btnBonusPoints->BackColor = System::Drawing::Color::Transparent;
-			this->btnBonusPoints->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->btnBonusPoints->BorderRadius = 0;
-			this->btnBonusPoints->ButtonText = L"PUNTOS BONUS";
-			this->btnBonusPoints->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->btnBonusPoints->DisabledColor = System::Drawing::Color::Gray;
-			this->btnBonusPoints->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.5F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->btnBonusPoints->ForeColor = System::Drawing::Color::White;
-			this->btnBonusPoints->Iconcolor = System::Drawing::Color::White;
-			this->btnBonusPoints->Iconimage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnBonusPoints.Iconimage")));
-			this->btnBonusPoints->Iconimage_right = nullptr;
-			this->btnBonusPoints->Iconimage_right_Selected = nullptr;
-			this->btnBonusPoints->Iconimage_Selected = nullptr;
-			this->btnBonusPoints->IconMarginLeft = 0;
-			this->btnBonusPoints->IconMarginRight = 0;
-			this->btnBonusPoints->IconRightVisible = true;
-			this->btnBonusPoints->IconRightZoom = 0;
-			this->btnBonusPoints->IconVisible = true;
-			this->btnBonusPoints->IconZoom = 90;
-			this->btnBonusPoints->IsTab = false;
-			this->btnBonusPoints->Location = System::Drawing::Point(3, 270);
-			this->btnBonusPoints->Name = L"btnBonusPoints";
-			this->btnBonusPoints->Normalcolor = System::Drawing::Color::Transparent;
-			this->btnBonusPoints->OnHovercolor = System::Drawing::Color::Transparent;
-			this->btnBonusPoints->OnHoverTextColor = System::Drawing::Color::White;
-			this->btnBonusPoints->selected = false;
-			this->btnBonusPoints->Size = System::Drawing::Size(155, 57);
-			this->btnBonusPoints->TabIndex = 14;
-			this->btnBonusPoints->Text = L"PUNTOS BONUS";
-			this->btnBonusPoints->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnBonusPoints->Textcolor = System::Drawing::Color::White;
-			this->btnBonusPoints->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->btnBonusPoints->Click += gcnew System::EventHandler(this, &ManagerMainForm::btnBonusPoints_Click);
-			// 
 			// ManagerMainForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -481,34 +481,38 @@ namespace AppView {
 
 		}
 
-
-
-	private: System::Void btnClose_Click(System::Object^ sender, System::EventArgs^ e) {
-		Windows::Forms::Application::Exit();
-	}
-private: System::Void btnReset_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->WindowState = Windows::Forms::FormWindowState::Normal;
-	btnReset->Visible = false;
-	btnMax->Visible = true;
-}
-private: System::Void btnMin_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->WindowState = Windows::Forms::FormWindowState::Minimized;
-}
-private: System::Void btnSignoff_Click(System::Object^ sender, System::EventArgs^ e) {
-	Login^ login = gcnew Login();
-	login->Show();
-	this->Hide();
-}
-private: System::Void lineSidebar_Load(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void btnInventory_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->AbrirPanel(gcnew AppView::ProductInventoryForm);
-}
-private: System::Void btnStatistics_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->AbrirPanel(gcnew AppView::StatisticsForm);
-}
-private: System::Void btnBonusPoints_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->AbrirPanel(gcnew AppView::BonusPointsForm);
-}
-};
+		private: System::Void btnClose_Click(System::Object^ sender, System::EventArgs^ e) {
+			Windows::Forms::Application::Exit();
+		}
+		private: System::Void btnReset_Click(System::Object^ sender, System::EventArgs^ e) {
+			this->WindowState = Windows::Forms::FormWindowState::Normal;
+			btnReset->Visible = false;
+			btnMax->Visible = true;
+		}
+		private: System::Void btnMin_Click(System::Object^ sender, System::EventArgs^ e) {
+			this->WindowState = Windows::Forms::FormWindowState::Minimized;
+		}
+		private: System::Void btnSignoff_Click(System::Object^ sender, System::EventArgs^ e) {
+			if (MessageBox::Show(
+				"¿Está seguro(a) de cerrar sesión?",
+				"Confirmación", MessageBoxButtons::YesNo,
+				MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes)
+			{
+				Login^ login = gcnew Login();
+				login->Show();
+				this->Hide();
+			}
+		}
+		private: System::Void lineSidebar_Load(System::Object^ sender, System::EventArgs^ e) {
+		}
+		private: System::Void btnInventory_Click(System::Object^ sender, System::EventArgs^ e) {
+			this->AbrirPanel(gcnew AppView::ProductInventoryForm);
+		}
+		private: System::Void btnStatistics_Click(System::Object^ sender, System::EventArgs^ e) {
+			this->AbrirPanel(gcnew AppView::StatisticsForm);
+		}
+		private: System::Void btnBonusPoints_Click(System::Object^ sender, System::EventArgs^ e) {
+			this->AbrirPanel(gcnew AppView::BonusPointsForm);
+		}
+	};
 }

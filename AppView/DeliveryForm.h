@@ -179,7 +179,7 @@ namespace AppView {
 			this->btnSignoff->FlatAppearance->BorderSize = 0;
 			this->btnSignoff->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btnSignoff->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->btnSignoff->Location = System::Drawing::Point(0, 344);
+			this->btnSignoff->Location = System::Drawing::Point(-10, 344);
 			this->btnSignoff->Name = L"btnSignoff";
 			this->btnSignoff->Size = System::Drawing::Size(182, 68);
 			this->btnSignoff->TabIndex = 8;
@@ -341,30 +341,36 @@ namespace AppView {
 
 		}
 #pragma endregion
-	private: System::Void DeliveryForm_Load(System::Object^ sender, System::EventArgs^ e) {
-		if (user == nullptr) {
-			Login^ login = gcnew Login();
-			login->ControlBox = false;
-			login->Text = "";
-			login->ShowDialog();
-		}
+		private: System::Void DeliveryForm_Load(System::Object^ sender, System::EventArgs^ e) {
+			if (user == nullptr) {
+				Login^ login = gcnew Login();
+				login->ControlBox = false;
+				login->Text = "";
+				login->ShowDialog();
+			}
 
-	}
-private: System::Void btnClose_Click(System::Object^ sender, System::EventArgs^ e) {
-	Windows::Forms::Application::Exit();
-}
-private: System::Void btnReset_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->WindowState = Windows::Forms::FormWindowState::Normal;
-	btnReset->Visible = false;
-	btnMax->Visible = true;
-}
-private: System::Void btnMin_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->WindowState = Windows::Forms::FormWindowState::Minimized;
-}
-private: System::Void btnSignoff_Click(System::Object^ sender, System::EventArgs^ e) {
-	Login^ login = gcnew Login();
-	login->Show();
-	this->Hide();
-}
-};
+		}
+		private: System::Void btnClose_Click(System::Object^ sender, System::EventArgs^ e) {
+			Windows::Forms::Application::Exit();
+		}
+		private: System::Void btnReset_Click(System::Object^ sender, System::EventArgs^ e) {
+			this->WindowState = Windows::Forms::FormWindowState::Normal;
+			btnReset->Visible = false;
+			btnMax->Visible = true;
+		}
+		private: System::Void btnMin_Click(System::Object^ sender, System::EventArgs^ e) {
+			this->WindowState = Windows::Forms::FormWindowState::Minimized;
+		}
+		private: System::Void btnSignoff_Click(System::Object^ sender, System::EventArgs^ e) {
+			if (MessageBox::Show(
+				"¿Está seguro(a) de cerrar sesión?",
+				"Confirmación", MessageBoxButtons::YesNo,
+				MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes)
+			{
+				Login^ login = gcnew Login();
+				login->Show();
+				this->Hide();
+			}
+		}
+	};
 }
