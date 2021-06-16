@@ -120,6 +120,16 @@ void AppController::AppManager::RegisterSale(Order^ sale)
 	DBController::RegisterSale(sale);
 }
 
+List<Order^>^ AppController::AppManager::QueryAllSales()
+{
+	return DBController::QueryAllSales();
+}
+
+List<Order^>^ AppController::AppManager::QueryAllSalesByCustomer(String^ username)
+{
+	return DBController::QueryAllSalesByCustomer(username);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 /*Bonnus Points*/
 void AppController::AppManager::AddBonusPointsPQ(BonusPoints^ bp)

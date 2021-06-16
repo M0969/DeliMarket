@@ -221,6 +221,27 @@ void AppController::DBController::RegisterSale(Order^ sale)
     saleDB->Persist();
 }
 
+List<Order^>^ AppController::DBController::QueryAllSales()
+{
+    saleDB->LoadFromBinaryFile();
+    return saleDB->ListDB;
+}
+
+List<Order^>^ AppController::DBController::QueryAllSalesByCustomer(String^ username)
+{
+    List<Order^>^ list = gcnew List<Order^>();
+    saleDB->LoadFromBinaryFile();
+    for (int i = 0; i < saleDB->ListDB->Count; i++) {
+        if (saleDB->ListDB[i]->Customer->Username->CompareTo(username) == 0) {
+            list->Add(dynamic_cast <Order^>(saleDB->ListDB[i]));
+
+        }
+        return list;
+    }
+
+}
+
+
 /////////////////////////////////////////////////
 
 /*User*/
@@ -479,7 +500,8 @@ void AppController::DBController::DeletefromCarrito(int productId)
 
 void AppController::DBController::DeleteAllCarrito()
 {
-    for (int i = 0; i < carritoDB->ListDB->Count; i++) {
+  
+    for (int i = 0; i <= carritoDB->ListDB->Count; i++) {
         carritoDB->ListDB->RemoveAt(i);
         //carritoDB->Persist();
     }

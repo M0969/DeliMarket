@@ -32,7 +32,7 @@ namespace AppView {
 			//TODO: agregar código de constructor aquí
 			//
 		}
-
+	
 	protected:
 		/// <summary>
 		/// Limpiar los recursos que se estén usando.
@@ -65,7 +65,7 @@ namespace AppView {
 	private: System::Windows::Forms::ComboBox^ cmbBoxBPSelect;
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Button^ btnASCustom;
-
+	public: System::Windows::Forms::TextBox^ textUserNameCS;
 
 
 
@@ -91,7 +91,7 @@ namespace AppView {
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::ComboBox^ cmbTypePayment;
 	private: System::Windows::Forms::TextBox^ txtSAddres;
-	public: System::Windows::Forms::TextBox^ textUserNameCS;
+	
 	private:
 
 
@@ -370,7 +370,6 @@ namespace AppView {
 			this->textUserNameCS->Name = L"textUserNameCS";
 			this->textUserNameCS->Size = System::Drawing::Size(100, 20);
 			this->textUserNameCS->TabIndex = 23;
-			this->textUserNameCS->Visible = false;
 			// 
 			// CarritoCustomerForm
 			// 
@@ -397,7 +396,7 @@ namespace AppView {
 			this->Controls->Add(this->dgvCarrito);
 			this->Controls->Add(this->label6);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			//this->Name = L"CarritoCustomerForm";
+
 			this->Text = L"CarritoCustomerForm";
 			this->Load += gcnew System::EventHandler(this, &CarritoCustomerForm::CarritoCustomerForm_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvCarrito))->EndInit();
@@ -412,6 +411,8 @@ private: System::Void CarritoCustomerForm_Load(System::Object^ sender, System::E
 	LoadCmbCustomer();
 	LoadCmbBoints();
 	RefreshDGVCarrito();
+	
+	
 }
 
 void LoadCmbCustomer() {
@@ -423,10 +424,10 @@ void LoadCmbCustomer() {
 
 }
 void LoadCmbBoints() {
-	//cmbBoxBPSelect->Items->Clear();
-	//List<BonusPoints^>^ bpList = AppManager::QueryAllBonusPointsPQ();
-	//for (int i = 0; bpList->Count; i++)
-		//cmbBoxBPSelect->Items->Add(gcnew ComboBoxItem(bpList[i]->PointsQuantity, ""));
+	cmbBoxBPSelect->Items->Clear();
+	List<BonusPoints^>^ bpList = AppManager::QueryAllBonusPointsPQ();
+	for (int i = 0; i< bpList->Count; i++)
+		cmbBoxBPSelect->Items->Add(gcnew ComboBoxItem(bpList[i]->PointsQuantity, ""));
 }
 
 public: void RefreshDGVCarrito() {

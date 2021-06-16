@@ -88,6 +88,11 @@ namespace AppView {
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Boleta::typeid));
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->ProductId = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->ProductName = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Quantity = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->UnitPrice = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Price = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
@@ -100,11 +105,6 @@ namespace AppView {
 			this->textTotalSaleB = (gcnew System::Windows::Forms::TextBox());
 			this->textNameCB = (gcnew System::Windows::Forms::TextBox());
 			this->txtDocumentNumberCB = (gcnew System::Windows::Forms::TextBox());
-			this->ProductId = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->ProductName = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Quantity = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->UnitPrice = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Price = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
@@ -112,10 +112,10 @@ namespace AppView {
 			// pictureBox1
 			// 
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(8, 8);
+			this->pictureBox1->Location = System::Drawing::Point(11, 8);
 			this->pictureBox1->Margin = System::Windows::Forms::Padding(2);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(95, 43);
+			this->pictureBox1->Size = System::Drawing::Size(85, 53);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox1->TabIndex = 0;
 			this->pictureBox1->TabStop = false;
@@ -135,112 +135,6 @@ namespace AppView {
 			this->dataGridView1->RowTemplate->Height = 28;
 			this->dataGridView1->Size = System::Drawing::Size(490, 112);
 			this->dataGridView1->TabIndex = 2;
-			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(433, 8);
-			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(82, 13);
-			this->label2->TabIndex = 4;
-			this->label2->Text = L"RUC XXXXXXX";
-			// 
-			// label3
-			// 
-			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(433, 25);
-			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(83, 13);
-			this->label3->TabIndex = 5;
-			this->label3->Text = L"Boleta de Venta";
-			// 
-			// label5
-			// 
-			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(23, 266);
-			this->label5->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(73, 13);
-			this->label5->TabIndex = 9;
-			this->label5->Text = L"Tipo de pago:";
-			// 
-			// label6
-			// 
-			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(387, 240);
-			this->label6->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(34, 13);
-			this->label6->TabIndex = 11;
-			this->label6->Text = L"Total:";
-			// 
-			// textDateTimeB
-			// 
-			this->textDateTimeB->Location = System::Drawing::Point(26, 237);
-			this->textDateTimeB->Name = L"textDateTimeB";
-			this->textDateTimeB->ReadOnly = true;
-			this->textDateTimeB->Size = System::Drawing::Size(189, 20);
-			this->textDateTimeB->TabIndex = 13;
-			// 
-			// textTypePaymentB
-			// 
-			this->textTypePaymentB->Location = System::Drawing::Point(101, 263);
-			this->textTypePaymentB->Name = L"textTypePaymentB";
-			this->textTypePaymentB->ReadOnly = true;
-			this->textTypePaymentB->Size = System::Drawing::Size(114, 20);
-			this->textTypePaymentB->TabIndex = 14;
-			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(23, 78);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(99, 13);
-			this->label1->TabIndex = 15;
-			this->label1->Text = L"Nombre del Cliente:";
-			// 
-			// label7
-			// 
-			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(357, 78);
-			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(92, 13);
-			this->label7->TabIndex = 16;
-			this->label7->Text = L"N° de Documento";
-			// 
-			// textIdSaleDetailB
-			// 
-			this->textIdSaleDetailB->Location = System::Drawing::Point(436, 41);
-			this->textIdSaleDetailB->Name = L"textIdSaleDetailB";
-			this->textIdSaleDetailB->ReadOnly = true;
-			this->textIdSaleDetailB->Size = System::Drawing::Size(100, 20);
-			this->textIdSaleDetailB->TabIndex = 17;
-			// 
-			// textTotalSaleB
-			// 
-			this->textTotalSaleB->Location = System::Drawing::Point(426, 237);
-			this->textTotalSaleB->Name = L"textTotalSaleB";
-			this->textTotalSaleB->ReadOnly = true;
-			this->textTotalSaleB->Size = System::Drawing::Size(100, 20);
-			this->textTotalSaleB->TabIndex = 18;
-			// 
-			// textNameCB
-			// 
-			this->textNameCB->Location = System::Drawing::Point(128, 75);
-			this->textNameCB->Name = L"textNameCB";
-			this->textNameCB->ReadOnly = true;
-			this->textNameCB->Size = System::Drawing::Size(145, 20);
-			this->textNameCB->TabIndex = 19;
-			// 
-			// txtDocumentNumberCB
-			// 
-			this->txtDocumentNumberCB->Location = System::Drawing::Point(455, 75);
-			this->txtDocumentNumberCB->Name = L"txtDocumentNumberCB";
-			this->txtDocumentNumberCB->ReadOnly = true;
-			this->txtDocumentNumberCB->Size = System::Drawing::Size(81, 20);
-			this->txtDocumentNumberCB->TabIndex = 20;
 			// 
 			// ProductId
 			// 
@@ -280,11 +174,136 @@ namespace AppView {
 			this->Price->ReadOnly = true;
 			this->Price->Width = 85;
 			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Corbel", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label2->ForeColor = System::Drawing::Color::Transparent;
+			this->label2->Location = System::Drawing::Point(433, 8);
+			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(71, 13);
+			this->label2->TabIndex = 4;
+			this->label2->Text = L"RUC XXXXXXX";
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Corbel", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label3->ForeColor = System::Drawing::Color::Transparent;
+			this->label3->Location = System::Drawing::Point(433, 25);
+			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(78, 13);
+			this->label3->TabIndex = 5;
+			this->label3->Text = L"Boleta de Venta";
+			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Font = (gcnew System::Drawing::Font(L"Corbel", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label5->ForeColor = System::Drawing::Color::Transparent;
+			this->label5->Location = System::Drawing::Point(23, 266);
+			this->label5->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(69, 13);
+			this->label5->TabIndex = 9;
+			this->label5->Text = L"Tipo de pago:";
+			// 
+			// label6
+			// 
+			this->label6->AutoSize = true;
+			this->label6->Font = (gcnew System::Drawing::Font(L"Corbel", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label6->ForeColor = System::Drawing::Color::Transparent;
+			this->label6->Location = System::Drawing::Point(375, 237);
+			this->label6->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(33, 13);
+			this->label6->TabIndex = 11;
+			this->label6->Text = L"Total:";
+			// 
+			// textDateTimeB
+			// 
+			this->textDateTimeB->Location = System::Drawing::Point(26, 237);
+			this->textDateTimeB->Name = L"textDateTimeB";
+			this->textDateTimeB->ReadOnly = true;
+			this->textDateTimeB->Size = System::Drawing::Size(189, 21);
+			this->textDateTimeB->TabIndex = 13;
+			// 
+			// textTypePaymentB
+			// 
+			this->textTypePaymentB->Location = System::Drawing::Point(101, 263);
+			this->textTypePaymentB->Name = L"textTypePaymentB";
+			this->textTypePaymentB->ReadOnly = true;
+			this->textTypePaymentB->Size = System::Drawing::Size(114, 21);
+			this->textTypePaymentB->TabIndex = 14;
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Corbel", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->ForeColor = System::Drawing::Color::Transparent;
+			this->label1->Location = System::Drawing::Point(23, 78);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(98, 13);
+			this->label1->TabIndex = 15;
+			this->label1->Text = L"Nombre del Cliente:";
+			// 
+			// label7
+			// 
+			this->label7->AutoSize = true;
+			this->label7->Font = (gcnew System::Drawing::Font(L"Corbel", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label7->ForeColor = System::Drawing::Color::Transparent;
+			this->label7->Location = System::Drawing::Point(357, 78);
+			this->label7->Name = L"label7";
+			this->label7->Size = System::Drawing::Size(88, 13);
+			this->label7->TabIndex = 16;
+			this->label7->Text = L"N° de Documento";
+			// 
+			// textIdSaleDetailB
+			// 
+			this->textIdSaleDetailB->Location = System::Drawing::Point(436, 41);
+			this->textIdSaleDetailB->Name = L"textIdSaleDetailB";
+			this->textIdSaleDetailB->ReadOnly = true;
+			this->textIdSaleDetailB->Size = System::Drawing::Size(100, 21);
+			this->textIdSaleDetailB->TabIndex = 17;
+			// 
+			// textTotalSaleB
+			// 
+			this->textTotalSaleB->Location = System::Drawing::Point(414, 234);
+			this->textTotalSaleB->Name = L"textTotalSaleB";
+			this->textTotalSaleB->ReadOnly = true;
+			this->textTotalSaleB->Size = System::Drawing::Size(100, 21);
+			this->textTotalSaleB->TabIndex = 18;
+			// 
+			// textNameCB
+			// 
+			this->textNameCB->Location = System::Drawing::Point(128, 75);
+			this->textNameCB->Name = L"textNameCB";
+			this->textNameCB->ReadOnly = true;
+			this->textNameCB->Size = System::Drawing::Size(145, 21);
+			this->textNameCB->TabIndex = 19;
+			// 
+			// txtDocumentNumberCB
+			// 
+			this->txtDocumentNumberCB->Location = System::Drawing::Point(455, 75);
+			this->txtDocumentNumberCB->Name = L"txtDocumentNumberCB";
+			this->txtDocumentNumberCB->ReadOnly = true;
+			this->txtDocumentNumberCB->Size = System::Drawing::Size(81, 21);
+			this->txtDocumentNumberCB->TabIndex = 20;
+			// 
 			// Boleta
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
+			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)), static_cast<System::Int32>(static_cast<System::Byte>(31)),
+				static_cast<System::Int32>(static_cast<System::Byte>(33)));
 			this->ClientSize = System::Drawing::Size(559, 308);
 			this->Controls->Add(this->txtDocumentNumberCB);
 			this->Controls->Add(this->textNameCB);
@@ -300,6 +319,9 @@ namespace AppView {
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->textDateTimeB);
+			this->Font = (gcnew System::Drawing::Font(L"Corbel", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->ForeColor = System::Drawing::Color::Transparent;
 			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"Boleta";
 			this->Text = L"Boleta";

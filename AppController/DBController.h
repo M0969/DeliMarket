@@ -106,6 +106,8 @@ namespace AppController {
 
 		/*Sale*/
 		static void RegisterSale(Order^);
+		static List<Order^>^ QueryAllSales();
+		static List<Order^>^ QueryAllSalesByCustomer(String^ username);
 	};
 }
 

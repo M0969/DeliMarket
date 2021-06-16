@@ -8,6 +8,7 @@ namespace AppController {
 	public:
 		List <Order^>^ ListDB = gcnew List<Order^>();
 		void Persist();
+		void LoadFromBinaryFile();
 		SaleDB();
 
 	};

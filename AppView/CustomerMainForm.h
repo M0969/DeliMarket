@@ -4,7 +4,7 @@
 #include "CarritoCustomerForm.h"
 #include "ProductsCustomerForm.h"
 #include "BonusPointsCustomerForm.h"
-
+#include "SalesCustomerForm.h"
 #include "StatisticsForm.h"
 
 namespace AppView {
@@ -141,14 +141,15 @@ namespace AppView {
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(CustomerMainForm::typeid));
 			this->Top = (gcnew System::Windows::Forms::Panel());
-			this->textUserNameC = (gcnew System::Windows::Forms::TextBox());
 			this->btnReset = (gcnew System::Windows::Forms::PictureBox());
 			this->btnClose = (gcnew System::Windows::Forms::PictureBox());
 			this->Title = (gcnew System::Windows::Forms::Label());
 			this->MenuSideBar = (gcnew System::Windows::Forms::PictureBox());
 			this->btnMin = (gcnew System::Windows::Forms::PictureBox());
 			this->btnMax = (gcnew System::Windows::Forms::PictureBox());
+			this->textUserNameC = (gcnew System::Windows::Forms::TextBox());
 			this->SideBarWrapper = (gcnew System::Windows::Forms::Panel());
+			this->txtNameC = (gcnew System::Windows::Forms::TextBox());
 			this->bunifuSeparator1 = (gcnew Bunifu::Framework::UI::BunifuSeparator());
 			this->btnSignoff = (gcnew System::Windows::Forms::Button());
 			this->btnMyshopping = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
@@ -159,7 +160,6 @@ namespace AppView {
 			this->lineSideBar3 = (gcnew Bunifu::Framework::UI::BunifuSeparator());
 			this->lineSidebar2 = (gcnew Bunifu::Framework::UI::BunifuSeparator());
 			this->Wrapper = (gcnew System::Windows::Forms::Panel());
-			this->txtNameC = (gcnew System::Windows::Forms::TextBox());
 			this->Top->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnReset))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnClose))->BeginInit();
@@ -185,17 +185,6 @@ namespace AppView {
 			this->Top->Name = L"Top";
 			this->Top->Size = System::Drawing::Size(675, 66);
 			this->Top->TabIndex = 0;
-			// 
-			// textUserNameC
-			// 
-			this->textUserNameC->BackColor = System::Drawing::SystemColors::AppWorkspace;
-			this->textUserNameC->ForeColor = System::Drawing::SystemColors::InfoText;
-			this->textUserNameC->Location = System::Drawing::Point(24, 15);
-			this->textUserNameC->Name = L"textUserNameC";
-			this->textUserNameC->ReadOnly = true;
-			this->textUserNameC->Size = System::Drawing::Size(116, 20);
-			this->textUserNameC->TabIndex = 4;
-			this->textUserNameC->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
 			// btnReset
 			// 
@@ -269,6 +258,17 @@ namespace AppView {
 			this->btnMax->TabStop = false;
 			this->btnMax->Click += gcnew System::EventHandler(this, &CustomerMainForm::btnMax_Click_1);
 			// 
+			// textUserNameC
+			// 
+			this->textUserNameC->BackColor = System::Drawing::SystemColors::AppWorkspace;
+			this->textUserNameC->ForeColor = System::Drawing::SystemColors::InfoText;
+			this->textUserNameC->Location = System::Drawing::Point(24, 15);
+			this->textUserNameC->Name = L"textUserNameC";
+			this->textUserNameC->ReadOnly = true;
+			this->textUserNameC->Size = System::Drawing::Size(116, 20);
+			this->textUserNameC->TabIndex = 4;
+			this->textUserNameC->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			// 
 			// SideBarWrapper
 			// 
 			this->SideBarWrapper->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)), static_cast<System::Int32>(static_cast<System::Byte>(31)),
@@ -290,6 +290,17 @@ namespace AppView {
 			this->SideBarWrapper->Name = L"SideBarWrapper";
 			this->SideBarWrapper->Size = System::Drawing::Size(165, 409);
 			this->SideBarWrapper->TabIndex = 1;
+			// 
+			// txtNameC
+			// 
+			this->txtNameC->BackColor = System::Drawing::SystemColors::AppWorkspace;
+			this->txtNameC->ForeColor = System::Drawing::SystemColors::InfoText;
+			this->txtNameC->Location = System::Drawing::Point(31, 41);
+			this->txtNameC->Name = L"txtNameC";
+			this->txtNameC->ReadOnly = true;
+			this->txtNameC->Size = System::Drawing::Size(100, 20);
+			this->txtNameC->TabIndex = 9;
+			this->txtNameC->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
 			// bunifuSeparator1
 			// 
@@ -354,6 +365,7 @@ namespace AppView {
 			this->btnMyshopping->Textcolor = System::Drawing::Color::White;
 			this->btnMyshopping->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->btnMyshopping->Click += gcnew System::EventHandler(this, &CustomerMainForm::btnMyshopping_Click);
 			// 
 			// btnListofproducts
 			// 
@@ -519,17 +531,6 @@ namespace AppView {
 			this->Wrapper->Size = System::Drawing::Size(510, 409);
 			this->Wrapper->TabIndex = 2;
 			// 
-			// txtNameC
-			// 
-			this->txtNameC->BackColor = System::Drawing::SystemColors::AppWorkspace;
-			this->txtNameC->ForeColor = System::Drawing::SystemColors::InfoText;
-			this->txtNameC->Location = System::Drawing::Point(31, 41);
-			this->txtNameC->Name = L"txtNameC";
-			this->txtNameC->ReadOnly = true;
-			this->txtNameC->Size = System::Drawing::Size(100, 20);
-			this->txtNameC->TabIndex = 9;
-			this->txtNameC->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			// 
 			// CustomerMainForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -564,7 +565,7 @@ namespace AppView {
 			FormHijo->TopLevel = false;
 			FormHijo->Dock = DockStyle::Fill;
 			this->Wrapper->Controls->Add(FormHijo);
-			this->Wrapper->Tag = FormHijo;
+	
 			FormHijo->Show();
 			
 		}
@@ -615,12 +616,15 @@ namespace AppView {
 	}
 
 	private: System::Void btnShoppingcart_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->AbrirPanel(gcnew AppView::CarritoCustomerForm);
-		CarritoCustomerForm^ form = gcnew CarritoCustomerForm();
-		form->textUserNameCS->Text = textUserNameC->Text;
+		CarritoCustomerForm^ carrito = gcnew CarritoCustomerForm();
+		carrito->textUserNameCS->Text = textUserNameC->Text;
+		this->AbrirPanel(carrito);
+		
+	
 	}
 
 	private: System::Void btnBonuspoints_Click(System::Object^ sender, System::EventArgs^ e) {
+
 		this->AbrirPanel(gcnew AppView::BonusPointsCustomerForm);
 	}
 		
@@ -640,5 +644,10 @@ namespace AppView {
 			this->Hide();
 		}
 	}
+private: System::Void btnMyshopping_Click(System::Object^ sender, System::EventArgs^ e) {
+	SalesCustomerForm^ sales = gcnew SalesCustomerForm();
+	sales->txtUser->Text = textUserNameC->Text;
+	this->AbrirPanel(sales);
+}
 };
 }
