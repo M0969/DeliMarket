@@ -53,6 +53,12 @@
     <ClCompile Include="StatisticsForm.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="BonusPointsCustomerForm.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Boleta.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CustomerMainForm.h">
@@ -88,10 +94,16 @@
     <ClInclude Include="StatisticsForm.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="BonusPointsCustomerForm.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Boleta.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Boleta.resx">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Archivos de recursos</Filter>
     </EmbeddedResource>
   </ItemGroup>
 </Project>
