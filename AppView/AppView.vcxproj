@@ -146,9 +146,12 @@
     <ClCompile Include="CarritoCustomerForm.cpp" />
     <ClCompile Include="ComboBoxItem.cpp" />
     <ClCompile Include="CustomerMainForm.cpp" />
+    <ClCompile Include="CustomerRatingForm.cpp" />
     <ClCompile Include="DeliveryForm.cpp" />
+    <ClCompile Include="DeliverymanRatingForm.cpp" />
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="ManagerMainForm.cpp" />
+    <ClCompile Include="OrderListForm.cpp" />
     <ClCompile Include="ProductInventoryForm.cpp" />
     <ClCompile Include="ProductsCustomerForm.cpp" />
     <ClCompile Include="StatisticsForm.cpp" />
@@ -171,13 +174,22 @@
     <ClInclude Include="CustomerMainForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="CustomerRatingForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="DeliveryForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="DeliverymanRatingForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Login.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="ManagerMainForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="OrderListForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="ProductInventoryForm.h">
@@ -210,11 +222,17 @@
     <EmbeddedResource Include="DeliveryForm.resx">
       <DependentUpon>DeliveryForm.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DeliverymanRatingForm.resx">
+      <DependentUpon>DeliverymanRatingForm.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerMainForm.resx">
       <DependentUpon>ManagerMainForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderListForm.resx">
+      <DependentUpon>OrderListForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductInventoryForm.resx">
       <DependentUpon>ProductInventoryForm.h</DependentUpon>
