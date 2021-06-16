@@ -69,6 +69,13 @@ List<HealthCare^>^ AppController::DBController::QueryAllHealthCare()
     return healthcareList;
 }
 
+int AppController::DBController::ReturnIDbyProductName(String^ name)
+{
+    for (int i = 0; i < productDB->ListDB->Count; i++)
+        if (productDB->ListDB[i]->Name == name)
+            return productDB->ListDB[i]->Id;
+}
+
 Product^ AppController::DBController::QueryProductById(int productId)
 {   //como lo tengo que buscar por id, tengo que hacer un for
     productDB->LoadFromBinaryFile();
@@ -206,6 +213,12 @@ List<BonusPoints^>^ AppController::DBController::QueryAllBonusPointsSQ()
 {
     bonuspointsDB->LoadFromBinaryFileSQ();
     return bonuspointsDB->ListSQDB;
+}
+
+void AppController::DBController::RegisterSale(Order^ sale)
+{
+    saleDB->ListDB->Add(sale);
+    saleDB->Persist();
 }
 
 /////////////////////////////////////////////////
@@ -455,21 +468,20 @@ void AppController::DBController::AddtoCarrito(Product^product)
 
 void AppController::DBController::DeletefromCarrito(int productId)
 {
+
     for (int i = 0; i < carritoDB->ListDB->Count; i++)
         if (carritoDB->ListDB[i]->Id == productId) {
-   
             carritoDB->ListDB->RemoveAt(i);
-            carritoDB->Persist();
+            //carritoDB->Persist();
             return;
         }
 }
 
 void AppController::DBController::DeleteAllCarrito()
 {
-    int a = carritoDB->ListDB->Count;
-    for (int i = 0; i < a; i++) {
+    for (int i = 0; i < carritoDB->ListDB->Count; i++) {
         carritoDB->ListDB->RemoveAt(i);
-        carritoDB->Persist();
+        //carritoDB->Persist();
     }
 }
 

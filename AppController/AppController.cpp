@@ -17,6 +17,11 @@ void AppController::AppManager::DeleteProduct(int productId)
 	DBController::DeleteProduct(productId);
 }
 
+int AppController::AppManager::ReturnIDbyProductName(String^ name)
+{
+	return DBController::ReturnIDbyProductName(name);
+}
+
 List<Product^>^ AppController::AppManager::QueryAllProducts()
 {
 	return DBController::QueryAllProducts();
@@ -108,6 +113,11 @@ List<Product^>^ AppController::AppManager::QueryAllCarrito()
 bool AppController::AppManager::QueryCarritoByName(String^ name)
 {
 	return DBController::QueryCarritoByName(name);
+}
+
+void AppController::AppManager::RegisterSale(Order^ sale)
+{
+	DBController::RegisterSale(sale);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////

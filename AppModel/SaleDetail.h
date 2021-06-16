@@ -14,6 +14,7 @@ namespace AppModel {
         property double Quantity;
         property double UnitPrice;
         property double Total;
+        property double SubTotal;
         property Product^ Product; // entonces SailDetail esta relacionado directamente con Product
     };
 }

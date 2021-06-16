@@ -12,6 +12,7 @@ namespace AppController {
 			static void AddProduct(Product^); // agregar
 			static void UpdateProduct(Product^); //actualizar
 			static void DeleteProduct(int productId); //borrar
+			static int ReturnIDbyProductName(String^ name);
 			static Product^ QueryProductById(int productId);
 			static List<Product^>^ QueryAllProducts(); // Consulta todos los productos
 			static List<Product^>^ QueryProductsByDescription(String^ description);
@@ -47,6 +48,7 @@ namespace AppController {
 		// Métodos CRUD para cliente
 
 		// Métodos CRUD para venta
+			static void RegisterSale(Order^);
 		// Métodos CRUD para repartidor
 	};
 

@@ -6,6 +6,8 @@
 #include "CustomerDB.h"
 #include "ManagerDB.h"
 #include "CarritoDB.h"
+#include "SaleDB.h"
+
 using namespace AppModel;
 using namespace System::Collections::Generic;
 
@@ -20,6 +22,7 @@ namespace AppController {
 		static DeliveryManDB^ deliveryManDB = gcnew DeliveryManDB();
 		static ManagerDB^ managerDB = gcnew ManagerDB();
 		static CarritoDB^ carritoDB = gcnew CarritoDB();
+		static SaleDB^ saleDB = gcnew SaleDB();
 	public:
 
 	/*User*/
@@ -79,6 +82,7 @@ namespace AppController {
 		static int QueryLastProductId();
 		static List<Groceries^>^ QueryAllGroceries();
 		static List<HealthCare^>^ QueryAllHealthCare();
+		static int ReturnIDbyProductName(String^ name);
 		static Product^ QueryProductById(int productId); //DEVOLDERÁ UN PRODUCTO COMPLETO
 		static Groceries^ QueryGroceriesById(int productId);
 		static HealthCare^ QueryHealthCareById(int productId);
@@ -100,6 +104,8 @@ namespace AppController {
 		static List<BonusPoints^>^ QueryAllBonusPointsPQ();
 		static List<BonusPoints^>^ QueryAllBonusPointsSQ();
 
+		/*Sale*/
+		static void RegisterSale(Order^);
 	};
 }
 

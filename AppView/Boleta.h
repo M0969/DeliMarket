@@ -38,20 +38,38 @@ namespace AppView {
 	protected:
 
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Cantidad;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Descripcion;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ PrecioUnitario;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Importe;
-	private: System::Windows::Forms::Label^ label1;
+
+
+
+
+
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::Label^ label4;
-	private: System::Windows::Forms::Label^ NumeroDNI;
-	private: System::Windows::Forms::DateTimePicker^ dateTimePicker1;
+
+
+
 	private: System::Windows::Forms::Label^ label5;
-	private: System::Windows::Forms::ComboBox^ comboBox1;
+
 	private: System::Windows::Forms::Label^ label6;
-	private: System::Windows::Forms::Label^ TOTAL;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ ProductId;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ ProductName;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Quantity;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ UnitPrice;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Price;
+	public: System::Windows::Forms::TextBox^ textDateTimeB;
+	private:
+	public: System::Windows::Forms::TextBox^ textTypePaymentB;
+	private: System::Windows::Forms::Label^ label1;
+	public:
+	private: System::Windows::Forms::Label^ label7;
+	public: System::Windows::Forms::TextBox^ textIdSaleDetailB;
+	private:
+	public: System::Windows::Forms::TextBox^ textTotalSaleB;
+	internal: System::Windows::Forms::TextBox^ textNameCB;
+	public:
+
+	public: System::Windows::Forms::TextBox^ txtDocumentNumberCB;
+
 
 
 	private:
@@ -70,20 +88,23 @@ namespace AppView {
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Boleta::typeid));
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			this->Cantidad = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Descripcion = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->PrecioUnitario = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Importe = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->NumeroDNI = (gcnew System::Windows::Forms::Label());
-			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
 			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->TOTAL = (gcnew System::Windows::Forms::Label());
+			this->textDateTimeB = (gcnew System::Windows::Forms::TextBox());
+			this->textTypePaymentB = (gcnew System::Windows::Forms::TextBox());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->label7 = (gcnew System::Windows::Forms::Label());
+			this->textIdSaleDetailB = (gcnew System::Windows::Forms::TextBox());
+			this->textTotalSaleB = (gcnew System::Windows::Forms::TextBox());
+			this->textNameCB = (gcnew System::Windows::Forms::TextBox());
+			this->txtDocumentNumberCB = (gcnew System::Windows::Forms::TextBox());
+			this->ProductId = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->ProductName = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Quantity = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->UnitPrice = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Price = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
@@ -91,9 +112,10 @@ namespace AppView {
 			// pictureBox1
 			// 
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(12, 12);
+			this->pictureBox1->Location = System::Drawing::Point(8, 8);
+			this->pictureBox1->Margin = System::Windows::Forms::Padding(2);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(142, 66);
+			this->pictureBox1->Size = System::Drawing::Size(95, 43);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox1->TabIndex = 0;
 			this->pictureBox1->TabStop = false;
@@ -101,161 +123,187 @@ namespace AppView {
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(4) {
-				this->Cantidad,
-					this->Descripcion, this->PrecioUnitario, this->Importe
+			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(5) {
+				this->ProductId,
+					this->ProductName, this->Quantity, this->UnitPrice, this->Price
 			});
 			this->dataGridView1->GridColor = System::Drawing::SystemColors::GradientInactiveCaption;
-			this->dataGridView1->Location = System::Drawing::Point(63, 173);
+			this->dataGridView1->Location = System::Drawing::Point(26, 105);
+			this->dataGridView1->Margin = System::Windows::Forms::Padding(2);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 62;
 			this->dataGridView1->RowTemplate->Height = 28;
-			this->dataGridView1->Size = System::Drawing::Size(668, 117);
+			this->dataGridView1->Size = System::Drawing::Size(490, 112);
 			this->dataGridView1->TabIndex = 2;
-			// 
-			// Cantidad
-			// 
-			this->Cantidad->HeaderText = L"Cantidad";
-			this->Cantidad->MinimumWidth = 8;
-			this->Cantidad->Name = L"Cantidad";
-			this->Cantidad->ReadOnly = true;
-			this->Cantidad->Width = 150;
-			// 
-			// Descripcion
-			// 
-			this->Descripcion->HeaderText = L"Descripcion";
-			this->Descripcion->MinimumWidth = 8;
-			this->Descripcion->Name = L"Descripcion";
-			this->Descripcion->Width = 150;
-			// 
-			// PrecioUnitario
-			// 
-			this->PrecioUnitario->HeaderText = L"Precio Unitario";
-			this->PrecioUnitario->MinimumWidth = 8;
-			this->PrecioUnitario->Name = L"PrecioUnitario";
-			this->PrecioUnitario->Width = 150;
-			// 
-			// Importe
-			// 
-			this->Importe->HeaderText = L"Importe";
-			this->Importe->MinimumWidth = 8;
-			this->Importe->Name = L"Importe";
-			this->Importe->Width = 150;
-			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->BackColor = System::Drawing::SystemColors::HighlightText;
-			this->label1->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->label1->Location = System::Drawing::Point(59, 130);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(140, 20);
-			this->label1->TabIndex = 3;
-			this->label1->Text = L"Nombre del cliente";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(650, 12);
+			this->label2->Location = System::Drawing::Point(433, 8);
+			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(125, 20);
+			this->label2->Size = System::Drawing::Size(82, 13);
 			this->label2->TabIndex = 4;
 			this->label2->Text = L"RUC XXXXXXX";
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(650, 32);
+			this->label3->Location = System::Drawing::Point(433, 25);
+			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(124, 20);
+			this->label3->Size = System::Drawing::Size(83, 13);
 			this->label3->TabIndex = 5;
 			this->label3->Text = L"Boleta de Venta";
-			// 
-			// label4
-			// 
-			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(650, 52);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(65, 20);
-			this->label4->TabIndex = 6;
-			this->label4->Text = L"N12345";
-			// 
-			// NumeroDNI
-			// 
-			this->NumeroDNI->BackColor = System::Drawing::SystemColors::ControlLightLight;
-			this->NumeroDNI->Location = System::Drawing::Point(553, 130);
-			this->NumeroDNI->Name = L"NumeroDNI";
-			this->NumeroDNI->Size = System::Drawing::Size(139, 30);
-			this->NumeroDNI->TabIndex = 7;
-			this->NumeroDNI->Text = L"Numero DNI";
-			// 
-			// dateTimePicker1
-			// 
-			this->dateTimePicker1->Checked = false;
-			this->dateTimePicker1->Enabled = false;
-			this->dateTimePicker1->ImeMode = System::Windows::Forms::ImeMode::Off;
-			this->dateTimePicker1->Location = System::Drawing::Point(63, 336);
-			this->dateTimePicker1->Name = L"dateTimePicker1";
-			this->dateTimePicker1->Size = System::Drawing::Size(282, 26);
-			this->dateTimePicker1->TabIndex = 8;
-			this->dateTimePicker1->ValueChanged += gcnew System::EventHandler(this, &Boleta::dateTimePicker1_ValueChanged);
 			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(63, 410);
+			this->label5->Location = System::Drawing::Point(23, 266);
+			this->label5->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(105, 20);
+			this->label5->Size = System::Drawing::Size(73, 13);
 			this->label5->TabIndex = 9;
 			this->label5->Text = L"Tipo de pago:";
-			// 
-			// comboBox1
-			// 
-			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Tarjeta", L"Efectivo" });
-			this->comboBox1->Location = System::Drawing::Point(175, 410);
-			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(121, 28);
-			this->comboBox1->TabIndex = 10;
 			// 
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(462, 309);
+			this->label6->Location = System::Drawing::Point(387, 240);
+			this->label6->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(121, 20);
+			this->label6->Size = System::Drawing::Size(34, 13);
 			this->label6->TabIndex = 11;
-			this->label6->Text = L"Con descuento:";
+			this->label6->Text = L"Total:";
 			// 
-			// TOTAL
+			// textDateTimeB
 			// 
-			this->TOTAL->BackColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->TOTAL->Location = System::Drawing::Point(589, 309);
-			this->TOTAL->Name = L"TOTAL";
-			this->TOTAL->Size = System::Drawing::Size(100, 23);
-			this->TOTAL->TabIndex = 12;
-			this->TOTAL->Text = L"TOTAL";
+			this->textDateTimeB->Location = System::Drawing::Point(26, 237);
+			this->textDateTimeB->Name = L"textDateTimeB";
+			this->textDateTimeB->ReadOnly = true;
+			this->textDateTimeB->Size = System::Drawing::Size(189, 20);
+			this->textDateTimeB->TabIndex = 13;
+			// 
+			// textTypePaymentB
+			// 
+			this->textTypePaymentB->Location = System::Drawing::Point(101, 263);
+			this->textTypePaymentB->Name = L"textTypePaymentB";
+			this->textTypePaymentB->ReadOnly = true;
+			this->textTypePaymentB->Size = System::Drawing::Size(114, 20);
+			this->textTypePaymentB->TabIndex = 14;
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(23, 78);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(99, 13);
+			this->label1->TabIndex = 15;
+			this->label1->Text = L"Nombre del Cliente:";
+			// 
+			// label7
+			// 
+			this->label7->AutoSize = true;
+			this->label7->Location = System::Drawing::Point(357, 78);
+			this->label7->Name = L"label7";
+			this->label7->Size = System::Drawing::Size(92, 13);
+			this->label7->TabIndex = 16;
+			this->label7->Text = L"N° de Documento";
+			// 
+			// textIdSaleDetailB
+			// 
+			this->textIdSaleDetailB->Location = System::Drawing::Point(436, 41);
+			this->textIdSaleDetailB->Name = L"textIdSaleDetailB";
+			this->textIdSaleDetailB->ReadOnly = true;
+			this->textIdSaleDetailB->Size = System::Drawing::Size(100, 20);
+			this->textIdSaleDetailB->TabIndex = 17;
+			// 
+			// textTotalSaleB
+			// 
+			this->textTotalSaleB->Location = System::Drawing::Point(426, 237);
+			this->textTotalSaleB->Name = L"textTotalSaleB";
+			this->textTotalSaleB->ReadOnly = true;
+			this->textTotalSaleB->Size = System::Drawing::Size(100, 20);
+			this->textTotalSaleB->TabIndex = 18;
+			// 
+			// textNameCB
+			// 
+			this->textNameCB->Location = System::Drawing::Point(128, 75);
+			this->textNameCB->Name = L"textNameCB";
+			this->textNameCB->ReadOnly = true;
+			this->textNameCB->Size = System::Drawing::Size(145, 20);
+			this->textNameCB->TabIndex = 19;
+			// 
+			// txtDocumentNumberCB
+			// 
+			this->txtDocumentNumberCB->Location = System::Drawing::Point(455, 75);
+			this->txtDocumentNumberCB->Name = L"txtDocumentNumberCB";
+			this->txtDocumentNumberCB->ReadOnly = true;
+			this->txtDocumentNumberCB->Size = System::Drawing::Size(81, 20);
+			this->txtDocumentNumberCB->TabIndex = 20;
+			// 
+			// ProductId
+			// 
+			this->ProductId->HeaderText = L"Id";
+			this->ProductId->Name = L"ProductId";
+			this->ProductId->ReadOnly = true;
+			this->ProductId->Width = 35;
+			// 
+			// ProductName
+			// 
+			this->ProductName->HeaderText = L"Nombre del Producto";
+			this->ProductName->MinimumWidth = 8;
+			this->ProductName->Name = L"ProductName";
+			this->ProductName->ReadOnly = true;
+			this->ProductName->Width = 150;
+			// 
+			// Quantity
+			// 
+			this->Quantity->HeaderText = L"Cantidad";
+			this->Quantity->MinimumWidth = 8;
+			this->Quantity->Name = L"Quantity";
+			this->Quantity->ReadOnly = true;
+			this->Quantity->Width = 55;
+			// 
+			// UnitPrice
+			// 
+			this->UnitPrice->HeaderText = L"Precio Unitario";
+			this->UnitPrice->MinimumWidth = 8;
+			this->UnitPrice->Name = L"UnitPrice";
+			this->UnitPrice->ReadOnly = true;
+			// 
+			// Price
+			// 
+			this->Price->HeaderText = L"Importe";
+			this->Price->MinimumWidth = 8;
+			this->Price->Name = L"Price";
+			this->Price->ReadOnly = true;
+			this->Price->Width = 85;
 			// 
 			// Boleta
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
-			this->ClientSize = System::Drawing::Size(838, 474);
-			this->Controls->Add(this->TOTAL);
+			this->ClientSize = System::Drawing::Size(559, 308);
+			this->Controls->Add(this->txtDocumentNumberCB);
+			this->Controls->Add(this->textNameCB);
+			this->Controls->Add(this->textTotalSaleB);
+			this->Controls->Add(this->textIdSaleDetailB);
+			this->Controls->Add(this->label7);
+			this->Controls->Add(this->label1);
+			this->Controls->Add(this->textTypePaymentB);
 			this->Controls->Add(this->label6);
-			this->Controls->Add(this->comboBox1);
 			this->Controls->Add(this->label5);
-			this->Controls->Add(this->dateTimePicker1);
-			this->Controls->Add(this->NumeroDNI);
-			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
-			this->Controls->Add(this->label1);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->pictureBox1);
+			this->Controls->Add(this->textDateTimeB);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"Boleta";
 			this->Text = L"Boleta";
+			this->Load += gcnew System::EventHandler(this, &Boleta::Boleta_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
@@ -268,6 +316,9 @@ namespace AppView {
 	private: System::Void tableLayoutPanel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 	}
 private: System::Void dateTimePicker1_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void Boleta_Load(System::Object^ sender, System::EventArgs^ e) {
+
 }
 };
 }
