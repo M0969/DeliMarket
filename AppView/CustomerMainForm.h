@@ -615,9 +615,11 @@ namespace AppView {
 	}
 
 	private: System::Void btnShoppingcart_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->AbrirPanel(gcnew AppView::CarritoCustomerForm);
+		
 		CarritoCustomerForm^ form = gcnew CarritoCustomerForm();
 		form->textUserNameCS->Text = textUserNameC->Text;
+		this->AbrirPanel(form);
+
 	}
 
 	private: System::Void btnBonuspoints_Click(System::Object^ sender, System::EventArgs^ e) {

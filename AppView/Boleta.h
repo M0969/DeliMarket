@@ -35,9 +35,10 @@ namespace AppView {
 			}
 		}
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
+	private: System::Windows::Forms::DataGridView^ dgvBoleta;
 	protected:
 
-	private: System::Windows::Forms::DataGridView^ dataGridView1;
+
 
 
 
@@ -65,7 +66,8 @@ namespace AppView {
 	public: System::Windows::Forms::TextBox^ textIdSaleDetailB;
 	private:
 	public: System::Windows::Forms::TextBox^ textTotalSaleB;
-	internal: System::Windows::Forms::TextBox^ textNameCB;
+	public: System::Windows::Forms::TextBox^ textNameCB;
+
 	public:
 
 	public: System::Windows::Forms::TextBox^ txtDocumentNumberCB;
@@ -87,7 +89,12 @@ namespace AppView {
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Boleta::typeid));
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
-			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->dgvBoleta = (gcnew System::Windows::Forms::DataGridView());
+			this->ProductId = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->ProductName = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Quantity = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->UnitPrice = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Price = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
@@ -100,13 +107,8 @@ namespace AppView {
 			this->textTotalSaleB = (gcnew System::Windows::Forms::TextBox());
 			this->textNameCB = (gcnew System::Windows::Forms::TextBox());
 			this->txtDocumentNumberCB = (gcnew System::Windows::Forms::TextBox());
-			this->ProductId = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->ProductName = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Quantity = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->UnitPrice = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Price = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvBoleta))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// pictureBox1
@@ -120,21 +122,60 @@ namespace AppView {
 			this->pictureBox1->TabIndex = 0;
 			this->pictureBox1->TabStop = false;
 			// 
-			// dataGridView1
+			// dgvBoleta
 			// 
-			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(5) {
+			this->dgvBoleta->AllowUserToAddRows = false;
+			this->dgvBoleta->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dgvBoleta->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(5) {
 				this->ProductId,
 					this->ProductName, this->Quantity, this->UnitPrice, this->Price
 			});
-			this->dataGridView1->GridColor = System::Drawing::SystemColors::GradientInactiveCaption;
-			this->dataGridView1->Location = System::Drawing::Point(26, 105);
-			this->dataGridView1->Margin = System::Windows::Forms::Padding(2);
-			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->RowHeadersWidth = 62;
-			this->dataGridView1->RowTemplate->Height = 28;
-			this->dataGridView1->Size = System::Drawing::Size(490, 112);
-			this->dataGridView1->TabIndex = 2;
+			this->dgvBoleta->GridColor = System::Drawing::SystemColors::GradientInactiveCaption;
+			this->dgvBoleta->Location = System::Drawing::Point(26, 105);
+			this->dgvBoleta->Margin = System::Windows::Forms::Padding(2);
+			this->dgvBoleta->Name = L"dgvBoleta";
+			this->dgvBoleta->RowHeadersWidth = 62;
+			this->dgvBoleta->RowTemplate->Height = 28;
+			this->dgvBoleta->Size = System::Drawing::Size(490, 112);
+			this->dgvBoleta->TabIndex = 2;
+			// 
+			// ProductId
+			// 
+			this->ProductId->HeaderText = L"Id";
+			this->ProductId->Name = L"ProductId";
+			this->ProductId->ReadOnly = true;
+			this->ProductId->Width = 35;
+			// 
+			// ProductName
+			// 
+			this->ProductName->HeaderText = L"Nombre del Producto";
+			this->ProductName->MinimumWidth = 8;
+			this->ProductName->Name = L"ProductName";
+			this->ProductName->ReadOnly = true;
+			this->ProductName->Width = 150;
+			// 
+			// Quantity
+			// 
+			this->Quantity->HeaderText = L"Cantidad";
+			this->Quantity->MinimumWidth = 8;
+			this->Quantity->Name = L"Quantity";
+			this->Quantity->ReadOnly = true;
+			this->Quantity->Width = 55;
+			// 
+			// UnitPrice
+			// 
+			this->UnitPrice->HeaderText = L"Precio Unitario";
+			this->UnitPrice->MinimumWidth = 8;
+			this->UnitPrice->Name = L"UnitPrice";
+			this->UnitPrice->ReadOnly = true;
+			// 
+			// Price
+			// 
+			this->Price->HeaderText = L"Importe";
+			this->Price->MinimumWidth = 8;
+			this->Price->Name = L"Price";
+			this->Price->ReadOnly = true;
+			this->Price->Width = 85;
 			// 
 			// label2
 			// 
@@ -242,44 +283,6 @@ namespace AppView {
 			this->txtDocumentNumberCB->Size = System::Drawing::Size(81, 20);
 			this->txtDocumentNumberCB->TabIndex = 20;
 			// 
-			// ProductId
-			// 
-			this->ProductId->HeaderText = L"Id";
-			this->ProductId->Name = L"ProductId";
-			this->ProductId->ReadOnly = true;
-			this->ProductId->Width = 35;
-			// 
-			// ProductName
-			// 
-			this->ProductName->HeaderText = L"Nombre del Producto";
-			this->ProductName->MinimumWidth = 8;
-			this->ProductName->Name = L"ProductName";
-			this->ProductName->ReadOnly = true;
-			this->ProductName->Width = 150;
-			// 
-			// Quantity
-			// 
-			this->Quantity->HeaderText = L"Cantidad";
-			this->Quantity->MinimumWidth = 8;
-			this->Quantity->Name = L"Quantity";
-			this->Quantity->ReadOnly = true;
-			this->Quantity->Width = 55;
-			// 
-			// UnitPrice
-			// 
-			this->UnitPrice->HeaderText = L"Precio Unitario";
-			this->UnitPrice->MinimumWidth = 8;
-			this->UnitPrice->Name = L"UnitPrice";
-			this->UnitPrice->ReadOnly = true;
-			// 
-			// Price
-			// 
-			this->Price->HeaderText = L"Importe";
-			this->Price->MinimumWidth = 8;
-			this->Price->Name = L"Price";
-			this->Price->ReadOnly = true;
-			this->Price->Width = 85;
-			// 
 			// Boleta
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -297,7 +300,7 @@ namespace AppView {
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
-			this->Controls->Add(this->dataGridView1);
+			this->Controls->Add(this->dgvBoleta);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->textDateTimeB);
 			this->Margin = System::Windows::Forms::Padding(2);
@@ -305,7 +308,7 @@ namespace AppView {
 			this->Text = L"Boleta";
 			this->Load += gcnew System::EventHandler(this, &Boleta::Boleta_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvBoleta))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -318,7 +321,20 @@ namespace AppView {
 private: System::Void dateTimePicker1_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void Boleta_Load(System::Object^ sender, System::EventArgs^ e) {
-
+	RefreshDGVBoleta();
 }
+	   void RefreshDGVBoleta() {
+		   //List <SaleDB^>^ sdList = AppManager::QueryAllBoleta();
+		   //dgvBoleta->Rows->Clear();
+		   //for (int i = 0; i < sdList->Count; i++) {
+			 //  dgvBoleta->Rows->Add(gcnew array<String^> {
+				//       "" + sdList[i]->Id,
+					//        sdList[i]->Name,
+					  // "" + sdList[i]->Quantity,
+					  // "" + sdList[i]->Price,
+					  // "" + sdList[i]->Price*sdList[i]->Quantity
+			  // });
+		   //}
+	   }
 };
 }

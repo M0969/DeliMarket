@@ -114,11 +114,13 @@ bool AppController::AppManager::QueryCarritoByName(String^ name)
 {
 	return DBController::QueryCarritoByName(name);
 }
-
+/*Sale Detail*/
 void AppController::AppManager::RegisterSale(Order^ sale)
 {
 	DBController::RegisterSale(sale);
 }
+
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 /*Bonnus Points*/

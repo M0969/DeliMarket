@@ -2,8 +2,6 @@
 #include "Login.h"
 
 
-
-
 int AppView::CarritoCustomerForm::ValidateInfo() {
 	//-1: No se ha elegido una direccion
     //-2: La fecha es menor a la fecha actual
@@ -44,7 +42,7 @@ System::Void AppView::CarritoCustomerForm::btnRegisterSale_Click(System::Object^
 		int customerId = UserManager::ReturnIDbyUserName(textUserNameCS->Text);
 		sale->User = UserManager::QueryUserbyId(customerId);
 		DateTime dt = dtpSaleDate->Value;
-		sale->Date = dt.Hour + ":" + dt.Minute; // ToString();
+		sale->Date = dt.Now + "" ; // ToString();
 		sale->Total = Double::Parse(txtTotalSale->Text);
 		sale->Details = gcnew List<SaleDetail^>();
 		SaleDetail^ saleDetail;
@@ -57,14 +55,19 @@ System::Void AppView::CarritoCustomerForm::btnRegisterSale_Click(System::Object^
 			saleDetail->SubTotal = Double::Parse(dgvCarrito->Rows[i]->Cells[3]->Value->ToString());
 			sale->Details->Add(saleDetail);
 		}
-		AppManager::RegisterSale(sale);
-		MessageBox::Show("Se ha registrado la venta exitosamente para el cliente " + textUserNameCS->Text);
-		Boleta^ aForm = gcnew Boleta();
-        aForm->ShowDialog();
+		AppManager::RegisterSale(sale);		
+		Boleta^ aForm = gcnew Boleta();       
 		User^ userB = gcnew User();
 		userB= UserManager::QueryUserbyId(customerId);
-		aForm->textNameCB->Text = sale->User->FirstName + " " + sale->User->LastName;
+		aForm->textNameCB->Text = userB->FirstName + " " + userB->LastName;
 		aForm->textDateTimeB->Text = sale->Date;
+		aForm->txtDocumentNumberCB->Text = userB->DocumentNumber;
+		aForm->textTotalSaleB->Text = txtTotalSale->Text;
+		aForm->textIdSaleDetailB->Text = "DMC- " + (sale->Id).ToString();
+
+
+		MessageBox::Show("Se ha registrado la venta exitosamente para el cliente: " + textUserNameCS->Text);
+		aForm->Show();
 	//	aForm->textTotalSaleB = sale->Total;
 
 	}

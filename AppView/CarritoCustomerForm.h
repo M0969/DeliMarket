@@ -334,7 +334,7 @@ namespace AppView {
 			// 
 			// dtpSaleDate
 			// 
-			this->dtpSaleDate->Location = System::Drawing::Point(12, 338);
+			this->dtpSaleDate->Location = System::Drawing::Point(12, 330);
 			this->dtpSaleDate->Name = L"dtpSaleDate";
 			this->dtpSaleDate->Size = System::Drawing::Size(200, 20);
 			this->dtpSaleDate->TabIndex = 19;
@@ -370,7 +370,6 @@ namespace AppView {
 			this->textUserNameCS->Name = L"textUserNameCS";
 			this->textUserNameCS->Size = System::Drawing::Size(100, 20);
 			this->textUserNameCS->TabIndex = 23;
-			this->textUserNameCS->Visible = false;
 			// 
 			// CarritoCustomerForm
 			// 
@@ -397,7 +396,8 @@ namespace AppView {
 			this->Controls->Add(this->dgvCarrito);
 			this->Controls->Add(this->label6);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			//this->Name = L"CarritoCustomerForm";
+//			this->Name = L"CarritoCustomerForm";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"CarritoCustomerForm";
 			this->Load += gcnew System::EventHandler(this, &CarritoCustomerForm::CarritoCustomerForm_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvCarrito))->EndInit();
