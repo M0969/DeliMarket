@@ -3,32 +3,17 @@
   <ListDB>
     <Customer>
       <Status>0</Status>
-      <Address>Los Rosales</Address>
+      <Address>El corral</Address>
       <Category>Cliente</Category>
-      <Email>m69@hotmail.com</Email>
-      <PhoneNumber>948412033</PhoneNumber>
-      <DocumentNumber>26691296</DocumentNumber>
+      <Email>norku@gmail.com</Email>
+      <PhoneNumber>91919191</PhoneNumber>
+      <DocumentNumber>19191919</DocumentNumber>
       <Gender>77</Gender>
-      <LastName>Barrantes</LastName>
-      <FirstName>Marco</FirstName>
+      <LastName>gordo</LastName>
+      <FirstName>pollo</FirstName>
       <Password>1234</Password>
-      <Username>m69</Username>
-      <Id>1</Id>
-      <CustomerPoints>0</CustomerPoints>
-    </Customer>
-    <Customer>
-      <Status>0</Status>
-      <Address>Rosas</Address>
-      <Category>Cliente</Category>
-      <Email>cgts@gmail.com</Email>
-      <PhoneNumber>654654654</PhoneNumber>
-      <DocumentNumber>456456465</DocumentNumber>
-      <Gender>77</Gender>
-      <LastName>Tarco</LastName>
-      <FirstName>Carlo</FirstName>
-      <Password>1234</Password>
-      <Username>CGTS</Username>
-      <Id>2</Id>
+      <Username>pep2</Username>
+      <Id>5</Id>
       <CustomerPoints>0</CustomerPoints>
     </Customer>
   </ListDB>
