@@ -3,17 +3,17 @@
   <ListDB>
     <Customer>
       <Status>0</Status>
-      <Address>124444</Address>
+      <Address>Limar Sur</Address>
       <Category>Cliente</Category>
-      <Email>pop@gmial.com</Email>
-      <PhoneNumber>124444</PhoneNumber>
-      <DocumentNumber>123124</DocumentNumber>
+      <Email>metzelder@hotmail.com</Email>
+      <PhoneNumber>7806322</PhoneNumber>
+      <DocumentNumber>75936780</DocumentNumber>
       <Gender>77</Gender>
-      <LastName>qweqwewqf</LastName>
-      <FirstName>qweqwe</FirstName>
-      <Password>1234</Password>
-      <Username>popo</Username>
-      <Id>5</Id>
+      <LastName>Torres</LastName>
+      <FirstName>Metzeder</FirstName>
+      <Password>met123</Password>
+      <Username>Met</Username>
+      <Id>8</Id>
       <CustomerPoints>0</CustomerPoints>
     </Customer>
   </ListDB>
