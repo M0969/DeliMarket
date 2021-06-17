@@ -206,7 +206,7 @@ namespace AppView {
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ControlLightLight;
-			this->ClientSize = System::Drawing::Size(484, 308);
+			this->ClientSize = System::Drawing::Size(497, 308);
 			this->Controls->Add(this->btnFinalize);
 			this->Controls->Add(this->txtDeliverymanRating);
 			this->Controls->Add(this->label4);
