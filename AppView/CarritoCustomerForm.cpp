@@ -69,6 +69,7 @@ System::Void AppView::CarritoCustomerForm::btnRegisterSale_Click(System::Object^
 		aForm->txtDocumentNumberCB->Text = userB->DocumentNumber;
 		aForm->textTotalSaleB->Text = txtTotalSale->Text;
 		aForm->textIdSaleDetailB->Text = "DMC- " + (sale->Id).ToString();
+		aForm->txtIdB->Text = userB->Username;
 	
 
 		AppManager::RegisterSale(sale);

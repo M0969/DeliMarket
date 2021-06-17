@@ -71,6 +71,7 @@ namespace AppView {
 	public:
 
 	public: System::Windows::Forms::TextBox^ txtDocumentNumberCB;
+	public: System::Windows::Forms::TextBox^ txtIdB;
 
 
 
@@ -107,6 +108,7 @@ namespace AppView {
 			this->textTotalSaleB = (gcnew System::Windows::Forms::TextBox());
 			this->textNameCB = (gcnew System::Windows::Forms::TextBox());
 			this->txtDocumentNumberCB = (gcnew System::Windows::Forms::TextBox());
+			this->txtIdB = (gcnew System::Windows::Forms::TextBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvBoleta))->BeginInit();
 			this->SuspendLayout();
@@ -283,6 +285,14 @@ namespace AppView {
 			this->txtDocumentNumberCB->Size = System::Drawing::Size(81, 20);
 			this->txtDocumentNumberCB->TabIndex = 20;
 			// 
+			// txtIdB
+			// 
+			this->txtIdB->Location = System::Drawing::Point(508, 41);
+			this->txtIdB->Name = L"txtIdB";
+			this->txtIdB->ReadOnly = true;
+			this->txtIdB->Size = System::Drawing::Size(28, 20);
+			this->txtIdB->TabIndex = 21;
+			// 
 			// Boleta
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -303,6 +313,7 @@ namespace AppView {
 			this->Controls->Add(this->dgvBoleta);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->textDateTimeB);
+			this->Controls->Add(this->txtIdB);
 			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"Boleta";
 			this->Text = L"Boleta";
@@ -324,17 +335,27 @@ private: System::Void Boleta_Load(System::Object^ sender, System::EventArgs^ e) 
 	RefreshDGVBoleta();
 }
 	   void RefreshDGVBoleta() {
-		   //List <SaleDB^>^ sdList = AppManager::QueryLastSaleId();
-		   //dgvBoleta->Rows->Clear();
-		   //for (int i = 0; i < sdList->Count; i++) {
-			 //  dgvBoleta->Rows->Add(gcnew array<String^> {
-				//       "" + sdList[i]->Id,
-					//        sdList[i]->Name,
-					  // "" + sdList[i]->Quantity,
-					  // "" + sdList[i]->Price,
-					  // "" + sdList[i]->Price*sdList[i]->Quantity
-			  // });
-		   //}
+		   /*
+		   int customerId = UserManager::ReturnIDbyUserName(txtIdB->Text);
+		   User^ user = UserManager::QueryUserbyId(customerId);
+		   List<Order^>^ listOrder = AppManager::QueryAllSales();
+
+		   int saleId = AppManager::QueryLastSaleId() + 1;
+		   Order^ sdList = AppManager::QueryOrderbyId(saleId);
+		   dgvBoleta->Rows->Clear();
+		   for (int i = 0; i < listOrder->Count; i++) {
+			   if(0){
+				   dgvBoleta->Rows->Add(gcnew array<String^> {
+					   "" + sdList[i]->Id,
+						   sdList[i]->Name,
+						   "" + sdList[i]->Quantity,
+						   "" + sdList[i]->Price,
+						   "" + sdList[i]->Price * sdList[i]->Quantity
+				   });
+			   }
+		   }
+		   */
 	   }
+	   
 };
 }
