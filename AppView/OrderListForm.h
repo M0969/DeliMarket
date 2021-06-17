@@ -105,12 +105,12 @@ namespace AppView {
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(OrderListForm::typeid));
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->dgvOrder = (gcnew System::Windows::Forms::DataGridView());
-			this->txtDeliveryman = (gcnew System::Windows::Forms::TextBox());
 			this->TicketCode = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->CustomerName = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->OrderDestination = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->OrderStatus = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->ViewOrder = (gcnew System::Windows::Forms::DataGridViewImageColumn());
+			this->txtDeliveryman = (gcnew System::Windows::Forms::TextBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvOrder))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -131,19 +131,12 @@ namespace AppView {
 				this->TicketCode,
 					this->CustomerName, this->OrderDestination, this->OrderStatus, this->ViewOrder
 			});
-			this->dgvOrder->Location = System::Drawing::Point(12, 58);
+			this->dgvOrder->Location = System::Drawing::Point(17, 58);
 			this->dgvOrder->Name = L"dgvOrder";
 			this->dgvOrder->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::CellSelect;
-			this->dgvOrder->Size = System::Drawing::Size(451, 163);
+			this->dgvOrder->Size = System::Drawing::Size(460, 163);
 			this->dgvOrder->TabIndex = 1;
 			this->dgvOrder->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &OrderListForm::dgvOrder_CellContentClick);
-			// 
-			// txtDeliveryman
-			// 
-			this->txtDeliveryman->Location = System::Drawing::Point(363, 18);
-			this->txtDeliveryman->Name = L"txtDeliveryman";
-			this->txtDeliveryman->Size = System::Drawing::Size(100, 20);
-			this->txtDeliveryman->TabIndex = 2;
 			// 
 			// TicketCode
 			// 
@@ -179,6 +172,13 @@ namespace AppView {
 			this->ViewOrder->ImageLayout = System::Windows::Forms::DataGridViewImageCellLayout::Stretch;
 			this->ViewOrder->Name = L"ViewOrder";
 			this->ViewOrder->Width = 70;
+			// 
+			// txtDeliveryman
+			// 
+			this->txtDeliveryman->Location = System::Drawing::Point(377, 18);
+			this->txtDeliveryman->Name = L"txtDeliveryman";
+			this->txtDeliveryman->Size = System::Drawing::Size(100, 20);
+			this->txtDeliveryman->TabIndex = 2;
 			// 
 			// OrderListForm
 			// 

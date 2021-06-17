@@ -90,7 +90,9 @@ namespace AppView {
 	private: System::Windows::Forms::DateTimePicker^ dtpSaleDate;
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::ComboBox^ cmbTypePayment;
-	private: System::Windows::Forms::TextBox^ txtSAddres;
+	public: System::Windows::Forms::TextBox^ txtSAddres;
+	private:
+
 	
 	private:
 
@@ -396,7 +398,7 @@ namespace AppView {
 			this->Controls->Add(this->dgvCarrito);
 			this->Controls->Add(this->label6);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-
+//			this->Name = L"CarritoCustomerForm";
 			this->Text = L"CarritoCustomerForm";
 			this->Load += gcnew System::EventHandler(this, &CarritoCustomerForm::CarritoCustomerForm_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvCarrito))->EndInit();
@@ -446,10 +448,9 @@ public: void RefreshDGVCarrito() {
 				    txtTotalSale->Text = "" + total;
 			   }
 		   }
-private: System::Void btnASCustom_Click(System::Object^ sender, System::EventArgs^ e) {
-	Ubicacion^ aForm = gcnew Ubicacion();
-	aForm->ShowDialog();
-}
+private: System::Void btnASCustom_Click(System::Object^ sender, System::EventArgs^ e);
+
+
 private: System::Void dgvCarrito_CellValueChanged(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 	if (dgvCarrito->Columns[e->ColumnIndex]->Name == "Quantity") {
 		if (dgvCarrito->CurrentCell != nullptr &&

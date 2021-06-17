@@ -137,6 +137,7 @@ namespace AppView {
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Login::typeid));
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->panelLogin = (gcnew System::Windows::Forms::Panel());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->linkCreateAccount = (gcnew System::Windows::Forms::LinkLabel());
@@ -144,7 +145,6 @@ namespace AppView {
 			this->btnLogin = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
 			this->txtPassword = (gcnew Bunifu::Framework::UI::BunifuMaterialTextbox());
 			this->txtUserName = (gcnew Bunifu::Framework::UI::BunifuMaterialTextbox());
-			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->panelRegister = (gcnew System::Windows::Forms::Panel());
 			this->chckCatM = (gcnew System::Windows::Forms::CheckBox());
 			this->txtCodeAccess = (gcnew Bunifu::Framework::UI::BunifuMaterialTextbox());
@@ -166,9 +166,9 @@ namespace AppView {
 			this->btnRegister = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
 			this->txtUserchck = (gcnew Bunifu::Framework::UI::BunifuMaterialTextbox());
 			this->panel1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->panelLogin->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->panelRegister->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnExitchk))->BeginInit();
 			this->SuspendLayout();
@@ -180,6 +180,16 @@ namespace AppView {
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(240, 461);
 			this->panel1->TabIndex = 0;
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(26, 163);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(131, 105);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox1->TabIndex = 0;
+			this->pictureBox1->TabStop = false;
 			// 
 			// panelLogin
 			// 
@@ -319,16 +329,6 @@ namespace AppView {
 			this->txtUserName->TextAlign = System::Windows::Forms::HorizontalAlignment::Left;
 			this->txtUserName->Enter += gcnew System::EventHandler(this, &Login::txtUserName_Enter);
 			this->txtUserName->Leave += gcnew System::EventHandler(this, &Login::txtUserName_Leave);
-			// 
-			// pictureBox1
-			// 
-			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(26, 163);
-			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(131, 105);
-			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBox1->TabIndex = 0;
-			this->pictureBox1->TabStop = false;
 			// 
 			// panelRegister
 			// 
@@ -741,10 +741,10 @@ namespace AppView {
 			this->Text = L"Login";
 			this->Load += gcnew System::EventHandler(this, &Login::Login_Load);
 			this->panel1->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->panelLogin->ResumeLayout(false);
 			this->panelLogin->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->panelRegister->ResumeLayout(false);
 			this->panelRegister->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnExitchk))->EndInit();

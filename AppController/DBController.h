@@ -110,8 +110,10 @@ namespace AppController {
 		static List<Order^>^ QueryAllSalesByCustomer(String^ username);
 		static int QueryLastSaleId();
 		static Order^ QueryOrderbyId(int saleId);
+		static List<Order^>^ QueryLastOrderbyId(int saleId);
 		static void UpdateOrder(Order^);
-
+		/*Ubication*/
+		static String^ CompareAdress(String^ Adress);
 	};
 }
 

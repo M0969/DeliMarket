@@ -54,6 +54,7 @@ namespace AppController {
 			static int QueryLastSaleId();
 			static Order^ QueryOrderbyId(int saleId);
 			static void UpdateOrder(Order^);
+			static List<Order^>^ QueryLastOrderbyId(int saleId);
 		// Métodos CRUD para repartidor
 	};
 
