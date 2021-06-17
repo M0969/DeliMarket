@@ -263,6 +263,19 @@ Order^ AppController::DBController::QueryOrderbyId(int saleId)
     return nullptr;
 }
 
+List<Order^>^ AppController::DBController::QueryLastOrderbyId(int saleId)
+{
+    List<Order^>^ list = gcnew List<Order^>();
+    saleDB->LoadFromBinaryFile();
+
+    for (int i = 0; i < saleDB->ListDB->Count; i++) {
+        if (saleDB->ListDB[i]->Id == saleId) {
+            list->Add((saleDB->ListDB[i]));
+        }
+        return list;
+    }
+}
+
 void AppController::DBController::UpdateOrder(Order^ order)
 {
     saleDB->LoadFromBinaryFile();

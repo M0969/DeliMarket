@@ -145,6 +145,11 @@ void AppController::AppManager::UpdateOrder(Order^ order)
 	DBController::UpdateOrder(order);
 }
 
+List<Order^>^ AppController::AppManager::QueryLastOrderbyId(int saleId)
+{
+	return DBController::QueryLastOrderbyId(saleId);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 /*Bonnus Points*/
 void AppController::AppManager::AddBonusPointsPQ(BonusPoints^ bp)

@@ -8,6 +8,9 @@ namespace AppView {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace AppController;
+	using namespace AppModel;
+	using namespace System::Collections::Generic;
 
 	/// <summary>
 	/// Resumen de Boleta
@@ -335,27 +338,39 @@ private: System::Void Boleta_Load(System::Object^ sender, System::EventArgs^ e) 
 	RefreshDGVBoleta();
 }
 	   void RefreshDGVBoleta() {
-		   /*
-		   int customerId = UserManager::ReturnIDbyUserName(txtIdB->Text);
-		   User^ user = UserManager::QueryUserbyId(customerId);
-		   List<Order^>^ listOrder = AppManager::QueryAllSales();
 
-		   int saleId = AppManager::QueryLastSaleId() + 1;
-		   Order^ sdList = AppManager::QueryOrderbyId(saleId);
+		   // int customerId = UserManager::ReturnIDbyUserName(txtIdB->Text);
+			//User^ user = UserManager::QueryUserbyId(customerId);
+			//List<Order^>^ listOrder = AppManager::QueryAllSales();
+			/*
+			int saleId = AppManager::QueryLastSaleId() + 1;
+			List<Order^>^ sdList = AppManager::QueryLastOrderbyId(saleId);
+			dgvBoleta->Rows->Clear();
+			for (int i = 0; i < sdList->Count; i++) {
+				if(0){
+					dgvBoleta->Rows->Add(gcnew array<String^> {
+						"" + sdList[i]->Id,
+							sdList[i]->Product,
+							"" + sdList[i]->Quantity,
+							"" + sdList[i]->Total,
+							"" + sdList[i]->Total * sdList[i]->Quantity
+					});
+				}
+			}
+			*/
+
+
+		   List <Product^>^ productList = AppManager::QueryAllCarrito();
 		   dgvBoleta->Rows->Clear();
-		   for (int i = 0; i < listOrder->Count; i++) {
-			   if(0){
-				   dgvBoleta->Rows->Add(gcnew array<String^> {
-					   "" + sdList[i]->Id,
-						   sdList[i]->Name,
-						   "" + sdList[i]->Quantity,
-						   "" + sdList[i]->Price,
-						   "" + sdList[i]->Price * sdList[i]->Quantity
-				   });
-			   }
+		   for (int i = 0; i < productList->Count; i++) {
+			   dgvBoleta->Rows->Add(gcnew array<String^> {
+				   "" + productList[i]->Id,
+					   productList[i]->Name,
+					   "1",
+					   "" + productList[i]->Price,
+					   "" + productList[i]->Price
+			   });
 		   }
-		   */
 	   }
-	   
 };
 }
