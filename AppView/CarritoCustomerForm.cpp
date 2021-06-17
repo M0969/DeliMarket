@@ -45,15 +45,20 @@ System::Void AppView::CarritoCustomerForm::btnRegisterSale_Click(System::Object^
 		sale->Date = dt.Now + "" ; // ToString();
 		sale->Total = Double::Parse(txtTotalSale->Text);
 		sale->Details = gcnew List<SaleDetail^>();
-		SaleDetail^ saleDetail;
+		
+		SaleDetail^ saledetail;
 		for (int i = 0; i < dgvCarrito->RowCount; i++) {
-			saleDetail = gcnew SaleDetail();
+			saledetail = gcnew SaleDetail();
+
 			int productId = AppManager::ReturnIDbyProductName(dgvCarrito->Rows[i]->Cells[0]->Value->ToString());
-			saleDetail->Product = AppManager::QueryProductById(productId);
-			saleDetail->Quantity = Int32::Parse(dgvCarrito->Rows[i]->Cells[1]->Value->ToString());
-			saleDetail->UnitPrice = Double::Parse(dgvCarrito->Rows[i]->Cells[2]->Value->ToString());
-			saleDetail->SubTotal = Double::Parse(dgvCarrito->Rows[i]->Cells[3]->Value->ToString());
-			sale->Details->Add(saleDetail);
+			saledetail->Product = AppManager::QueryProductById(productId);
+			
+			saledetail->Quantity = Double::Parse(dgvCarrito->Rows[i]->Cells[1]->Value->ToString());
+			saledetail->UnitPrice = Double::Parse(dgvCarrito->Rows[i]->Cells[2]->Value->ToString());
+			saledetail->SubTotal = Double::Parse(dgvCarrito->Rows[i]->Cells[3]->Value->ToString());
+			sale->Details->Add(saledetail);
+
+			
 		}
 		
 		

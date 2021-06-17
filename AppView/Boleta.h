@@ -8,6 +8,10 @@ namespace AppView {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace AppModel;
+	using namespace AppController;
+	using namespace System::Collections::Generic;
+
 
 	/// <summary>
 	/// Resumen de Boleta
@@ -324,9 +328,21 @@ private: System::Void Boleta_Load(System::Object^ sender, System::EventArgs^ e) 
 	RefreshDGVBoleta();
 }
 	   void RefreshDGVBoleta() {
+		   int idsale = AppManager::QueryLastSaleId();
+		   Order^ order = AppManager::QueryOrderbyId(idsale);
+		   
 		   //List <SaleDB^>^ sdList = AppManager::QueryLastSaleId();
-		   //dgvBoleta->Rows->Clear();
-		   //for (int i = 0; i < sdList->Count; i++) {
+		   dgvBoleta->Rows->Clear();
+		   for (int i = 0; i < order->Details->Count; i++) {
+			   dgvBoleta->Rows->Add(gcnew array<String^>{
+				 "" + order->Details[i]->Product->Id,
+				 "" + order->Details[i]->Product->Name,
+				"" + order->Details[i]->Quantity,
+				 "" + order->Details[i]->UnitPrice,
+					   "" + order->Details[i]->SubTotal
+
+			   });
+		   }
 			 //  dgvBoleta->Rows->Add(gcnew array<String^> {
 				//       "" + sdList[i]->Id,
 					//        sdList[i]->Name,

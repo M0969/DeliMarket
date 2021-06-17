@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ManagerDB xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ListDB>
+    <Manager>
+      <Status>0</Status>
+      <Address>koala</Address>
+      <Category>Manager</Category>
+      <Email>kat69@gmail.com</Email>
+      <PhoneNumber>55555555</PhoneNumber>
+      <DocumentNumber>44444444</DocumentNumber>
+      <Gender>70</Gender>
+      <LastName>sanchez</LastName>
+      <FirstName>katy</FirstName>
+      <Password>1234</Password>
+      <Username>kat</Username>
+      <Id>7</Id>
+      <VerificationCode>0</VerificationCode>
+      <Salary>0</Salary>
+      <EmployeesNumber>0</EmployeesNumber>
+    </Manager>
+  </ListDB>
+</ManagerDB>

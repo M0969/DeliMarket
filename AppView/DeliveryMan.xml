@@ -37,5 +37,23 @@
       <Available>false</Available>
       <Quota>0</Quota>
     </DeliveryMan>
+    <DeliveryMan>
+      <Status>0</Status>
+      <Address>asdasdddd</Address>
+      <Category>Repartidor</Category>
+      <Email>asdasd</Email>
+      <PhoneNumber>98465132496</PhoneNumber>
+      <DocumentNumber>4986546</DocumentNumber>
+      <Gender>77</Gender>
+      <LastName>puente</LastName>
+      <FirstName>jose</FirstName>
+      <Password>1234</Password>
+      <Username>jos</Username>
+      <Id>6</Id>
+      <VerificationCode>123456</VerificationCode>
+      <Salary>0</Salary>
+      <Available>false</Available>
+      <Quota>0</Quota>
+    </DeliveryMan>
   </ListDB>
 </DeliveryManDB>
