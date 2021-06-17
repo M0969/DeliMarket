@@ -2,10 +2,6 @@
 #include "Login.h"
 
 
-
-
-
-
 System::Void AppView::CarritoCustomerForm::btnASCustom_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	int customerId = UserManager::ReturnIDbyUserName(textUserNameCS->Text);
@@ -79,15 +75,14 @@ System::Void AppView::CarritoCustomerForm::btnRegisterSale_Click(System::Object^
 		sale->Status = 'W';
 
 			
-		Boleta^ aForm = gcnew Boleta();       
+		Boleta^ aForm = gcnew Boleta();
 		User^ userB = gcnew User();
-		userB= UserManager::QueryUserbyId(customerId);
+		userB = UserManager::QueryUserbyId(customerId);
 		aForm->textNameCB->Text = userB->FirstName + " " + userB->LastName;
 		aForm->textDateTimeB->Text = sale->Date;
 		aForm->txtDocumentNumberCB->Text = userB->DocumentNumber;
 		aForm->textTotalSaleB->Text = txtTotalSale->Text;
 		aForm->textIdSaleDetailB->Text = "DMC- " + (sale->Id).ToString();
-		aForm->txtIdB->Text = (sale->Id).ToString();
 
 	
 

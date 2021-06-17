@@ -3,17 +3,17 @@
   <ListDB>
     <Manager>
       <Status>0</Status>
-      <Address>koala</Address>
+      <Address>Lima Norte</Address>
       <Category>Manager</Category>
-      <Email>kat69@gmail.com</Email>
-      <PhoneNumber>55555555</PhoneNumber>
-      <DocumentNumber>44444444</DocumentNumber>
-      <Gender>70</Gender>
-      <LastName>sanchez</LastName>
-      <FirstName>katy</FirstName>
+      <Email>piero@hotmail.com</Email>
+      <PhoneNumber>456123</PhoneNumber>
+      <DocumentNumber>7894662</DocumentNumber>
+      <Gender>77</Gender>
+      <LastName>Sánchez</LastName>
+      <FirstName>Piero</FirstName>
       <Password>1234</Password>
-      <Username>kat</Username>
-      <Id>7</Id>
+      <Username>jefecito</Username>
+      <Id>9</Id>
       <VerificationCode>0</VerificationCode>
       <Salary>0</Salary>
       <EmployeesNumber>0</EmployeesNumber>
