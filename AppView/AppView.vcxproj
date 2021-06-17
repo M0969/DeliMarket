@@ -140,6 +140,7 @@
     <Image Include="btnreset.Image.png" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AccesoUbiDes.cpp" />
     <ClCompile Include="Boleta.cpp" />
     <ClCompile Include="BonusPointsCustomerForm.cpp" />
     <ClCompile Include="BonusPointsForm.cpp" />
@@ -159,6 +160,9 @@
     <ClCompile Include="Ubicacion.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AccesoUbiDes.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Boleta.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -210,6 +214,9 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AccesoUbiDes.resx">
+      <DependentUpon>AccesoUbiDes.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Boleta.resx" />
     <EmbeddedResource Include="BonusPointsCustomerForm.resx">
       <DependentUpon>BonusPointsCustomerForm.h</DependentUpon>
