@@ -32,6 +32,7 @@ System::Void AppView::Login::btnLogin_Click(System::Object^ sender, System::Even
 			DeliveryForm::user = user;
 			DeliveryForm^ form = gcnew DeliveryForm();
 			form->Show();
+			form->txtDeliverymanUserName->Text = user->Username;
 		}
 		else if (user->Category->Equals("Manager")) {
 			MessageBox::Show("Bienvenido " + user->FirstName + " " + user->LastName + " : " + user->Category);

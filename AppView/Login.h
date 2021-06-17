@@ -851,7 +851,9 @@ private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArg
 				c->CustomerPoints = 0;
 
 				if (UserManager::ConfirmCustomer(c)) {
-					c->Id = UserManager::QueryLastUserId() + 1;
+					int id= UserManager::QueryLastUserId() + 1;
+					u->Id = id;
+					c->Id = id;
 					UserManager::AddUser(u);
 					UserManager::AddCustomers(c);
 					panelRegister->Visible = false;
@@ -875,7 +877,9 @@ private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArg
 				dm->VerificationCode = codeaccess;
 
 				if (UserManager::ConfirmDeliveryMan(dm)) {
-					dm->Id = UserManager::QueryLastUserId() + 1;
+					int id=UserManager::QueryLastUserId() + 1;
+					u->Id = id;
+					dm->Id = id;
 					UserManager::AddUser(u);
 					UserManager::AddDeliveryMan(dm);
 					panelRegister->Visible = false;
@@ -898,7 +902,9 @@ private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArg
 				m->VerificationCode = codeaccess;
 
 				if (UserManager::ConfirmManager(m)) {
-					dm->Id = UserManager::QueryLastUserId() + 1;
+					int id = UserManager::QueryLastUserId() + 1;
+					u->Id =id;
+					m->Id = id;
 					UserManager::AddUser(u);
 					UserManager::AddManagers(m);
 					panelRegister->Visible = false;

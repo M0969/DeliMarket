@@ -3,17 +3,35 @@
   <ListDB>
     <DeliveryMan>
       <Status>0</Status>
-      <Address>Cercado de Lima</Address>
+      <Address>Tulipanes</Address>
       <Category>Repartidor</Category>
-      <Email>aaron@hotmail.com</Email>
-      <PhoneNumber>3300543</PhoneNumber>
-      <DocumentNumber>85936790</DocumentNumber>
+      <Email>fofi@gmail.com</Email>
+      <PhoneNumber>987987987</PhoneNumber>
+      <DocumentNumber>789798789</DocumentNumber>
+      <Gender>70</Gender>
+      <LastName>Cacho</LastName>
+      <FirstName>Sofia</FirstName>
+      <Password>1234</Password>
+      <Username>fofi</Username>
+      <Id>3</Id>
+      <VerificationCode>123456</VerificationCode>
+      <Salary>0</Salary>
+      <Available>false</Available>
+      <Quota>0</Quota>
+    </DeliveryMan>
+    <DeliveryMan>
+      <Status>0</Status>
+      <Address>Jr. Jupiter</Address>
+      <Category>Repartidor</Category>
+      <Email>roro@gmail.com</Email>
+      <PhoneNumber>258258258</PhoneNumber>
+      <DocumentNumber>852852852</DocumentNumber>
       <Gender>77</Gender>
-      <LastName>Taipe</LastName>
-      <FirstName>Aarón</FirstName>
-      <Password>aaron123</Password>
-      <Username>Yorca</Username>
-      <Id>1</Id>
+      <LastName>Angeles</LastName>
+      <FirstName>Rodrigo</FirstName>
+      <Password>1234</Password>
+      <Username>roro</Username>
+      <Id>4</Id>
       <VerificationCode>123456</VerificationCode>
       <Salary>0</Salary>
       <Available>false</Available>

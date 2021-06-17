@@ -52,6 +52,10 @@ namespace AppView {
 
 
 
+	public:
+
+
+
 
 
 	private:
@@ -109,16 +113,19 @@ namespace AppView {
 			// 
 			this->Id->HeaderText = L"Id";
 			this->Id->Name = L"Id";
+			this->Id->ReadOnly = true;
 			// 
 			// DeliveryMan
 			// 
 			this->DeliveryMan->HeaderText = L"Repartidor";
 			this->DeliveryMan->Name = L"DeliveryMan";
+			this->DeliveryMan->ReadOnly = true;
 			// 
 			// Status
 			// 
 			this->Status->HeaderText = L"Estado de la venta";
 			this->Status->Name = L"Status";
+			this->Status->ReadOnly = true;
 			// 
 			// SalesCustomerForm
 			// 
@@ -139,37 +146,44 @@ namespace AppView {
 		}
 #pragma endregion
 	private: System::Void SalesCustomerForm_Load(System::Object^ sender, System::EventArgs^ e) {
-		//RefreshDGVSales();
+		RefreshDGVSales();
 
 
 	}
-		   /*public:
+		   public:
 			   void RefreshDGVSales() {
-				   List<Order^>^ listOrder = AppManager::QueryAllSalesByCustomer(txtUser->Text);
+				   int customerId = UserManager::ReturnIDbyUserName(txtUser->Text);
+				   User^ user = UserManager::QueryUserbyId(customerId);
+				   List<Order^>^ listOrder = AppManager::QueryAllSales();
 				   String^ mode;
 				   String^ deliveryman;
+
 				   dgvSales->Rows->Clear();
 				   for (int i = 0; i < listOrder->Count; i++) {
-					   if (listOrder[i]->Status == 'W') {
-						   mode = "EN ESPERA";
-						   deliveryman = "NO. DELMAN";
-					   }
-					   else if (listOrder[i]->Status == 'G') {
-						   mode = "EN CAMINO";
-						   deliveryman = listOrder[i]->DeliveryMan->FirstName + "" + listOrder[i]->DeliveryMan->LastName;
-					   }
-					   else { mode = "ENTREGADO"; }
+					   if (listOrder[i]->User->Username->CompareTo(user->Username) == 0) {
+					  if (listOrder[i]->Status == 'W') {
+							 mode = "EN ESPERA";
+							 deliveryman = "NO HAY AUN";
+
+						 }
+						 else if (listOrder[i]->Status == 'G') {
+							 mode = "EN CAMINO";
+							 deliveryman = listOrder[i]->DeliveryMan->FirstName;
+
+						 }
+						 else { mode = "ENTREGADO"; }
 
 
 					   dgvSales->Rows->Add(gcnew array<String^> {
 						   "" + listOrder[i]->Id,
-							   "" + deliveryman,
-							   "" + mode,
+							   deliveryman,
+							    "" + mode
 
 					   });
+				   }
 
 				   }
-			   }*/
+			   }
 		 
 };
 }

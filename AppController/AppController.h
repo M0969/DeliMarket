@@ -51,6 +51,9 @@ namespace AppController {
 			static void RegisterSale(Order^);
 			static List<Order^>^ QueryAllSales();
 			static List<Order^>^ QueryAllSalesByCustomer(String^ username);
+			static int QueryLastSaleId();
+			static Order^ QueryOrderbyId(int saleId);
+			static void UpdateOrder(Order^);
 		// Métodos CRUD para repartidor
 	};
 

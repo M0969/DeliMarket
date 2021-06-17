@@ -130,6 +130,21 @@ List<Order^>^ AppController::AppManager::QueryAllSalesByCustomer(String^ usernam
 	return DBController::QueryAllSalesByCustomer(username);
 }
 
+int AppController::AppManager::QueryLastSaleId()
+{
+	return DBController::QueryLastSaleId();
+}
+
+Order^ AppController::AppManager::QueryOrderbyId(int saleId)
+{
+	return	DBController::QueryOrderbyId(saleId);
+}
+
+void AppController::AppManager::UpdateOrder(Order^ order)
+{
+	DBController::UpdateOrder(order);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 /*Bonnus Points*/
 void AppController::AppManager::AddBonusPointsPQ(BonusPoints^ bp)

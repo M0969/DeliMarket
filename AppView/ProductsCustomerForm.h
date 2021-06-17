@@ -471,6 +471,8 @@ private: System::Void cmbSearch_SelectedIndexChanged(System::Object^ sender, Sys
 	}
 }
 	private: System::Void dgvProducts_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+
+		
 		if (dgvProducts->Rows[e->RowIndex]->Cells["addCarrito"]->Selected) {
 
 			int selectedrowindex = dgvProducts->SelectedCells[0]->RowIndex;

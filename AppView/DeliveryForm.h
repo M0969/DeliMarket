@@ -43,9 +43,14 @@ namespace AppView {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Panel^ panel1;
+	private: System::Windows::Forms::Panel^ SideBarWrapper;
+	protected:
+
+	protected:
+
 	private: System::Windows::Forms::Panel^ panel2;
-	private: System::Windows::Forms::Panel^ panel3;
+	private: System::Windows::Forms::Panel^ Wrapper;
+
 	private: System::Windows::Forms::Label^ Title;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	private: System::Windows::Forms::PictureBox^ btnReset;
@@ -57,6 +62,11 @@ namespace AppView {
 	private: Bunifu::Framework::UI::BunifuSeparator^ bunifuSeparator1;
 	private: Bunifu::Framework::UI::BunifuFlatButton^ bunifuFlatButton1;
 	private: Bunifu::Framework::UI::BunifuSeparator^ lineSidebar;
+	private: System::Windows::Forms::TextBox^ textBox2;
+	public: System::Windows::Forms::TextBox^ txtDeliverymanUserName;
+	private:
+
+
 
 
 
@@ -76,7 +86,9 @@ namespace AppView {
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(DeliveryForm::typeid));
-			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->SideBarWrapper = (gcnew System::Windows::Forms::Panel());
+			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->txtDeliverymanUserName = (gcnew System::Windows::Forms::TextBox());
 			this->bunifuSeparator1 = (gcnew Bunifu::Framework::UI::BunifuSeparator());
 			this->bunifuFlatButton1 = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
 			this->lineSidebar = (gcnew Bunifu::Framework::UI::BunifuSeparator());
@@ -89,8 +101,8 @@ namespace AppView {
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->btnMin = (gcnew System::Windows::Forms::PictureBox());
 			this->Title = (gcnew System::Windows::Forms::Label());
-			this->panel3 = (gcnew System::Windows::Forms::Panel());
-			this->panel1->SuspendLayout();
+			this->Wrapper = (gcnew System::Windows::Forms::Panel());
+			this->SideBarWrapper->SuspendLayout();
 			this->panel2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnReset))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnClose))->BeginInit();
@@ -99,19 +111,35 @@ namespace AppView {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnMin))->BeginInit();
 			this->SuspendLayout();
 			// 
-			// panel1
+			// SideBarWrapper
 			// 
-			this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)), static_cast<System::Int32>(static_cast<System::Byte>(31)),
+			this->SideBarWrapper->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)), static_cast<System::Int32>(static_cast<System::Byte>(31)),
 				static_cast<System::Int32>(static_cast<System::Byte>(33)));
-			this->panel1->Controls->Add(this->bunifuSeparator1);
-			this->panel1->Controls->Add(this->bunifuFlatButton1);
-			this->panel1->Controls->Add(this->lineSidebar);
-			this->panel1->Controls->Add(this->btnSignoff);
-			this->panel1->Controls->Add(this->btnSale);
-			this->panel1->Location = System::Drawing::Point(0, 66);
-			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(165, 415);
-			this->panel1->TabIndex = 0;
+			this->SideBarWrapper->Controls->Add(this->textBox2);
+			this->SideBarWrapper->Controls->Add(this->txtDeliverymanUserName);
+			this->SideBarWrapper->Controls->Add(this->bunifuSeparator1);
+			this->SideBarWrapper->Controls->Add(this->bunifuFlatButton1);
+			this->SideBarWrapper->Controls->Add(this->lineSidebar);
+			this->SideBarWrapper->Controls->Add(this->btnSignoff);
+			this->SideBarWrapper->Controls->Add(this->btnSale);
+			this->SideBarWrapper->Location = System::Drawing::Point(0, 66);
+			this->SideBarWrapper->Name = L"SideBarWrapper";
+			this->SideBarWrapper->Size = System::Drawing::Size(165, 415);
+			this->SideBarWrapper->TabIndex = 0;
+			// 
+			// textBox2
+			// 
+			this->textBox2->Location = System::Drawing::Point(12, 48);
+			this->textBox2->Name = L"textBox2";
+			this->textBox2->Size = System::Drawing::Size(140, 20);
+			this->textBox2->TabIndex = 13;
+			// 
+			// txtDeliverymanUserName
+			// 
+			this->txtDeliverymanUserName->Location = System::Drawing::Point(29, 10);
+			this->txtDeliverymanUserName->Name = L"txtDeliverymanUserName";
+			this->txtDeliverymanUserName->Size = System::Drawing::Size(99, 20);
+			this->txtDeliverymanUserName->TabIndex = 12;
 			// 
 			// bunifuSeparator1
 			// 
@@ -314,27 +342,28 @@ namespace AppView {
 			this->Title->TabIndex = 2;
 			this->Title->Text = L"DELIMARKET";
 			// 
-			// panel3
+			// Wrapper
 			// 
-			this->panel3->Location = System::Drawing::Point(171, 72);
-			this->panel3->Name = L"panel3";
-			this->panel3->Size = System::Drawing::Size(504, 400);
-			this->panel3->TabIndex = 1;
+			this->Wrapper->Location = System::Drawing::Point(171, 72);
+			this->Wrapper->Name = L"Wrapper";
+			this->Wrapper->Size = System::Drawing::Size(504, 400);
+			this->Wrapper->TabIndex = 1;
 			// 
 			// DeliveryForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(675, 475);
-			this->Controls->Add(this->panel3);
+			this->Controls->Add(this->Wrapper);
 			this->Controls->Add(this->panel2);
-			this->Controls->Add(this->panel1);
+			this->Controls->Add(this->SideBarWrapper);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"DeliveryForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"DeliveryForm";
 			this->Load += gcnew System::EventHandler(this, &DeliveryForm::DeliveryForm_Load);
-			this->panel1->ResumeLayout(false);
+			this->SideBarWrapper->ResumeLayout(false);
+			this->SideBarWrapper->PerformLayout();
 			this->panel2->ResumeLayout(false);
 			this->panel2->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnReset))->EndInit();
@@ -346,6 +375,18 @@ namespace AppView {
 
 		}
 #pragma endregion
+		template<class T>
+
+		void AbrirPanel(T FormHijo) {
+			if (this->Wrapper->Controls->Count > 0)
+				this->Wrapper->Controls->RemoveAt(0);
+			FormHijo->TopLevel = false;
+			FormHijo->Dock = DockStyle::Fill;
+			this->Wrapper->Controls->Add(FormHijo);
+
+			FormHijo->Show();
+
+		}
 
 		private: System::Void DeliveryForm_Load(System::Object^ sender, System::EventArgs^ e) {
 			if (user == nullptr) {
@@ -380,7 +421,9 @@ namespace AppView {
 		}
 		private: System::Void btnSale_Click(System::Object^ sender, System::EventArgs^ e) {
 				OrderListForm^ orderListForm = gcnew OrderListForm();
-				orderListForm->Show();
+				orderListForm->txtDeliveryman->Text = txtDeliverymanUserName->Text;
+				this->AbrirPanel(orderListForm);
+				
 		}
 };
 }

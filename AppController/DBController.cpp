@@ -217,6 +217,7 @@ List<BonusPoints^>^ AppController::DBController::QueryAllBonusPointsSQ()
 
 void AppController::DBController::RegisterSale(Order^ sale)
 {
+
     saleDB->ListDB->Add(sale);
     saleDB->Persist();
 }
@@ -230,17 +231,51 @@ List<Order^>^ AppController::DBController::QueryAllSales()
 List<Order^>^ AppController::DBController::QueryAllSalesByCustomer(String^ username)
 {
     List<Order^>^ list = gcnew List<Order^>();
+
     saleDB->LoadFromBinaryFile();
+
     for (int i = 0; i < saleDB->ListDB->Count; i++) {
-        if (saleDB->ListDB[i]->Customer->Username->CompareTo(username) == 0) {
-            list->Add(dynamic_cast <Order^>(saleDB->ListDB[i]));
+        if (saleDB->ListDB[i]->User->Username->CompareTo(username) == 0) {
+            list->Add((saleDB->ListDB[i]));
 
         }
         return list;
     }
 
 }
+
+int AppController::DBController::QueryLastSaleId()
+{
+    if (saleDB->ListDB->Count > 0)
+        return saleDB->ListDB[saleDB->ListDB->Count - 1]->Id;
+    else
+        return 0;
+}
 
+Order^ AppController::DBController::QueryOrderbyId(int saleId)
+{
+    saleDB->LoadFromBinaryFile();
+    for (int i = 0; i < saleDB->ListDB->Count; i++) {
+        if (saleDB->ListDB[i]->Id == saleId) {
+            return saleDB->ListDB[i];
+        }
+    }
+    return nullptr;
+}
+
+void AppController::DBController::UpdateOrder(Order^ order)
+{
+    saleDB->LoadFromBinaryFile();
+
+    for (int i = 0; i <= saleDB->ListDB->Count; i++) {
+        if (saleDB->ListDB[i]->Id == order->Id) {
+            saleDB->ListDB[i]->Status = order->Status;
+            saleDB->ListDB[i]->DeliveryMan = order->DeliveryMan;
+            saleDB->Persist();
+            return;
+        }
+    }
+}
 
 /////////////////////////////////////////////////
 
@@ -300,7 +335,7 @@ int AppController::DBController::ReturnIDbyUserName(String^ username)
 {
     userDB->LoadUsers();
     for (int i = 0; i < userDB->ListDB->Count; i++)
-        if (userDB->ListDB[i]->Username == username)
+        if (userDB->ListDB[i]->Username->Equals(username))
             return userDB->ListDB[i]->Id;
 }
 
@@ -532,7 +567,9 @@ DeliveryMan^ AppController::DBController::QueryDeliveryManById(int deliverymanId
     LoadDeliveryMan();
     for (int i = 0; i < deliveryManDB->ListDB->Count; i++) {
         if (deliveryManDB->ListDB[i]->Id == deliverymanId)
-            return deliveryManDB->ListDB[i];
+        {
+            return (DeliveryMan^)(deliveryManDB->ListDB[i]);
+        }
     }
     return nullptr;
 }

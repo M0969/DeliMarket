@@ -55,7 +55,12 @@ System::Void AppView::CarritoCustomerForm::btnRegisterSale_Click(System::Object^
 			saleDetail->SubTotal = Double::Parse(dgvCarrito->Rows[i]->Cells[3]->Value->ToString());
 			sale->Details->Add(saleDetail);
 		}
-		AppManager::RegisterSale(sale);		
+		
+		
+		sale->Id=AppManager::QueryLastSaleId()+1;
+		sale->Status = 'W';
+
+			
 		Boleta^ aForm = gcnew Boleta();       
 		User^ userB = gcnew User();
 		userB= UserManager::QueryUserbyId(customerId);
@@ -64,8 +69,9 @@ System::Void AppView::CarritoCustomerForm::btnRegisterSale_Click(System::Object^
 		aForm->txtDocumentNumberCB->Text = userB->DocumentNumber;
 		aForm->textTotalSaleB->Text = txtTotalSale->Text;
 		aForm->textIdSaleDetailB->Text = "DMC- " + (sale->Id).ToString();
+	
 
-
+		AppManager::RegisterSale(sale);
 		MessageBox::Show("Se ha registrado la venta exitosamente para el cliente: " + textUserNameCS->Text);
 		aForm->Show();
 	//	aForm->textTotalSaleB = sale->Total;

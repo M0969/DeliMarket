@@ -324,7 +324,7 @@ private: System::Void Boleta_Load(System::Object^ sender, System::EventArgs^ e) 
 	RefreshDGVBoleta();
 }
 	   void RefreshDGVBoleta() {
-		   //List <SaleDB^>^ sdList = AppManager::QueryAllBoleta();
+		   //List <SaleDB^>^ sdList = AppManager::QueryLastSaleId();
 		   //dgvBoleta->Rows->Clear();
 		   //for (int i = 0; i < sdList->Count; i++) {
 			 //  dgvBoleta->Rows->Add(gcnew array<String^> {
