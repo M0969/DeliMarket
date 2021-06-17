@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ManagerDB xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ListDB>
+    <Manager>
+      <Status>0</Status>
+      <Address>Cercado de Lima</Address>
+      <Category>Manager</Category>
+      <Email>a20172892@pucp.edu.pe</Email>
+      <PhoneNumber>946233132</PhoneNumber>
+      <DocumentNumber>75936790</DocumentNumber>
+      <Gender>70</Gender>
+      <LastName>Taipe</LastName>
+      <FirstName>Elizabeth</FirstName>
+      <Password>elikuroko</Password>
+      <Username>Elikyu</Username>
+      <Id>8</Id>
+      <VerificationCode>0</VerificationCode>
+      <Salary>0</Salary>
+      <EmployeesNumber>0</EmployeesNumber>
+    </Manager>
+  </ListDB>
+</ManagerDB>
