@@ -243,7 +243,8 @@ List<Order^>^ AppController::DBController::QueryAllSalesByCustomer(String^ usern
     }
 
 }
-
+
+
 int AppController::DBController::QueryLastSaleId()
 {
     if (saleDB->ListDB->Count > 0)
@@ -265,15 +266,8 @@ Order^ AppController::DBController::QueryOrderbyId(int saleId)
 
 List<Order^>^ AppController::DBController::QueryLastOrderbyId(int saleId)
 {
-    List<Order^>^ list = gcnew List<Order^>();
-    saleDB->LoadFromBinaryFile();
-
-    for (int i = 0; i < saleDB->ListDB->Count; i++) {
-        if (saleDB->ListDB[i]->Id == saleId) {
-            list->Add((saleDB->ListDB[i]));
-        }
-        return list;
-    }
+    throw gcnew System::NotImplementedException();
+    // TODO: Insertar una instrucción "return" aquí
 }
 
 void AppController::DBController::UpdateOrder(Order^ order)

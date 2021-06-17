@@ -448,10 +448,9 @@ public: void RefreshDGVCarrito() {
 				    txtTotalSale->Text = "" + total;
 			   }
 		   }
-private: System::Void btnASCustom_Click(System::Object^ sender, System::EventArgs^ e) {
-	Ubicacion^ aForm = gcnew Ubicacion();
-	aForm->ShowDialog();
-}
+private: System::Void btnASCustom_Click(System::Object^ sender, System::EventArgs^ e);
+
+
 private: System::Void dgvCarrito_CellValueChanged(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 	if (dgvCarrito->Columns[e->ColumnIndex]->Name == "Quantity") {
 		if (dgvCarrito->CurrentCell != nullptr &&

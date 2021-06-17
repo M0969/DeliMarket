@@ -2,6 +2,19 @@
 #include "Login.h"
 
 
+
+
+
+
+System::Void AppView::CarritoCustomerForm::btnASCustom_Click(System::Object^ sender, System::EventArgs^ e)
+{
+	int customerId = UserManager::ReturnIDbyUserName(textUserNameCS->Text);
+	User^ u = UserManager::QueryUserbyId(customerId);
+	Ubicacion^ aForm = gcnew Ubicacion();
+	aForm->txtAddressC->Text = u->Address;
+		aForm->ShowDialog();
+}
+
 int AppView::CarritoCustomerForm::ValidateInfo() {
 	//-1: No se ha elegido una direccion
     //-2: La fecha es menor a la fecha actual
@@ -70,6 +83,7 @@ System::Void AppView::CarritoCustomerForm::btnRegisterSale_Click(System::Object^
 		aForm->textTotalSaleB->Text = txtTotalSale->Text;
 		aForm->textIdSaleDetailB->Text = "DMC- " + (sale->Id).ToString();
 		aForm->txtIdB->Text = (sale->Id).ToString();
+
 	
 
 		AppManager::RegisterSale(sale);

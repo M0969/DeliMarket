@@ -88,10 +88,9 @@ namespace AppView {
 			// chckAddress
 			// 
 			this->chckAddress->AutoSize = true;
-			this->chckAddress->Location = System::Drawing::Point(62, 23);
-			this->chckAddress->Margin = System::Windows::Forms::Padding(2);
+			this->chckAddress->Location = System::Drawing::Point(93, 35);
 			this->chckAddress->Name = L"chckAddress";
-			this->chckAddress->Size = System::Drawing::Size(63, 17);
+			this->chckAddress->Size = System::Drawing::Size(89, 24);
 			this->chckAddress->TabIndex = 0;
 			this->chckAddress->Text = L"Mi casa";
 			this->chckAddress->UseVisualStyleBackColor = true;
@@ -100,10 +99,9 @@ namespace AppView {
 			// chckCustomAddress
 			// 
 			this->chckCustomAddress->AutoSize = true;
-			this->chckCustomAddress->Location = System::Drawing::Point(62, 55);
-			this->chckCustomAddress->Margin = System::Windows::Forms::Padding(2);
+			this->chckCustomAddress->Location = System::Drawing::Point(93, 85);
 			this->chckCustomAddress->Name = L"chckCustomAddress";
-			this->chckCustomAddress->Size = System::Drawing::Size(167, 17);
+			this->chckCustomAddress->Size = System::Drawing::Size(245, 24);
 			this->chckCustomAddress->TabIndex = 2;
 			this->chckCustomAddress->Text = L"Agregar ubicacion en el mapa";
 			this->chckCustomAddress->UseVisualStyleBackColor = true;
@@ -112,10 +110,9 @@ namespace AppView {
 			// pictureBox1
 			// 
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(258, 48);
-			this->pictureBox1->Margin = System::Windows::Forms::Padding(2);
+			this->pictureBox1->Location = System::Drawing::Point(387, 74);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(487, 227);
+			this->pictureBox1->Size = System::Drawing::Size(730, 349);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox1->TabIndex = 3;
 			this->pictureBox1->TabStop = false;
@@ -123,10 +120,9 @@ namespace AppView {
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(180, 314);
-			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label3->Location = System::Drawing::Point(270, 483);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(142, 13);
+			this->label3->Size = System::Drawing::Size(211, 20);
 			this->label3->TabIndex = 5;
 			this->label3->Text = L"Tiempo estimado de llegada:";
 			this->label3->Click += gcnew System::EventHandler(this, &Ubicacion::label3_Click);
@@ -135,10 +131,9 @@ namespace AppView {
 			// 
 			this->btnAddressCheck_Click->BackColor = System::Drawing::SystemColors::ControlDarkDark;
 			this->btnAddressCheck_Click->ForeColor = System::Drawing::Color::Black;
-			this->btnAddressCheck_Click->Location = System::Drawing::Point(312, 344);
-			this->btnAddressCheck_Click->Margin = System::Windows::Forms::Padding(2);
+			this->btnAddressCheck_Click->Location = System::Drawing::Point(468, 529);
 			this->btnAddressCheck_Click->Name = L"btnAddressCheck_Click";
-			this->btnAddressCheck_Click->Size = System::Drawing::Size(83, 27);
+			this->btnAddressCheck_Click->Size = System::Drawing::Size(124, 42);
 			this->btnAddressCheck_Click->TabIndex = 7;
 			this->btnAddressCheck_Click->Text = L"Confirmar";
 			this->btnAddressCheck_Click->UseVisualStyleBackColor = false;
@@ -146,38 +141,36 @@ namespace AppView {
 			// 
 			// txtCustomAddressC
 			// 
-			this->txtCustomAddressC->Location = System::Drawing::Point(371, 279);
-			this->txtCustomAddressC->Margin = System::Windows::Forms::Padding(2);
+			this->txtCustomAddressC->Location = System::Drawing::Point(556, 429);
 			this->txtCustomAddressC->Name = L"txtCustomAddressC";
-			this->txtCustomAddressC->Size = System::Drawing::Size(174, 20);
+			this->txtCustomAddressC->Size = System::Drawing::Size(259, 26);
 			this->txtCustomAddressC->TabIndex = 8;
 			this->txtCustomAddressC->Text = L"Escribir  Direccion";
 			this->txtCustomAddressC->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &Ubicacion::txtCustomAddressC_KeyDown);
 			// 
 			// txtArrivalTimeC
 			// 
-			this->txtArrivalTimeC->Location = System::Drawing::Point(371, 312);
-			this->txtArrivalTimeC->Margin = System::Windows::Forms::Padding(2);
+			this->txtArrivalTimeC->Location = System::Drawing::Point(556, 480);
 			this->txtArrivalTimeC->Name = L"txtArrivalTimeC";
 			this->txtArrivalTimeC->ReadOnly = true;
-			this->txtArrivalTimeC->Size = System::Drawing::Size(174, 20);
+			this->txtArrivalTimeC->Size = System::Drawing::Size(259, 26);
 			this->txtArrivalTimeC->TabIndex = 9;
 			// 
 			// txtAddressC
 			// 
-			this->txtAddressC->Location = System::Drawing::Point(258, 21);
-			this->txtAddressC->Margin = System::Windows::Forms::Padding(2);
+			this->txtAddressC->Location = System::Drawing::Point(387, 32);
 			this->txtAddressC->Name = L"txtAddressC";
 			this->txtAddressC->ReadOnly = true;
-			this->txtAddressC->Size = System::Drawing::Size(229, 20);
+			this->txtAddressC->Size = System::Drawing::Size(342, 26);
 			this->txtAddressC->TabIndex = 10;
+			this->txtAddressC->TextChanged += gcnew System::EventHandler(this, &Ubicacion::txtAddressC_TextChanged);
 			// 
 			// Ubicacion
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::InactiveCaption;
-			this->ClientSize = System::Drawing::Size(771, 376);
+			this->ClientSize = System::Drawing::Size(1156, 578);
 			this->Controls->Add(this->txtAddressC);
 			this->Controls->Add(this->txtArrivalTimeC);
 			this->Controls->Add(this->txtCustomAddressC);
@@ -186,9 +179,9 @@ namespace AppView {
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->chckCustomAddress);
 			this->Controls->Add(this->chckAddress);
-			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"Ubicacion";
 			this->Text = L"Ubicacion";
+			this->Load += gcnew System::EventHandler(this, &Ubicacion::Ubicacion_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -231,6 +224,13 @@ private: System::Void chckCustomAddress_CheckedChanged(System::Object^ sender, S
 	else {
 		chckAddress->Enabled = true;
 	}
+}
+private: System::Void txtAddressC_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	//if (chckAddress->Checked == true)
+
+		//txtAddressC->Text = AppModel::User::Address;
+}
+private: System::Void Ubicacion_Load(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

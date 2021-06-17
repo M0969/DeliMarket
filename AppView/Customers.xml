@@ -3,17 +3,17 @@
   <ListDB>
     <Customer>
       <Status>0</Status>
-      <Address>mi casa</Address>
+      <Address>CallePucp</Address>
       <Category>Cliente</Category>
-      <Email>kled@gmail,com</Email>
-      <PhoneNumber>56848195</PhoneNumber>
-      <DocumentNumber>12349887</DocumentNumber>
+      <Email>cualquiera</Email>
+      <PhoneNumber>98765</PhoneNumber>
+      <DocumentNumber>123456</DocumentNumber>
       <Gender>77</Gender>
-      <LastName>tarado</LastName>
-      <FirstName>Kledy</FirstName>
-      <Password>1234</Password>
-      <Username>Kledja</Username>
-      <Id>6</Id>
+      <LastName>Sanchez</LastName>
+      <FirstName>Piero</FirstName>
+      <Password>12345</Password>
+      <Username>Pasg</Username>
+      <Id>7</Id>
       <CustomerPoints>0</CustomerPoints>
     </Customer>
   </ListDB>
