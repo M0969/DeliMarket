@@ -111,7 +111,8 @@ namespace AppController {
 		static int QueryLastSaleId();
 		static Order^ QueryOrderbyId(int saleId);
 		static void UpdateOrder(Order^);
-
+		/*Ubication*/
+		static String^ CompareAdress(String^ Adress);
 	};
 }
 

@@ -277,6 +277,31 @@ void AppController::DBController::UpdateOrder(Order^ order)
     }
 }
 
+String^ AppController::DBController::CompareAdress(String^ Adress)
+{
+    if (Adress == "Direccion1")return "13 minutos";
+    if (Adress == "Direccion2")return "6 minutos";
+    if (Adress == "Direccion3")return "10 minutos";
+    if (Adress == "Direccion4")return "10 minutos";
+    if (Adress == "Direccion5")return "11 minutos";
+    if (Adress == "Direccion6")return "11 minutos";
+    if (Adress == "Direccion7")return "8 minutos";
+    if (Adress == "Direccion8")return "8 minutos";
+    if (Adress == "Direccion9")return "5 minutos";
+    if (Adress == "Direccion10")return "11 minutos";
+    if (Adress == "Direccion11")return "12 minutos";
+    if (Adress == "Direccion12")return "11 minutos";
+    if (Adress == "Direccion13")return "11 minutos";
+    if (Adress == "Direccion14")return "9 minutos";
+    if (Adress == "Direccion15")return "9 minutos";
+    if (Adress == "Direccion16")return "8 minutos";
+    if (Adress == "Direccion17")return "9 minutos";
+    if (Adress == "Direccion18")return "10 minutos";
+    if (Adress == "Direccion19")return "10 minutos";
+    if (Adress == "Direccion20")return "13 minutos";
+    if (Adress == "Direccion21")return "11 minutos";
+}
+
 /////////////////////////////////////////////////
 
 /*User*/
